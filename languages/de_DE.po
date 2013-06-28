@@ -1,0 +1,565 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Fanoe v1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2013-06-01 11:26:10+0000\n"
+"Last-Translator: admin <kontakt@webdesign-florian-brinkmann.de>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: CSL v1.x\n"
+"X-Poedit-Language: German\n"
+"X-Poedit-Country: GERMANY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: 404.php:6
+#@ fanoe
+msgid "This is somewhat embarrassing, isn&rsquo;t it?"
+msgstr "Die Seite konnte nicht gefunden werden ..."
+
+#: 404.php:10
+#@ fanoe
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching, or one of the links below, can help."
+msgstr "Entschuldigung, aber die gesuchten Inhalte konnten nicht abgerufen werden. Vielleicht hilf ein Blick auf die Sitemap oder ein Versuch mit dem Suchformular."
+
+#: archive.php:12
+#, php-format
+#@ fanoe
+msgid "Daily Archives: %s"
+msgstr "Tagesarchiv: %s"
+
+#: archive.php:14
+#, php-format
+#@ fanoe
+msgid "Monthly Archives: %s"
+msgstr "Monatsarchiv: %s"
+
+#: archive.php:14
+#@ fanoe
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr "F Y"
+
+#: archive.php:16
+#, php-format
+#@ fanoe
+msgid "Yearly Archives: %s"
+msgstr "Jahresarchiv: %s"
+
+#: archive.php:16
+#@ fanoe
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr "Y"
+
+#: archive.php:18
+#@ fanoe
+msgid "Blog Archives"
+msgstr "Blog Archiv"
+
+#: archive.php:37
+#: author.php:51
+#: category.php:20
+#: index.php:13
+#: search.php:28
+#: tag.php:39
+#@ fanoe
+msgid "Nothing Found"
+msgstr "Nichts gefunden"
+
+#: archive.php:41
+#: author.php:55
+#: category.php:24
+#: index.php:17
+#: tag.php:43
+#@ fanoe
+msgid "Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post."
+msgstr "Entschuldigung, aber es wurden keine Ergebnisse in dem gesuchten Archiv gefunden. Vielleicht hilf die Suchfunktion, den gesuchten Artikel zu finden."
+
+#: author.php:15
+#, php-format
+#@ fanoe
+msgid "Author Archives: %s"
+msgstr "Autorenarchiv: %s"
+
+#: author.php:34
+#: single.php:96
+#: single.php:121
+#, php-format
+#@ fanoe
+msgid "About %s"
+msgstr "Über %s"
+
+#: category.php:6
+#, php-format
+#@ fanoe
+msgid "Category Archives: %s"
+msgstr "Kategoriearchiv: %s"
+
+#: comments.php:28
+#@ fanoe
+msgid "Comment navigation"
+msgstr "Kommentar Navigation"
+
+#: comments.php:29
+#@ fanoe
+msgid "&larr; Older Comments"
+msgstr "&larr; Ältere Kommentare"
+
+#: comments.php:30
+#@ fanoe
+msgid "Newer Comments &rarr;"
+msgstr "Neuere Kommentare &rarr;"
+
+#: comments.php:39
+#@ fanoe
+msgid "Comments are closed."
+msgstr "Kommentare sind geschlossen."
+
+#: comments.php:44
+#@ fanoe
+msgid "Submit Comment"
+msgstr "Kommetar absenden"
+
+#: content-aside.php:3
+#: content-aside.php:5
+#: content-gallery.php:3
+#: content-gallery.php:5
+#: content-gallery.php:33
+#: content-image.php:3
+#: content-image.php:5
+#: content-link.php:3
+#: content-link.php:5
+#: content-quote.php:3
+#: content-quote.php:5
+#: content-status.php:3
+#: content-status.php:5
+#: content.php:3
+#: content.php:6
+#, php-format
+#@ fanoe
+msgid "Permalink to %s"
+msgstr "Permalink zu %s"
+
+#: functions.php:281
+#@ fanoe
+msgid "Reply"
+msgstr "Antworten"
+
+#: content-aside.php:20
+#: content-gallery.php:21
+#: content-image.php:15
+#: content-link.php:19
+#: content-quote.php:20
+#: content-status.php:23
+#: content.php:22
+#: functions.php:135
+#@ fanoe
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Weiterlesen <span class=\"meta-nav\">&rarr;</span>"
+
+#: content-aside.php:21
+#: content-gallery.php:37
+#: content-image.php:16
+#: content-link.php:20
+#: content-quote.php:21
+#: content-status.php:24
+#: content.php:23
+#: single.php:36
+#@ fanoe
+msgid "Pages:"
+msgstr "Seiten:"
+
+#: content-image.php:58
+#: functions.php:277
+#: page.php:16
+#: single.php:65
+#@ fanoe
+msgid "Edit"
+msgstr "Bearbeiten"
+
+#: content-gallery.php:33
+#, php-format
+#@ fanoe
+msgid "This gallery contains <a %1$s>%2$s photo</a>."
+msgid_plural "This gallery contains <a %1$s>%2$s photos</a>."
+msgstr[0] "Diese Galerie enthält <a %1$s>%2$s Foto</a>."
+msgstr[1] "Diese Galerie enthält <a %1$s>%2$s Fotos</a>."
+
+#. translators: used between list items, there is a space after the comma
+#. translators: used between list items, there is a space after the comma
+#: content-aside.php:30
+#: content-aside.php:42
+#: content-gallery.php:46
+#: content-gallery.php:58
+#: content-image.php:37
+#: content-image.php:47
+#: content-link.php:29
+#: content-link.php:41
+#: content-quote.php:30
+#: content-quote.php:42
+#: content-status.php:33
+#: content-status.php:46
+#: content.php:32
+#: content.php:45
+#: single.php:42
+#: single.php:45
+#@ fanoe
+msgid ", "
+msgstr ", "
+
+#: content-aside.php:34
+#: content-gallery.php:50
+#: content-image.php:41
+#: content-link.php:33
+#: content-quote.php:34
+#: content-status.php:37
+#: content.php:36
+#, php-format
+#@ fanoe
+msgid "<span class=\"%1$s\">Posted in</span> %2$s"
+msgstr "<span class=\"%1$s\">Veröffentlicht in</span> %2$s"
+
+#: content-aside.php:48
+#: content-gallery.php:64
+#: content-image.php:53
+#: content-link.php:47
+#: content-quote.php:48
+#: content-status.php:52
+#: content.php:51
+#, php-format
+#@ fanoe
+msgid "<span class=\"%1$s\">Tagged</span> %2$s"
+msgstr "<span class=\"%1$s\">Tags:</span> %2$s"
+
+#: content-image.php:22
+#, php-format
+#@ fanoe
+msgid "<a href=\"%1$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%2$s\">%3$s</time></a><span class=\"by-author\"> <span class=\"sep\"> by </span> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%4$s\" title=\"%5$s\" rel=\"author\">%6$s</a></span></span>"
+msgstr "<a href=\"%1$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%2$s\">%3$s</time></a><span class=\"by-author\"> <span class=\"sep\"> von </span> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%4$s\" title=\"%5$s\" rel=\"author\">%6$s</a></span></span>"
+
+#: content-image.php:27
+#, php-format
+#@ fanoe
+msgid "View all posts by %s"
+msgstr "Alle Beiträge von %s"
+
+#: 404.php:18
+#: archive.php:56
+#: author.php:64
+#: category.php:32
+#: index.php:26
+#: page.php:25
+#: search.php:45
+#: single.php:154
+#: tag.php:58
+#@ fanoe
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&larr;</span> Ältere Beiträge"
+
+#: 404.php:19
+#: archive.php:57
+#: author.php:65
+#: category.php:33
+#: index.php:27
+#: page.php:26
+#: search.php:46
+#: single.php:155
+#: tag.php:59
+#@ fanoe
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Neuere Beiträge <span class=\"meta-nav\">&rarr;</span>"
+
+#: functions.php:245
+#@ fanoe
+msgid "(Edit)"
+msgstr "(Bearbeiten)"
+
+#: functions.php:260
+#@ fanoe
+msgid "Post author"
+msgstr "Beitragsautor"
+
+#. translators: 1: date, 2: time
+#: functions.php:266
+#, php-format
+#@ fanoe
+msgid "%1$s at %2$s"
+msgstr "%1$s @ %2$s"
+
+#: functions.php:272
+#@ fanoe
+msgid "Your comment is awaiting moderation."
+msgstr "Dein Kommentar wartet auf Moderation."
+
+#: functions.php:294
+#@ fanoe
+msgid "Name*"
+msgstr "Name*"
+
+#: functions.php:297
+#@ fanoe
+msgid "Email*"
+msgstr "Email*"
+
+#: functions.php:300
+#@ fanoe
+msgid "Website"
+msgstr "Website"
+
+#: header.php:29
+#, php-format
+#@ fanoe
+msgid "Page %s"
+msgstr "Seite %s"
+
+#: header.php:69
+#@ fanoe
+msgid "Skip to content"
+msgstr "Zum Inhalt"
+
+#: search.php:8
+#, php-format
+#@ fanoe
+msgid "Search Results for: %s"
+msgstr "Suchergebnisse für: %s"
+
+#: search.php:32
+#@ fanoe
+msgid "Sorry, but nothing matched your search criteria. Please try again with some different keywords."
+msgstr "Entschuldigung, aber für die Suche gibt es keinen Treffer. Bitte versuche es erneut mit anderen Stichwörtern."
+
+#: searchform.php:2
+#: searchform.php:3
+#: searchform.php:4
+#@ fanoe
+msgid "Search"
+msgstr "Suche"
+
+#: single.php:138
+#@ fanoe
+msgid "Post navigation"
+msgstr "Beitragsnavigation"
+
+#: single.php:102
+#: single.php:127
+#, php-format
+#@ fanoe
+msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Alle Beiträge von %s <span class=\"meta-nav\">&rarr;</span>"
+
+#: tag.php:11
+#, php-format
+#@ fanoe
+msgid "Tag Archives: %s"
+msgstr "Tagarchiv: %s"
+
+#: functions.php:245
+#@ fanoe
+msgid "Trackback:"
+msgstr "Trackback:"
+
+#: functions.php:343
+#@ fanoe
+msgid " Comment"
+msgstr " Kommentar"
+
+#: functions.php:344
+#@ fanoe
+msgid " Comments"
+msgstr " Kommentare"
+
+#: functions.php:356
+#@ fanoe
+msgid " Trackback"
+msgstr " Trackback"
+
+#: functions.php:357
+#@ fanoe
+msgid " Trackbacks"
+msgstr " Trackbacks"
+
+#: single.php:47
+#, php-format
+#@ fanoe
+msgid "This entry was posted in %1$s and tagged %2$s by <a href=\"%6$s\">%5$s</a>.<br>Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr "Dieser Eintrag wurde veröffentlicht in %1$s mit den Schlagwörtern %2$s von <a href=\"%6$s\">%5$s</a>.<br>Füge den <a href=\"%3$s\" title=\"Permalink zu %4$s\" rel=\"bookmark\">Permalink</a> zu deinen Lesezeichen hinzu."
+
+#: single.php:49
+#, php-format
+#@ fanoe
+msgid "This entry was posted in %1$s by <a href=\"%6$s\">%5$s</a>.<br>Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr "Dieser Eintrag wurde veröffentlicht in %1$s von <a href=\"%6$s\">%5$s</a>.<br>Füge den <a href=\"%3$s\" title=\"Permalink zu %4$s\" rel=\"bookmark\">Permalink</a> zu deinen Lesezeichen hinzu."
+
+#: single.php:51
+#, php-format
+#@ fanoe
+msgid "This entry was posted by <a href=\"%6$s\">%5$s</a>.<br>Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr "Dieser Eintrag wurde veröffentlicht von <a href=\"%6$s\">%5$s</a>.<br>Füge den <a href=\"%3$s\" title=\"Permalink zu %4$s\" rel=\"bookmark\">Permalink</a> zu deinen Lesezeichen hinzu."
+
+#: functions.php:114
+#@ fanoe
+msgid "Sidebar Menu"
+msgstr "Sidebar Menü"
+
+#: functions.php:636
+#@ fanoe
+msgid "Add a menu"
+msgstr "Menü hinzufügen"
+
+#: header.php:70
+#@ fanoe
+msgid "Menu"
+msgstr "Menü"
+
+#: inc/fanoe-theme-options.php:73
+#@ fanoe
+msgid "Custom CSS"
+msgstr "Eigenes CSS"
+
+#: inc/fanoe-theme-options.php:29
+#@ fanoe
+msgid "Copyright Text"
+msgstr "Copyright Text"
+
+#: inc/fanoe-theme-options.php:30
+#@ fanoe
+msgid "Here you can write in your copyright text. <b>If the field is empty, the copyright symbol, the current year and the name of the blog is displayed.</b> Some inline HTML (&lt;a&gt;, &lt;b&gt;, &lt;em&gt;, &lt;i&gt;, &lt;strong&gt;) is allowed."
+msgstr "Hier kannst du deinen Copyright-Text reinschreiben. <b>Wenn das Feld leer ist, wird das Copyright-Zeichen, das aktuelle Jahr und der Name des Blogs angezeigt.</b> Ein bisschen inline-HTML (&lt;a&gt;, &lt;b&gt;, &lt;em&gt;, &lt;i&gt;, &lt;strong&gt;) ist erlaubt."
+
+#: inc/fanoe-theme-options.php:48
+#@ fanoe
+msgid "Share Buttons in the <b>blog view</b>"
+msgstr "Teilen Buttons in der <b>Blogansicht</b>"
+
+#: inc/fanoe-theme-options.php:49
+#@ fanoe
+msgid "Remove the hook for the social media share buttons are not displayed in the blog view."
+msgstr "Entferne den Haken, damit die Social Media Teilen Buttons in der Blogansicht nicht mehr angezeigt werden."
+
+#: inc/fanoe-theme-options.php:56
+#@ fanoe
+msgid "Share buttons in the <b>single view</b>"
+msgstr "Teilen Buttons in der <b>Einzelansicht</b>"
+
+#: inc/fanoe-theme-options.php:57
+#@ fanoe
+msgid "Remove the hook for the social media share buttons are not displayed in single view."
+msgstr "Entferne den Haken, damit die Social Media Teilen Buttons in der Einzelansicht nicht mehr angezeigt werden."
+
+#: inc/fanoe-theme-settings.php:31
+#: inc/theme-options.php:35
+#@ fanoe
+msgid "fanoe Settings Page"
+msgstr "fanoe Theme Optionen"
+
+#: inc/fanoe-theme-settings.php:124
+#@ fanoe
+msgid "fanoe Options"
+msgstr "fanoe Optionen"
+
+#: inc/fanoe-theme-settings.php:295
+#: inc/theme-options.php:72
+#@ fanoe
+msgid "Save Changes"
+msgstr "Speichern"
+
+#: inc/fanoe-theme-settings.php:337
+#@ fanoe
+msgid "Expecting a Numeric value! Please fix."
+msgstr "Nur numerische Werte! Bitte korrigieren."
+
+#: inc/fanoe-theme-settings.php:350
+#@ fanoe
+msgid "Expecting comma separated numeric values"
+msgstr "Nur kommaseparierte numerische Werte!"
+
+#: inc/fanoe-theme-settings.php:360
+#@ fanoe
+msgid "Expecting comma separated numeric values! Please fix."
+msgstr "Nur kommaseparierte numerische Werte! Bitte korrigieren."
+
+#: inc/fanoe-theme-settings.php:385
+#@ fanoe
+msgid "Invalid email! Please re-enter!"
+msgstr "Ungültige E-Mail Adresse! Bitte erneut eingeben."
+
+#: inc/fanoe-theme-settings.php:387
+#@ fanoe
+msgid "This setting field cannot be empty! Please enter a valid email address."
+msgstr "Dieses Einstellungsfeld darf nicht leer sein! Bitte gib eine gültige E-Mail Adresse ein."
+
+#: inc/fanoe-theme-settings.php:395
+#@ fanoe
+msgid "Please enter a valid email address."
+msgstr "Bitte gib eine gültige E-Mail Adresse ein."
+
+#: inc/theme-options.php:21
+#@ fanoe
+msgid "Fanoe Options"
+msgstr "Fanoe Optionen"
+
+#: sidebar.php:11
+#@ fanoe
+msgid "Theme: Fanoe by <a href=\"http://webdesign-florian-brinkmann.de\">Webdesign Florian Brinkmann</a>"
+msgstr "Theme: Fanoe von <a href=\"http://webdesign-florian-brinkmann.de\">Webdesign Florian Brinkmann</a>"
+
+#: inc/fanoe-theme-settings.php:134
+#@ fanoe
+msgid "<h3>Background Color Post Formats</h3><p>The background color of the post formats can be set with the following classes:<br><i>format-link</i>, <i>format-gallery</i>, <i>format-chat</i>, <i>format-image</i>, <i>format-video</i>, <i>format-quote</i>, <i>format-audio</i>, <i>format-status</i> and <i>format-aside</i></p> "
+msgstr "<h3>Hintergrundfarbe Post Formate</h3><p>Die Hintergrundfarbe der Post Formate kann mit folgenden Klassen eingestellt werden:<br><i>format-link</i>, <i>format-gallery</i>, <i>format-chat</i>, <i>format-image</i>, <i>format-video</i>, <i>format-quote</i>, <i>format-audio</i>, <i>format-status</i> and <i>format-aside</i></p> "
+
+#: inc/fanoe-theme-options.php:38
+#: inc/fanoe-theme-settings.php:145
+#@ fanoe
+msgid "Design Color"
+msgstr "Design Farbe"
+
+#: inc/fanoe-theme-options.php:39
+#@ fanoe
+msgid "Here you can enter the main color of the design. Standard is 84A11D. In the \"Help\" at the top, there is more information."
+msgstr "Hier kannst du die Hauptfarbe des Designs einstellen. Standard ist 84A11D. In der \"Hilfe\" oben gibt es mehr Informationen."
+
+#: inc/fanoe-theme-options.php:74
+#@ fanoe
+msgid "Here you can place your own CSS. In the \"Help\" at the top, there is more information."
+msgstr "Hier kannst du dein eigenes CSS reinschreiben. In der \"Hilfe\" oben gibt es mehr Informationen."
+
+#: inc/fanoe-theme-settings.php:135
+#@ fanoe
+msgid "<h3>Design Color</h3><p>This setting changes the color of the green links, the background color of the status post format and the colored left border of a comment by the author of the article.<br>In addition, the background color of the input fields in the active state and the colored left border of the sidebar.</p> "
+msgstr "<h3>Design Farbe</h3><p>Diese Einstellung ändert die Farben der grünen Links, die Hintergrundfarbe des Post Formates Status und den farbigen linken Rahmen eines Kommentares vom Autor des Artikels. Außerdem die Hintergrundfarbe der Eingabefelder bei aktivem Zustand und den farbigen linken Rahmen der Sidebar.</p>"
+
+#: inc/fanoe-theme-settings.php:140
+#@ fanoe
+msgid "CSS"
+msgstr "CSS"
+
+#: inc/fanoe-theme-options.php:64
+#@ fanoe
+msgid "Author Bio"
+msgstr "Autorenbeschreibung"
+
+#: inc/fanoe-theme-options.php:65
+#@ fanoe
+msgid "Remove the hook so that the author bio in the single view is only displayed in multi-author blogs."
+msgstr "Entferne den Haken, damit die Autorenbeschreibung in der Einzelansicht nur noch in Mehr-Autoren Blogs angezeigt wird."
+
+#: functions.php:370
+#@ fanoe
+msgid "Here you can add your social media channels of Google Plus, Twitter, Facebook and your RSS Feed to display the Icons in the Sidebar."
+msgstr "Hier kannst du deine Social Media Kanäle eintragen, damit diese als Icons in der Sidebar angezeigt werden."
+
+#: functions.php:393
+#@ fanoe
+msgid "Title:"
+msgstr "Titel:"
+
