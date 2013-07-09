@@ -9,7 +9,7 @@ if ( post_password_required() )
 	<?php if ( have_comments() ) : ?>
 		<?php if (!empty($comments_by_type['comment'])) { ?>
             <h2 id="comments-title">
-                <?php comment_count(); ?>
+                <?php fanoe_comment_count(); ?>
             </h2>
 
             <ol class="commentlist">
@@ -17,7 +17,7 @@ if ( post_password_required() )
             </ol><!-- .commentlist -->
 		<?php } if (!empty($comments_by_type['pings'])) { ?>
 	 
-            <h2 id="trackbacks-title"><?php trackback_count(); ?></h2>
+            <h2 id="trackbacks-title"><?php fanoe_trackback_count(); ?></h2>
 	 
             <ol class="commentlist">
                 <?php wp_list_comments( array( 'callback' => 'fanoe_comment', 'type' => 'pings' ) );?>

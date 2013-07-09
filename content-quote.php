@@ -2,12 +2,12 @@
 	<header class="entry-header">
 		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'fanoe' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 		<div class="entry-meta">
-			<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'fanoe' ), the_title_attribute( 'echo=0' ) ) ); ?>"><?php the_time('j. F Y \@ H:i \U\h\r'); ?></a>
+			<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'fanoe' ), the_title_attribute( 'echo=0' ) ) ); ?>"><?php the_time(__('F j, Y \@ g:i a', 'fanoe')); ?></a>
 		</div><!-- .entry-meta -->
 
         <div class="comments-trackbacks">
-            <a href="<?php the_permalink(); ?>#comments-title"><?php comment_count(); ?></a>
-            <a href="<?php the_permalink(); ?>#trackbacks-title"><?php trackback_count(); ?></a>
+            <a href="<?php the_permalink(); ?>#comments-title"><?php fanoe_comment_count(); ?></a>
+            <a href="<?php the_permalink(); ?>#trackbacks-title"><?php fanoe_trackback_count(); ?></a>
         </div>
     </header><!-- .entry-header -->
 
@@ -52,9 +52,9 @@
 		<?php endif; // End if is_object_in_taxonomy( get_post_type(), 'post_tag' ) ?>
 		<?php $fanoe_option = fanoe_get_global_options(); if($fanoe_option['fanoe_social_blog'] =='0'){}else{ ?>
             <ul class="social">
-                <li><a class="icon-google-plus" href="https://plus.google.com/share?url=<?php echo urlencode(get_permalink($post->ID)); ?>&amp;title=<?php echo rawurlencode(strip_tags(get_the_title())) ?>" target="blank" title="Teilen Sie '<?php the_title(); ?>' bei Google +"></a></li>
-                <li><a class="icon-twitter" href="https://twitter.com/intent/tweet?source=webclient&amp;text=<?php echo rawurlencode(strip_tags(get_the_title())) ?>%20<?php echo urlencode(get_permalink($post->ID)); ?>" target="blank" title="Teilen Sie '<?php the_title(); ?>' auf Twitter"></a></li>
-                <li><a class="icon-facebook" href="http://www.facebook.com/sharer.php?u=<?php echo urlencode(get_permalink($post->ID)); ?>&amp;t=<?php echo rawurlencode(strip_tags(get_the_title())) ?>" target="blank" title="Teilen Sie '<?php the_title(); ?>' bei Facebook"></a></li>
+                <li><a class="icon-google-plus" href="https://plus.google.com/share?url=<?php echo urlencode(get_permalink($post->ID)); ?>&amp;title=<?php echo rawurlencode(strip_tags(get_the_title())) ?>" target="blank" title="<?php _e('Share on Google +', 'fanoe')?>"></a></li>
+                <li><a class="icon-twitter" href="https://twitter.com/intent/tweet?source=webclient&amp;text=<?php echo rawurlencode(strip_tags(get_the_title())) ?>%20<?php echo urlencode(get_permalink($post->ID)); ?>" target="blank" title="<?php _e('Share on Twitter', 'fanoe')?>"></a></li>
+                <li><a class="icon-facebook" href="http://www.facebook.com/sharer.php?u=<?php echo urlencode(get_permalink($post->ID)); ?>&amp;t=<?php echo rawurlencode(strip_tags(get_the_title())) ?>" target="blank" title="<?php _e('Share on Facebook', 'fanoe')?>"></a></li>
             </ul>
 		<?php }?>
     </footer><!-- .entry-meta -->

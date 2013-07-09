@@ -9,7 +9,8 @@ window.onload = function() {
 			'icon-google-plus' : '&#xe000;',
 			'icon-twitter' : '&#xe001;',
 			'icon-feed' : '&#xe002;',
-			'icon-facebook' : '&#xe004;'
+			'icon-facebook' : '&#xe004;',
+			'icon-github' : '&#xe003;'
 		},
 		els = document.getElementsByTagName('*'),
 		i, attr, html, c, el;

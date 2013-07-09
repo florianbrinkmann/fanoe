@@ -605,11 +605,14 @@ function fanoe_show_msg($message, $msgclass = 'info') {
 function fanoe_admin_msgs() {
 	
 	// check for our settings page - need this in conditional further down
+	if ( isset($_GET['page'])) {
 	$fanoe_settings_pg = strpos($_GET['page'], fanoe_PAGE_BASENAME);
+	}
 	// collect setting errors/notices: //http://codex.wordpress.org/Function_Reference/get_settings_errors
 	$set_errors = get_settings_errors(); 
 	
 	//display admin message only for the admin to see, only on our settings page and only when setting errors/notices are returned!	
+	if ( isset($fanoe_settings_pg)) {
 	if(current_user_can ('manage_options') && $fanoe_settings_pg !== FALSE && !empty($set_errors)){
 
 		// have our settings succesfully been updated? 
@@ -624,6 +627,7 @@ function fanoe_admin_msgs() {
 				fanoe_show_msg("<p class='setting-error-message' title='" . $set_error['setting'] . "'>" . $set_error['message'] . "</p>", 'error');
 			}
 		}
+	}
 	}
 }
 

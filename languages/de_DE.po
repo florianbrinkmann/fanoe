@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Fanoe v1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2013-06-01 11:26:10+0000\n"
+"PO-Revision-Date: 2013-07-09 13:05:47+0000\n"
 "Last-Translator: admin <kontakt@webdesign-florian-brinkmann.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -91,8 +91,8 @@ msgid "Author Archives: %s"
 msgstr "Autorenarchiv: %s"
 
 #: author.php:34
-#: single.php:96
-#: single.php:121
+#: single.php:93
+#: single.php:118
 #, php-format
 #@ fanoe
 msgid "About %s"
@@ -149,7 +149,7 @@ msgstr "Kommetar absenden"
 msgid "Permalink to %s"
 msgstr "Permalink zu %s"
 
-#: functions.php:281
+#: functions.php:346
 #@ fanoe
 msgid "Reply"
 msgstr "Antworten"
@@ -161,7 +161,7 @@ msgstr "Antworten"
 #: content-quote.php:20
 #: content-status.php:23
 #: content.php:22
-#: functions.php:135
+#: functions.php:202
 #@ fanoe
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Weiterlesen <span class=\"meta-nav\">&rarr;</span>"
@@ -173,15 +173,15 @@ msgstr "Weiterlesen <span class=\"meta-nav\">&rarr;</span>"
 #: content-quote.php:21
 #: content-status.php:24
 #: content.php:23
-#: single.php:36
+#: single.php:33
 #@ fanoe
 msgid "Pages:"
 msgstr "Seiten:"
 
 #: content-image.php:58
-#: functions.php:277
+#: functions.php:342
 #: page.php:16
-#: single.php:65
+#: single.php:62
 #@ fanoe
 msgid "Edit"
 msgstr "Bearbeiten"
@@ -210,8 +210,8 @@ msgstr[1] "Diese Galerie enthält <a %1$s>%2$s Fotos</a>."
 #: content-status.php:46
 #: content.php:32
 #: content.php:45
+#: single.php:39
 #: single.php:42
-#: single.php:45
 #@ fanoe
 msgid ", "
 msgstr ", "
@@ -259,7 +259,7 @@ msgstr "Alle Beiträge von %s"
 #: index.php:26
 #: page.php:25
 #: search.php:45
-#: single.php:154
+#: single.php:151
 #: tag.php:58
 #@ fanoe
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
@@ -272,45 +272,38 @@ msgstr "<span class=\"meta-nav\">&larr;</span> Ältere Beiträge"
 #: index.php:27
 #: page.php:26
 #: search.php:46
-#: single.php:155
+#: single.php:152
 #: tag.php:59
 #@ fanoe
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Neuere Beiträge <span class=\"meta-nav\">&rarr;</span>"
 
-#: functions.php:245
+#: functions.php:310
 #@ fanoe
 msgid "(Edit)"
 msgstr "(Bearbeiten)"
 
-#: functions.php:260
+#: functions.php:325
 #@ fanoe
 msgid "Post author"
 msgstr "Beitragsautor"
 
-#. translators: 1: date, 2: time
-#: functions.php:266
-#, php-format
-#@ fanoe
-msgid "%1$s at %2$s"
-msgstr "%1$s @ %2$s"
-
-#: functions.php:272
+#: functions.php:337
 #@ fanoe
 msgid "Your comment is awaiting moderation."
 msgstr "Dein Kommentar wartet auf Moderation."
 
-#: functions.php:294
+#: functions.php:360
 #@ fanoe
 msgid "Name*"
 msgstr "Name*"
 
-#: functions.php:297
+#: functions.php:363
 #@ fanoe
 msgid "Email*"
 msgstr "Email*"
 
-#: functions.php:300
+#: functions.php:366
 #@ fanoe
 msgid "Website"
 msgstr "Website"
@@ -321,7 +314,7 @@ msgstr "Website"
 msgid "Page %s"
 msgstr "Seite %s"
 
-#: header.php:69
+#: header.php:45
 #@ fanoe
 msgid "Skip to content"
 msgstr "Zum Inhalt"
@@ -344,13 +337,13 @@ msgstr "Entschuldigung, aber für die Suche gibt es keinen Treffer. Bitte versuc
 msgid "Search"
 msgstr "Suche"
 
-#: single.php:138
+#: single.php:135
 #@ fanoe
 msgid "Post navigation"
 msgstr "Beitragsnavigation"
 
-#: single.php:102
-#: single.php:127
+#: single.php:99
+#: single.php:124
 #, php-format
 #@ fanoe
 msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
@@ -362,60 +355,60 @@ msgstr "Alle Beiträge von %s <span class=\"meta-nav\">&rarr;</span>"
 msgid "Tag Archives: %s"
 msgstr "Tagarchiv: %s"
 
-#: functions.php:245
+#: functions.php:310
 #@ fanoe
 msgid "Trackback:"
 msgstr "Trackback:"
 
-#: functions.php:343
+#: functions.php:410
 #@ fanoe
 msgid " Comment"
 msgstr " Kommentar"
 
-#: functions.php:344
+#: functions.php:411
 #@ fanoe
 msgid " Comments"
 msgstr " Kommentare"
 
-#: functions.php:356
+#: functions.php:423
 #@ fanoe
 msgid " Trackback"
 msgstr " Trackback"
 
-#: functions.php:357
+#: functions.php:424
 #@ fanoe
 msgid " Trackbacks"
 msgstr " Trackbacks"
 
-#: single.php:47
+#: single.php:44
 #, php-format
 #@ fanoe
 msgid "This entry was posted in %1$s and tagged %2$s by <a href=\"%6$s\">%5$s</a>.<br>Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
 msgstr "Dieser Eintrag wurde veröffentlicht in %1$s mit den Schlagwörtern %2$s von <a href=\"%6$s\">%5$s</a>.<br>Füge den <a href=\"%3$s\" title=\"Permalink zu %4$s\" rel=\"bookmark\">Permalink</a> zu deinen Lesezeichen hinzu."
 
-#: single.php:49
+#: single.php:46
 #, php-format
 #@ fanoe
 msgid "This entry was posted in %1$s by <a href=\"%6$s\">%5$s</a>.<br>Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
 msgstr "Dieser Eintrag wurde veröffentlicht in %1$s von <a href=\"%6$s\">%5$s</a>.<br>Füge den <a href=\"%3$s\" title=\"Permalink zu %4$s\" rel=\"bookmark\">Permalink</a> zu deinen Lesezeichen hinzu."
 
-#: single.php:51
+#: single.php:48
 #, php-format
 #@ fanoe
 msgid "This entry was posted by <a href=\"%6$s\">%5$s</a>.<br>Bookmark the <a href=\"%3$s\" title=\"Permalink to %4$s\" rel=\"bookmark\">permalink</a>."
 msgstr "Dieser Eintrag wurde veröffentlicht von <a href=\"%6$s\">%5$s</a>.<br>Füge den <a href=\"%3$s\" title=\"Permalink zu %4$s\" rel=\"bookmark\">Permalink</a> zu deinen Lesezeichen hinzu."
 
-#: functions.php:114
+#: functions.php:181
 #@ fanoe
 msgid "Sidebar Menu"
 msgstr "Sidebar Menü"
 
-#: functions.php:636
+#: functions.php:703
 #@ fanoe
 msgid "Add a menu"
 msgstr "Menü hinzufügen"
 
-#: header.php:70
+#: header.php:46
 #@ fanoe
 msgid "Menu"
 msgstr "Menü"
@@ -456,7 +449,6 @@ msgid "Remove the hook for the social media share buttons are not displayed in s
 msgstr "Entferne den Haken, damit die Social Media Teilen Buttons in der Einzelansicht nicht mehr angezeigt werden."
 
 #: inc/fanoe-theme-settings.php:31
-#: inc/theme-options.php:35
 #@ fanoe
 msgid "fanoe Settings Page"
 msgstr "fanoe Theme Optionen"
@@ -467,7 +459,6 @@ msgid "fanoe Options"
 msgstr "fanoe Optionen"
 
 #: inc/fanoe-theme-settings.php:295
-#: inc/theme-options.php:72
 #@ fanoe
 msgid "Save Changes"
 msgstr "Speichern"
@@ -501,11 +492,6 @@ msgstr "Dieses Einstellungsfeld darf nicht leer sein! Bitte gib eine gültige E-
 #@ fanoe
 msgid "Please enter a valid email address."
 msgstr "Bitte gib eine gültige E-Mail Adresse ein."
-
-#: inc/theme-options.php:21
-#@ fanoe
-msgid "Fanoe Options"
-msgstr "Fanoe Optionen"
 
 #: sidebar.php:11
 #@ fanoe
@@ -553,13 +539,97 @@ msgstr "Autorenbeschreibung"
 msgid "Remove the hook so that the author bio in the single view is only displayed in multi-author blogs."
 msgstr "Entferne den Haken, damit die Autorenbeschreibung in der Einzelansicht nur noch in Mehr-Autoren Blogs angezeigt wird."
 
-#: functions.php:370
+#: functions.php:437
 #@ fanoe
 msgid "Here you can add your social media channels of Google Plus, Twitter, Facebook and your RSS Feed to display the Icons in the Sidebar."
 msgstr "Hier kannst du deine Social Media Kanäle eintragen, damit diese als Icons in der Sidebar angezeigt werden."
 
-#: functions.php:393
+#: functions.php:460
 #@ fanoe
 msgid "Title:"
 msgstr "Titel:"
+
+#: functions.php:89
+#@ fanoe
+msgctxt "Source Sans Pro font: on or off"
+msgid "on"
+msgstr ""
+
+#: functions.php:94
+#@ fanoe
+msgctxt "Source Sans Pro font: add new subset (greek, cyrillic, vietnamese)"
+msgid "no-subset"
+msgstr ""
+
+#: single.php:71
+#@ fanoe
+msgid "Share this Article"
+msgstr "Diesen Beitrag teilen"
+
+#: content-aside.php:55
+#: content-gallery.php:71
+#: content-image.php:61
+#: content-link.php:54
+#: content-quote.php:55
+#: content-status.php:60
+#: content.php:59
+#: single.php:73
+#@ fanoe
+msgid "Share on Google +"
+msgstr "Teilen bei Google +"
+
+#: content-aside.php:56
+#: content-gallery.php:72
+#: content-image.php:62
+#: content-link.php:55
+#: content-quote.php:56
+#: content-status.php:61
+#: content.php:60
+#: single.php:74
+#@ fanoe
+msgid "Share on Twitter"
+msgstr "Teilen bei Twitter"
+
+#: content-aside.php:57
+#: content-gallery.php:73
+#: content-image.php:63
+#: content-link.php:56
+#: content-quote.php:57
+#: content-status.php:62
+#: content.php:61
+#: single.php:75
+#@ fanoe
+msgid "Share on Facebook"
+msgstr "Teilen bei Facebook"
+
+#. translators: 1: date, 2: time
+#: functions.php:331
+#, php-format
+#@ fanoe
+msgid "%1$s @ %2$s"
+msgstr ""
+
+#: functions.php:331
+#@ default
+msgctxt "fanoe"
+msgid "F j, Y"
+msgstr ""
+
+#: functions.php:331
+#@ default
+msgctxt "fanoe"
+msgid "g:i a"
+msgstr ""
+
+#: content-aside.php:5
+#: content-gallery.php:5
+#: content-image.php:5
+#: content-link.php:5
+#: content-quote.php:5
+#: content-status.php:5
+#: content.php:6
+#: single.php:23
+#@ fanoe
+msgid "F j, Y \\@ g:i a"
+msgstr "j. F Y \\@ h:i"
 

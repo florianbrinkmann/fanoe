@@ -52,7 +52,79 @@ function fanoe_setup() {
 }
 endif; // fanoe_setup
 
+/**
+ * Enqueues scripts and styles for front-end.
+ *
+ */
+function fanoe_scripts_styles() {
+	global $wp_styles;
 
+	/*
+	 * Adds JavaScript to pages with the comment form to support
+	 * sites with threaded comments (when in use).
+	 */
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
+		wp_enqueue_script( 'comment-reply' );
+
+
+	/*
+	 * Loads our special font CSS file.
+	 *
+	 * The use of Source Sans Pro by default is localized. For languages that use
+	 * characters not supported by the font, the font can be disabled.
+	 *
+	 * To disable in a child theme, use wp_dequeue_style()
+	 * function mytheme_dequeue_fonts() {
+	 *     wp_dequeue_style( 'fanoe-fonts' );
+	 * }
+	 * add_action( 'wp_enqueue_scripts', 'mytheme_dequeue_fonts', 11 );
+	 */
+
+	/* translators: If there are characters in your language that are not supported
+	   by Open Sans, translate this to 'off'. Do not translate into your own language. */
+	if ( 'off' !== _x( 'on', 'Source Sans Pro font: on or off', 'fanoe' ) ) {
+		$subsets = 'latin,latin-ext';
+
+		/* translators: To add an additional Open Sans character subset specific to your language, translate
+		   this to 'greek', 'cyrillic' or 'vietnamese'. Do not translate into your own language. */
+		$subset = _x( 'no-subset', 'Source Sans Pro font: add new subset (greek, cyrillic, vietnamese)', 'fanoe' );
+
+		if ( 'cyrillic' == $subset )
+			$subsets .= ',cyrillic,cyrillic-ext';
+		elseif ( 'greek' == $subset )
+			$subsets .= ',greek,greek-ext';
+		elseif ( 'vietnamese' == $subset )
+			$subsets .= ',vietnamese';
+
+		$protocol = is_ssl() ? 'https' : 'http';
+		$query_args = array(
+			'family' => 'Source+Code+Pro|Source+Sans+Pro:400,700,400italic',
+			'subset' => $subsets,
+		);
+		wp_enqueue_style( 'fanoe-fonts', add_query_arg( $query_args, "$protocol://fonts.googleapis.com/css" ), array(), null );
+	}
+
+	/*
+	 * Loads our main stylesheet.
+	 */
+	wp_enqueue_style( 'fanoe-style', get_stylesheet_uri(), array(), null );
+
+}
+add_action( 'wp_enqueue_scripts', 'fanoe_scripts_styles' );
+
+// add ie conditional html5 shim to header
+function fanoe_add_ie_conditional () {
+	global $is_IE;
+	if ($is_IE){
+   		echo '<!--[if lt IE 9]>';
+    	echo '<script src="'.get_template_directory_uri() .'/js/html5.js"></script>';
+    	echo '<![endif]-->';
+		echo '<!--[if lt IE 8]>';
+    	echo '<script src="'.get_template_directory_uri() .'/conditional/lte-ie7.js" type="text/javascript"></script>';
+    	echo '<![endif]-->';
+	}
+}
+add_action('wp_head', 'fanoe_add_ie_conditional');
 
 //Shortcodes
 function fanoe_vimeo_func( $atts ) {
@@ -199,7 +271,7 @@ function fanoe_footer_sidebar_class() {
 
 
 
-function remove_more_jump_link($link) { 
+function fanoe_remove_more_jump_link($link) { 
 $offset = strpos($link, '#more-');
 if ($offset) {
 $end = strpos($link, '"',$offset);
@@ -209,7 +281,7 @@ $link = substr_replace($link, '', $offset, $end-$offset);
 }
 return $link;
 }
-add_filter('the_content_more_link', 'remove_more_jump_link');
+add_filter('the_content_more_link', 'fanoe_remove_more_jump_link');
 
 
 
@@ -252,7 +324,7 @@ function fanoe_comment( $comment, $args, $depth ) {
 						esc_url( get_comment_link( $comment->comment_ID ) ),
 						get_comment_time( 'c' ),
 						/* translators: 1: date, 2: time */
-						sprintf( __( '%1$s at %2$s', 'fanoe' ), get_comment_date(), get_comment_time() )
+						sprintf( __( '%1$s @ %2$s', 'fanoe' ), get_comment_date(_x('F j, Y', 'fanoe')), get_comment_time(_x('g:i a', 'fanoe')) )
 					);
 				?>
 			</header><!-- .comment-meta -->
@@ -280,6 +352,7 @@ endif;
 
 // Customize Comment Form
 	function fanoe_fields($fields) {
+	if ( isset($req) && isset($commenter) && isset($aria_req)) {
 	$fields['author'] = '<p class="comment-form-author">' . '<label for="author">' . __( 'Name*', 'fanoe' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) .
 	                    '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>';
 	                     
@@ -290,6 +363,7 @@ endif;
 	                    '<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></p>';
 	 
 	return $fields;
+	}
 	}
 	add_filter('comment_form_default_fields','fanoe_fields');
 ?>
@@ -311,21 +385,10 @@ register_sidebar(array('name' => 'Sidebar',
 add_filter('gallery_style', create_function('$a', 'return "
 	<div class=\'gallery\'>";'));
 	
-	
-// Enqueue Scripts/Styles for our Lightbox
-function fanoe_add_lightbox() {
-    wp_enqueue_script( 'fancybox', get_template_directory_uri() . '/inc/lightbox/jquery.fancybox.pack.js', array( 'jquery' ), false, true );
-    wp_enqueue_script( 'lightbox', get_template_directory_uri() . '/inc/lightbox/lightbox.js', array( 'fancybox' ), false, true );
-    wp_enqueue_style( 'lightbox-style', get_template_directory_uri() . '/inc/lightbox/jquery.fancybox.css' );
-}
-add_action( 'wp_enqueue_scripts', 'fanoe_add_lightbox' );
 
+//Kommentaranzahl in fanoe_comment_count speichern
 
-
-
-//Kommentaranzahl in comment_count speichern
-
-function comment_count() { global $post; $thePostID = $post->ID; global $wpdb;
+function fanoe_comment_count() { global $post; $thePostID = $post->ID; global $wpdb;
 $count = "SELECT COUNT(*) FROM $wpdb->comments WHERE comment_type = ' '
 AND comment_post_ID = $thePostID AND comment_approved='1'"; $co_number = $wpdb->get_var($count);
 if ($co_number == 0) {}
@@ -335,8 +398,8 @@ else {echo $co_number .  __(' Comments', 'fanoe');}
 
 
 
-//Trackbackzahl in trackback_count speichern
-function trackback_count() 
+//Trackbackzahl in fanoe_trackback_count speichern
+function fanoe_trackback_count() 
 { global $post;
 $thePostID = $post->ID;global $wpdb;$count = "SELECT COUNT(*) FROM $wpdb->comments
 WHERE comment_type != ' '

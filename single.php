@@ -20,7 +20,7 @@
 					<?php if ( 'post' == get_post_type() ) : ?>
                     
                     <div class="entry-meta">
-                        <?php the_time('j. F Y \@ H:i \U\h\r'); ?>
+                        <?php the_time(__('F j, Y \@ g:i a', 'fanoe')); ?>
                     </div><!-- .entry-meta -->
                    
                     <?php endif; ?>
@@ -68,11 +68,11 @@
 		<?php if($fanoe_option['fanoe_social_single'] =='0'){}else{ ?>
 		
             <div id="share">
-                <h2 class="share">Diesen Beitrag teilen</h2>
+                <h2 class="share"><?php _e('Share this Article', 'fanoe')?></h2>
                 <ul class="social">
-                    <li><a class="icon-google-plus" href="https://plus.google.com/share?url=<?php echo urlencode(get_permalink($post->ID)); ?>&amp;title=<?php echo rawurlencode(strip_tags(get_the_title())) ?>" target="blank" title="Teilen Sie '<?php the_title(); ?>' bei Google +"></a></li>
-                    <li><a class="icon-twitter" href="https://twitter.com/intent/tweet?source=webclient&amp;text=<?php echo rawurlencode(strip_tags(get_the_title())) ?>%20<?php echo urlencode(get_permalink($post->ID)); ?>" target="blank" title="Teilen Sie '<?php the_title(); ?>' auf Twitter"></a></li>
-                    <li><a class="icon-facebook" href="http://www.facebook.com/sharer.php?u=<?php echo urlencode(get_permalink($post->ID)); ?>&amp;t=<?php echo rawurlencode(strip_tags(get_the_title())) ?>" target="blank" title="Teilen Sie '<?php the_title(); ?>' bei Facebook"></a></li>
+                    <li><a class="icon-google-plus" href="https://plus.google.com/share?url=<?php echo urlencode(get_permalink($post->ID)); ?>&amp;title=<?php echo rawurlencode(strip_tags(get_the_title())) ?>" target="blank" title="<?php _e('Share on Google +', 'fanoe')?>"></a></li>
+                    <li><a class="icon-twitter" href="https://twitter.com/intent/tweet?source=webclient&amp;text=<?php echo rawurlencode(strip_tags(get_the_title())) ?>%20<?php echo urlencode(get_permalink($post->ID)); ?>" target="blank" title="<?php _e('Share on Twitter', 'fanoe')?>"></a></li>
+                    <li><a class="icon-facebook" href="http://www.facebook.com/sharer.php?u=<?php echo urlencode(get_permalink($post->ID)); ?>&amp;t=<?php echo rawurlencode(strip_tags(get_the_title())) ?>" target="blank" title="<?php _e('Share on Facebook', 'fanoe')?>"></a></li>
                 </ul>
             
             </div>
