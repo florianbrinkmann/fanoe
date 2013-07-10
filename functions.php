@@ -403,7 +403,7 @@ function fanoe_trackback_count()
 { global $post;
 $thePostID = $post->ID;global $wpdb;$count = "SELECT COUNT(*) FROM $wpdb->comments
 WHERE comment_type != ' '
-AND comment_post_ID = $thePostID"; $tb_number = $wpdb->get_var($count);
+AND comment_post_ID = $thePostID AND comment_approved='1'"; $tb_number = $wpdb->get_var($count);
 if ($tb_number == 0) {}
 elseif ($tb_number == 1) {echo $tb_number . __(' Trackback', 'fanoe');} 
 else {echo $tb_number .  __(' Trackbacks', 'fanoe');}  }
