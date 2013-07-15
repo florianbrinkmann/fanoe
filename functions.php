@@ -329,7 +329,7 @@ function fanoe_comment( $comment, $args, $depth ) {
 						esc_url( get_comment_link( $comment->comment_ID ) ),
 						get_comment_time( 'c' ),
 						/* translators: 1: date, 2: time */
-						sprintf( __( '%1$s @ %2$s', 'fanoe' ), get_comment_date(_x('F j, Y', 'fanoe')), get_comment_time(_x('g:i a', 'fanoe')) )
+						sprintf( __( '%1$s @ %2$s', 'fanoe' ), get_comment_date(__('F j, Y', 'fanoe')), get_comment_time(__('g:i a', 'fanoe')) )
 					);
 				?>
 			</header><!-- .comment-meta -->
