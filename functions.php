@@ -66,6 +66,10 @@ function fanoe_scripts_styles() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
 		wp_enqueue_script( 'comment-reply' );
 
+	/*
+	 * Adds JavaScript for handling the navigation menu hide-and-show behavior.
+	 */
+	wp_enqueue_script( 'fanoe-sidebar', get_template_directory_uri() . '/js/sidebar.js', array(), false, true );
 
 	/*
 	 * Loads our special font CSS file.
@@ -118,6 +122,7 @@ function fanoe_add_ie_conditional () {
 	if ($is_IE){
    		echo '<!--[if lt IE 9]>';
     	echo '<script src="'.get_template_directory_uri() .'/js/html5.js"></script>';
+		echo '<script src="'.get_template_directory_uri() .'/conditional/matchmedia.js"></script>';
     	echo '<![endif]-->';
 		echo '<!--[if lt IE 8]>';
     	echo '<script src="'.get_template_directory_uri() .'/conditional/lte-ie7.js" type="text/javascript"></script>';

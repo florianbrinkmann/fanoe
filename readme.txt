@@ -5,6 +5,10 @@ For a detailed documentation visit: http://themes.webdesign-florian-brinkmann.de
 Changelog:
 ||||||||||||||
 
+Version 1.0.3 — 15.07.2013
+---
+- enqueue all stylesheets and scripts from the functions.php, have forgotten a few in Version 1.0.2
+
 
 
 Version 1.0.2 — 09.07.2013
@@ -229,6 +233,11 @@ Source Code Pro
 
 
 
+Icon Set: IcoMoon - Free -- http://keyamoon.com/icomoon/
+License: CC BY 3.0 -- http://creativecommons.org/licenses/by/3.0/
+
+
+
 jscolor, JavaScript Color Picker
 ---
 	@version 1.4.1
@@ -240,7 +249,7 @@ jscolor, JavaScript Color Picker
 
 
 
-matchMedia() polyfill
+matchMedia.js
 ---
 	Test a CSS media type/query in JS. 
 	Authors & copyright (c) 2012: Scott Jehl, Paul Irish, Nicholas Zakas. 
