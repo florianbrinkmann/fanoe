@@ -52,6 +52,24 @@ function fanoe_setup() {
 }
 endif; // fanoe_setup
 
+/*
+ * Print the <title> tag based on what is being viewed.
+ */
+function fanoe_custom_wp_title($title) {
+	global $page, $paged;
+
+	if ( is_feed() )
+		return $title;
+
+	$site_description = get_bloginfo( 'description' );
+
+	$filtered_title = $title . get_bloginfo( 'name' );
+	$filtered_title .= ( ! empty( $site_description ) && ( is_home() || is_front_page() ) ) ? ' | ' . $site_description: '';
+	$filtered_title .= ( 2 <= $paged || 2 <= $page ) ? ' | ' . sprintf( __( 'Page %s', 'fanoe' ), max( $paged, $page ) ) : '';
+
+	return $filtered_title;
+}
+add_filter( 'wp_title', 'fanoe_custom_wp_title');
 /**
  * Enqueues scripts and styles for front-end.
  *
@@ -69,7 +87,8 @@ function fanoe_scripts_styles() {
 	/*
 	 * Adds JavaScript for handling the navigation menu hide-and-show behavior.
 	 */
-	wp_enqueue_script( 'fanoe-sidebar', get_template_directory_uri() . '/js/sidebar.js', array(), false, true );
+	 if(!is_admin())
+	 wp_enqueue_script( 'fanoe-sidebar', get_template_directory_uri() . '/js/sidebar.js', array(), false, true );
 
 	/*
 	 * Loads our special font CSS file.
@@ -117,37 +136,21 @@ function fanoe_scripts_styles() {
 add_action( 'wp_enqueue_scripts', 'fanoe_scripts_styles' );
 
 // add ie conditional html5 shim to header
-function fanoe_add_ie_conditional () {
-	global $is_IE;
-	if ($is_IE){
-   		echo '<!--[if lt IE 9]>';
-    	echo '<script src="'.get_template_directory_uri() .'/js/html5.js"></script>';
-		echo '<script src="'.get_template_directory_uri() .'/conditional/matchmedia.js"></script>';
-    	echo '<![endif]-->';
-		echo '<!--[if lt IE 8]>';
-    	echo '<script src="'.get_template_directory_uri() .'/conditional/lte-ie7.js" type="text/javascript"></script>';
-    	echo '<![endif]-->';
+if(!is_admin()){
+	function fanoe_add_ie_conditional () {
+		global $is_IE;
+		if ($is_IE){
+			echo '<!--[if lt IE 9]>';
+			echo '<script src="'.get_template_directory_uri() .'/js/html5.js"></script>';
+			echo '<script src="'.get_template_directory_uri() .'/conditional/matchmedia.js"></script>';
+			echo '<![endif]-->';
+			echo '<!--[if lt IE 8]>';
+			echo '<script src="'.get_template_directory_uri() .'/conditional/lte-ie7.js" type="text/javascript"></script>';
+			echo '<![endif]-->';
+		}
 	}
+	add_action('wp_head', 'fanoe_add_ie_conditional');
 }
-add_action('wp_head', 'fanoe_add_ie_conditional');
-
-//Shortcodes
-function fanoe_vimeo_func( $atts ) {
-	extract( shortcode_atts( array(
-		'video_id' => ''
-	), $atts ) );
-
-	return "<div class='fluid-video'><iframe src='http://player.vimeo.com/video/{$video_id}' width='500' height='281' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>";
-}
-add_shortcode( 'vimeo', 'fanoe_vimeo_func' );
-function fanoe_youtube_func( $atts ) {
-	extract( shortcode_atts( array(
-		'video_id' => ''
-	), $atts ) );
-
-	return "<div class='fluid-video'><iframe src='http://www.youtube.com/embed/{$video_id}' frameborder='0' width='560' height='315' allowfullscreen></iframe></div>";
-}
-add_shortcode( 'youtube', 'fanoe_youtube_func' );
 	
  /** 
  * Collects our theme options 
