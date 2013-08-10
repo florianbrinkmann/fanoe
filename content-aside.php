@@ -50,7 +50,7 @@
         		</span>
         	<?php endif; // End if $tags_list ?>
         <?php endif; // End if is_object_in_taxonomy( get_post_type(), 'post_tag' ) ?>
-		<?php $fanoe_option = fanoe_get_global_options(); if($fanoe_option['fanoe_social_blog'] =='0'){}else{ ?>
+		<?php $share_btns_blogview = get_option( 'share_btns_blogview' ); if($share_btns_blogview == "0"){}else{ ?>
             <ul class="social">
                 <li><a class="icon-google-plus" href="https://plus.google.com/share?url=<?php echo urlencode(get_permalink($post->ID)); ?>&amp;title=<?php echo rawurlencode(strip_tags(get_the_title())) ?>" target="blank" title="<?php _e('Share on Google +', 'fanoe')?>"></a></li>
                 <li><a class="icon-twitter" href="https://twitter.com/intent/tweet?source=webclient&amp;text=<?php echo rawurlencode(strip_tags(get_the_title())) ?>%20<?php echo urlencode(get_permalink($post->ID)); ?>" target="blank" title="<?php _e('Share on Twitter', 'fanoe')?>"></a></li>

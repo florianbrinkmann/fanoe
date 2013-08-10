@@ -8,7 +8,7 @@
 		
         <div class="widget copyright">
 			<h4>Copyright</h4>
-			<p><?php $fanoe_option = fanoe_get_global_options(); if($fanoe_option['fanoe_copyright_input'] !=''){echo $fanoe_option['fanoe_copyright_input'];}else{?>&copy; 2013 <?php bloginfo( 'name' ); ?><?php }?>  | <?php _e('Theme: Fanoe by <a href="http://webdesign-florian-brinkmann.de">Webdesign Florian Brinkmann</a>', 'fanoe')?></p> 
+			<p><?php $copyright = get_theme_mod( 'copyright' ); if($copyright !=''){echo $copyright;}else{?>&copy; <?php echo date(Y); ?>  <?php bloginfo( 'name' ); ?><?php }?>  | <?php _e('Theme: Fanoe by <a href="http://webdesign-florian-brinkmann.de">Webdesign Florian Brinkmann</a>', 'fanoe')?></p> 
         </div>
     </div>
 </aside>

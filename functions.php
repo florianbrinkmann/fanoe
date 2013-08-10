@@ -36,21 +36,23 @@ function fanoe_setup() {
 
 	// Add support for a variety of post formats
 	add_theme_support( 'post-formats', array( 'aside', 'link', 'gallery', 'status', 'quote', 'image', 'video', 'audio', 'chat' ) );
-
-	// This theme allows users to set a custom background
-	add_theme_support( 'custom-background' );
 	
+	$args = array(
+		'flex-width'    => true,
+		'flex-height'    => true,
+		'height'        => 122,
+		'uploads'       => true,
+	);
+	add_theme_support( 'custom-header', $args );
+
 
 	// This theme uses Featured Images (also known as post thumbnails) for per-post/per-page Custom Header images
 	add_theme_support( 'post-thumbnails' );
 	
-	if(is_admin()){
-		require_once ( get_template_directory() . '/inc/fanoe-theme-settings.php' );
-	}
-
 	
 }
 endif; // fanoe_setup
+
 
 /*
  * Print the <title> tag based on what is being viewed.
@@ -688,20 +690,131 @@ function fanoe_link_to_menu_editor( $args )
     return $output;
 }
 
+
+//Customizer
+
+
+function fanoe_customize_register( $wp_customize ) {
+	$colors = array();
+	$colors[] = array(
+		'slug'=>'design_color', 
+		'default' => '#27ae60',
+		'label' => __('Main Color of the Design', 'fanoe')
+	);
+	foreach( $colors as $color ) {
+		// SETTINGS
+		$wp_customize->add_setting(
+			$color['slug'], array(
+				'default' => $color['default'],
+				'type' => 'option', 
+				'capability' => 
+				'edit_theme_options',
+			)
+		);
+		// CONTROLS
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control(
+				$wp_customize,
+				$color['slug'], 
+				array('label' => $color['label'], 
+				'section' => 'colors',
+				'settings' => $color['slug'])
+			)
+		);
+		
+	}
+	$contents = array();
+	$contents[] = array(
+		'slug'=>'share_btns_blogview', 
+		'default' => '1',
+		'label' => __( 'Share Buttons in the blog view', 'fanoe' )
+	);
+	$contents[] = array(
+		'slug'=>'share_btns_singleview', 
+		'default' => '1',
+		'label' => __( 'Share Buttons in the single view', 'fanoe' )
+	);
+	$contents[] = array(
+		'slug'=>'author_bio', 
+		'default' => '1',
+		'label' => __( 'Diplay the Author Bio in the single view also on a single-author blog.', 'fanoe' )
+	);
+	foreach( $contents as $content ) {
+		// SETTINGS
+		$wp_customize->add_setting(
+			$content['slug'], array(
+				'default' => $content['default'],
+				'type' => 'option', 
+				'capability' => 
+				'edit_theme_options',
+			)
+		);
+		// CONTROLS
+		$wp_customize->add_control($content['slug'], array(
+			'label'      => $content['label'],
+			'section'    => 'content',
+			'settings'   => $content['slug'],
+			'type'       => 'checkbox',
+		));
+		
+	}
+	class fanoe_Customize_Textarea_Control extends WP_Customize_Control {
+		public $type = 'textarea';
+		public function render_content() {
+	?>
+	
+		<label>
+			<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+			<textarea rows="5" style="width:100%;" <?php $this->link(); ?>><?php echo esc_textarea( $this->value() ); ?></textarea>
+		</label>
+	
+	<?php
+		}
+	}
+	class fanoe_Customize_Input_Control extends WP_Customize_Control {
+		public $type = 'input';
+		public function render_content() {
+	?>
+	
+		<label>
+			<span class="customize-control-title"><?php echo __('Copyright', 'fanoe') ?></span>
+			<input type="text" value="<?php echo get_theme_mod( 'copyright' );?>" style="width:100%;" <?php $this->link(); ?>></input>
+		</label>
+	
+	<?php
+		}
+	}
+	$wp_customize->add_setting('custom_css', array('default' => '',));
+	$wp_customize->add_control(new fanoe_Customize_Textarea_Control($wp_customize, 'custom_css', array(
+		'label' => 'Custom CSS',
+		'section' => 'css',
+		'settings' => 'custom_css',
+	)));
+	$wp_customize->add_section('css' , array(
+		'title' => __('CSS','fanoe'),
+	));
+	$wp_customize->add_setting('copyright', array('default' => '',));
+	$wp_customize->add_control(new fanoe_Customize_Input_Control($wp_customize, 'copyright', array(
+		'label' => 'Copyright',
+		'section' => 'content',
+		'settings' => 'copyright',
+	)));
+	$wp_customize->add_section('content' , array(
+		'title' => __('Content','fanoe'),
+	));
+}
+add_action( 'customize_register', 'fanoe_customize_register' );
+
 ?>
 <?php // Custom CSS for Link Colors
 function fanoe_insert_custom(){
 	
-	$fanoe_option = fanoe_get_global_options(); 
-	if($fanoe_option['fanoe_custom_css'] !=''):?>
-		<style type="text/css"><?php echo $fanoe_option['fanoe_custom_css'];?></style>
-	<?php endif; ?>
-    <?php if( $fanoe_option['fanoe_design_color'] != '84A11D' ) : ?>
-		<style type="text/css">a {color: #<?php echo $fanoe_option['fanoe_design_color'] ; ?>;}a:focus,a:active,a:hover {background:#<?php echo $fanoe_option['fanoe_design_color'] ; ?>;color:#fff;}.format-status,input[type=reset]:hover, input[type=submit]:hover, input[type=reset]:active, input[type=submit]:active, input[type=reset]:focus, input[type=submit]:focus,::selection,::-moz-selection{background:#<?php echo $fanoe_option['fanoe_design_color'] ; ?>}.format-status header h1 a:hover, .format-status header h1 a:active, .format-status header h1 a:focus{color:#<?php echo $fanoe_option['fanoe_design_color'] ; ?>}#site-title a:hover, #site-title a:active, #site-title a:focus{color:#<?php echo $fanoe_option['fanoe_design_color'] ; ?>}input[type=text]:hover,input[type=password]:hover,input[type=email]:hover,input[type=url]:hover,input[type=number]:hover,
-textarea:hover,input[type=text]:focus,input[type=password]:focus,input[type=email]:focus,input[type=url]:focus,input[type=number]:focus,textarea:focus {border-color:#<?php echo $fanoe_option['fanoe_design_color'] ; ?>}.bypostauthor, .js #sidebar-content{border-left-color:#<?php echo $fanoe_option['fanoe_design_color'] ; ?>}</style>
-<?php endif; ?>
-
-<?php
+	$design_color = get_option('design_color');
+	?>
+    <style>::selection {background:<?php echo $design_color ; ?>;color: #fff;}::-moz-selection {background:<?php echo $design_color ; ?>;color: #fff;}a,.format-status header h1 a:hover, .format-status header h1 a:active, .format-status header h1 a:focus,#site-title a:hover, #site-title a:active, #site-title a:focus {color: <?php echo $design_color ; ?>;}a:focus,a:active,a:hover,.format-status,input[type=reset]:hover, input[type=submit]:hover, input[type=reset]:active, input[type=submit]:active, input[type=reset]:focus, input[type=submit]:focus{background:<?php echo $design_color ; ?>;}input[type=text]:hover,input[type=password]:hover,input[type=email]:hover,input[type=url]:hover,input[type=number]:hover,textarea:hover,input[type=text]:focus,input[type=password]:focus,input[type=email]:focus,input[type=url]:focus,input[type=number]:focus,textarea:focus {border-color:<?php echo $design_color ; ?>}.bypostauthor, .js #sidebar-content{border-left-color:<?php echo $design_color ; ?>}
+<?php echo get_theme_mod( 'custom_css', 'default_value' ); ?>
+	</style>
+    <?php
 } 
 
 add_action('wp_head', 'fanoe_insert_custom');?>
