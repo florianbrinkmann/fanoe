@@ -132,7 +132,7 @@ add_action( 'admin_menu', 'fanoe_add_menu' );
 
 function fanoe_theme_options_add_help() {
 	$help = __('<h3>Background Color Post Formats</h3><p>The background color of the post formats can be set with the following classes:<br><i>format-link</i>, <i>format-gallery</i>, <i>format-chat</i>, <i>format-image</i>, <i>format-video</i>, <i>format-quote</i>, <i>format-audio</i>, <i>format-status</i> and <i>format-aside</i></p> ', 'fanoe');
-	$help_link_color = __('<h3>Design Color</h3><p>This setting changes the color of the green links, the background color of the status post format and the colored left border of a comment by the author of the article.<br>In addition, the background color of the input fields in the active state and the colored left border of the sidebar.</p> ', 'fanoe');
+	$help_link_color = __('<h3>Design Color</h3><p>This setting changes the color of the green links, the background color of the status post format and the colored left border of a comment by the author of the article.<br>In addition, the border color of the input fields in the active state and the colored left border of the sidebar.</p> ', 'fanoe');
 
 	$screen = get_current_screen();
 		//$request = unserialize(csp_fetch_remote_content('http://api.wordpress.org/plugins/info/1.0/codestyling-localization'));

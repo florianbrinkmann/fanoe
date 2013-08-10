@@ -18,7 +18,7 @@
 	<?php else : ?>
 		<div class="entry-content">
 			<div class="avatar">
-				<?php echo get_avatar( get_the_author_meta( 'ID' ), apply_filters( 'fanoe_status_avatar', '65' ) ); ?>
+				<?php echo get_avatar( get_the_author_meta( 'ID' ), apply_filters( 'fanoe_status_avatar', '92' ) ); ?>
 			</div>
 			<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'fanoe' ) ); ?>
 			<?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'fanoe' ) . '</span>', 'after' => '</div>' ) ); ?>

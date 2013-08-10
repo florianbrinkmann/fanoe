@@ -92,42 +92,8 @@ function fanoe_scripts_styles() {
 	 
     	 
 
-	/*
-	 * Loads our special font CSS file.
-	 *
-	 * The use of Source Sans Pro by default is localized. For languages that use
-	 * characters not supported by the font, the font can be disabled.
-	 *
-	 * To disable in a child theme, use wp_dequeue_style()
-	 * function mytheme_dequeue_fonts() {
-	 *     wp_dequeue_style( 'fanoe-fonts' );
-	 * }
-	 * add_action( 'wp_enqueue_scripts', 'mytheme_dequeue_fonts', 11 );
-	 */
-
-	/* translators: If there are characters in your language that are not supported
-	   by Open Sans, translate this to 'off'. Do not translate into your own language. */
-	if ( 'off' !== _x( 'on', 'Source Sans Pro font: on or off', 'fanoe' ) ) {
-		$subsets = 'latin,latin-ext';
-
-		/* translators: To add an additional Open Sans character subset specific to your language, translate
-		   this to 'greek', 'cyrillic' or 'vietnamese'. Do not translate into your own language. */
-		$subset = _x( 'no-subset', 'Source Sans Pro font: add new subset (greek, cyrillic, vietnamese)', 'fanoe' );
-
-		if ( 'cyrillic' == $subset )
-			$subsets .= ',cyrillic,cyrillic-ext';
-		elseif ( 'greek' == $subset )
-			$subsets .= ',greek,greek-ext';
-		elseif ( 'vietnamese' == $subset )
-			$subsets .= ',vietnamese';
-
-		$protocol = is_ssl() ? 'https' : 'http';
-		$query_args = array(
-			'family' => 'Source+Code+Pro|Source+Sans+Pro:400,700,400italic|Gentium+Basic:400,400italic',
-			'subset' => $subsets,
-		);
-		wp_enqueue_style( 'fanoe-fonts', add_query_arg( $query_args, "$protocol://fonts.googleapis.com/css" ), array(), null );
-	}
+	
+	wp_enqueue_style( 'fanoe-fonts', 'http://fonts.googleapis.com/css?family=Source+Code+Pro|Libre+Baskerville:400,400italic,700', array(), null );
 
 	/*
 	 * Loads our main stylesheet.
@@ -731,7 +697,8 @@ function fanoe_insert_custom(){
 		<style type="text/css"><?php echo $fanoe_option['fanoe_custom_css'];?></style>
 	<?php endif; ?>
     <?php if( $fanoe_option['fanoe_design_color'] != '84A11D' ) : ?>
-		<style type="text/css">a {color: #<?php echo $fanoe_option['fanoe_design_color'] ; ?>;}a:focus,a:active,a:hover {background:#<?php echo $fanoe_option['fanoe_design_color'] ; ?>;color:#fff;}.format-status{background:#<?php echo $fanoe_option['fanoe_design_color'] ; ?>}.format-status header h1 a:hover, .format-status header h1 a:active, .format-status header h1 a:focus{color:#<?php echo $fanoe_option['fanoe_design_color'] ; ?>}#site-title a:hover, #site-title a:active, #site-title a:focus{color:#<?php echo $fanoe_option['fanoe_design_color'] ; ?>}input[type="text"]:focus, input[type="text"]:hover, input[type="password"]:focus, input[type="password"]:hover, input[type="email"]:focus, input[type="email"]:hover, input[type="url"]:focus, input[type="url"]:hover, input[type="number"]:focus, input[type="number"]:hover, textarea:focus, textarea:hover, #submit:hover, input[type="submit"]:hover, #submit:active, input[type="submit"]:active, #submit:focus, input[type="submit"]:focus{background:#<?php echo $fanoe_option['fanoe_design_color'] ; ?>}.bypostauthor, .js #sidebar-content{border-left-color:#<?php echo $fanoe_option['fanoe_design_color'] ; ?>}</style>
+		<style type="text/css">a {color: #<?php echo $fanoe_option['fanoe_design_color'] ; ?>;}a:focus,a:active,a:hover {background:#<?php echo $fanoe_option['fanoe_design_color'] ; ?>;color:#fff;}.format-status,input[type=reset]:hover, input[type=submit]:hover, input[type=reset]:active, input[type=submit]:active, input[type=reset]:focus, input[type=submit]:focus,::selection,::-moz-selection{background:#<?php echo $fanoe_option['fanoe_design_color'] ; ?>}.format-status header h1 a:hover, .format-status header h1 a:active, .format-status header h1 a:focus{color:#<?php echo $fanoe_option['fanoe_design_color'] ; ?>}#site-title a:hover, #site-title a:active, #site-title a:focus{color:#<?php echo $fanoe_option['fanoe_design_color'] ; ?>}input[type=text]:hover,input[type=password]:hover,input[type=email]:hover,input[type=url]:hover,input[type=number]:hover,
+textarea:hover,input[type=text]:focus,input[type=password]:focus,input[type=email]:focus,input[type=url]:focus,input[type=number]:focus,textarea:focus {border-color:#<?php echo $fanoe_option['fanoe_design_color'] ; ?>}.bypostauthor, .js #sidebar-content{border-left-color:#<?php echo $fanoe_option['fanoe_design_color'] ; ?>}</style>
 <?php endif; ?>
 
 <?php

@@ -36,9 +36,9 @@ function fanoe_options_page_fields() {
 		"id"      => fanoe_SHORTNAME . "_design_color",
 		"class"	  => "color",
 		"title"   => __( 'Design Color', 'fanoe' ),
-		"desc"    => __( 'Here you can enter the main color of the design. Standard is 84A11D. In the "Help" at the top, there is more information.', 'fanoe' ),
+		"desc"    => __( 'Here you can enter the main color of the design. Standard is 27AE60. In the "Help" at the top, there is more information.', 'fanoe' ),
 		"type"    => "text",
-		"std"     => "84A11D"
+		"std"     => "27AE60"
 	);
 
 	// Checkbox Form Fields section

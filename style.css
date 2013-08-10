@@ -4,7 +4,7 @@ Theme URI: http://themes.webdesign-florian-brinkmann.de/fanoe/
 Author: Florian Brinkmann
 Author URI: http://webdesign-florian-brinkmann.de
 Description: The Fanoe Theme is a fully responsive theme with a off canvas sidebar. The post-formats are highlighted with different background colors. The main color of the design can be changed in the theme-options. 
-Version: 1.0.6
+Version: 1.1
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: post-formats, one-column, custom-background, light, flexible-width, sticky-post, theme-options, translation-ready, threaded-comments, white, custom-colors
@@ -32,12 +32,12 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	vertical-align: baseline;
 }
 ::selection {
-	background: #fff9c0;
-	color: #000;
+	background: #27ae60;
+	color: #fff;
 }
 ::-moz-selection {
-	background: #fff9c0;
-	color: #000;
+	background: #27ae60;
+	color: #fff;
 }
 :focus {/* remember to define focus styles! */
 	outline: 0;
@@ -47,8 +47,9 @@ html{
 }
 body {
 	background: #fff;
-	font-family:Source Sans Pro;
-	line-height: 1;
+	font-family:Libre Baskerville;
+	font-size:1em;
+	letter-spacing:1px;
 }
 ol, ul {
 	list-style: none;
@@ -58,10 +59,10 @@ table {/* tables still need 'cellspacing="0"' in the markup */
 	border-spacing: 0;
 }
 table{
-	margin:1em 2em;
+	line-height:2em;
+	margin:2em;
 }
 th, td{
-	padding:.2em;
 }
 th{
 	font-style:italic;
@@ -124,20 +125,39 @@ h1,h2,h3,h4,h5,h6 {
 	word-wrap:break-word;
 }
 h1{
-	font-size:1.8em;
-	margin-bottom:.8em;
-	padding-top:.2em;
+	font-size:1.875em;
+	line-height:1.066em;
+	margin-bottom:1.066em;
+	margin-top:1.066em;
 }
 h2{
-	font-size:1.5em;
-	margin-bottom:.5em;
+	font-size:1.625em;
+	line-height:1.231em;
+	margin-bottom:1.231em;
+	margin-top:1.231em;
 }
 h3{
-	font-size:1.2em;
-	margin-bottom:.3em;
+	font-size:1.375em;
+	line-height:1.455em;
+	margin-bottom:1.455em;
+	margin-top:1.455em;
 }
 h4{
-	margin-bottom:.1em;
+	font-size:1.125em;
+	line-height:1.778em;
+	margin-bottom:1.778em;
+	margin-top:1.778em;
+}
+h5{
+	line-height:2em;
+	margin-bottom:2em;
+	margin-top:2em;
+}
+h6{
+	font-size:.938em;
+	line-height:2.132em;
+	margin-bottom:2.132em;
+	margin-top:2.132em;
 }
 hr {
 	background-color: #ccc;
@@ -149,38 +169,47 @@ hr {
 /* Text elements */
 p {
 	color:#444;
-	line-height:1.6em;
-	margin-bottom: 1.625em;
+	font-size:1em;
+	line-height:2em;
+	margin: 2em 0;
 }
 ul, ol {
-	margin: 0 0 1.625em 2.5em;
+	margin: 2em 0 2em 2.5em;
+}
+ul ul, ol ol, ul ol, ol ul{
+	margin-bottom:0;
+	margin-top:0;
 }
 ul {
+	line-height:2em;
 	list-style: square;
 }
-ol {
+li{
+}
+ol , ol.commentlist .comment-content ol{
+	line-height:2em;
 	list-style-type: decimal;
 }
-ol ol {
+ol ol, ol.commentlist .comment-content ol ol {
 	list-style: upper-alpha;
 }
-ol ol ol {
+ol ol ol, ol.commentlist .comment-content ol ol ol {
 	list-style: lower-roman;
 }
-ol ol ol ol {
+ol ol ol ol, ol.commentlist .comment-content ol ol ol ol {
 	list-style: lower-alpha;
 }
-ul ul, ol ol, ul ol, ol ul {
-	margin-bottom: 0;
-}
 dl {
-	margin: 0 1.625em;
+	line-height:2em;
 }
 dt {
 	font-weight: bold;
 }
 dd {
-	margin-bottom: 1.2em;
+}
+.entry-content div{
+	line-height:2em;
+	margin:2em 0;
 }
 strong {
 	font-weight: bold;
@@ -206,11 +235,12 @@ blockquote cite {
 }
 pre {
 	background: #f4f4f4;
-	font: 13px "Courier 10 Pitch", Courier, monospace;
-	line-height: 1.5;
-	margin-bottom: 1.625em;
+	font: 13px "Source Code Pro";
+	line-height: 2.462em;
+	margin-bottom: 2.462em;
+	margin-top:2.462em;
 	overflow: auto;
-	padding: 0.75em 1.625em;
+	padding: 1em 1.625em;
 }
 code, kbd, samp, var {
 	font: Source Code Pro;
@@ -221,7 +251,8 @@ abbr, acronym, dfn {
 }
 address {
 	display: block;
-	margin: 0 0 1.625em;
+	line-height:2em;
+	margin: 2em 0;
 }
 ins {
 	background: #fff9c0;
@@ -252,24 +283,28 @@ input[type=email],
 input[type=url],
 input[type=number],
 textarea {
-	background: #444;
-	-moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);
-	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);
-	box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);
-	border: none;
-
-
-	color: #fff;
-	font-family:Source Sans Pro;
+	border: 1px solid #444;
+	color: #444;
+	font-family:Libre Baskerville;
 }
-input[type=text]:focus, input[type=text]:hover,
-input[type=password]:focus, input[type=password]:hover,
-input[type=email]:focus, input[type=email]:hover,
-input[type=url]:focus, input[type=url]:hover,
-input[type=number]:focus, input[type=number]:hover,
-textarea:focus, textarea:hover {
-	background: #84A11D;
+input[type=text]:hover,
+input[type=password]:hover,
+input[type=email]:hover,
+input[type=url]:hover,
+input[type=number]:hover,
+textarea:hover {
+	border-style:dashed;
+	border-color: #27ae60;
 }
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=email]:focus,
+input[type=url]:focus,
+input[type=number]:focus,
+textarea:focus {
+	border-color: #27ae60;
+}
+
 input[type=text],
 input[type=password],
 input[type=email],
@@ -289,8 +324,7 @@ input#s {
 	color:#444;
 	font-size: 14px;
 	height: 22px;
-	line-height: 1.2em;
-	margin-bottom:1.6em;
+	margin-bottom:1.5em;
 	padding: 4px 10px 4px 28px;
 }
 input#searchsubmit {
@@ -302,13 +336,13 @@ video {
 }
 /* Links */
 a {
-	color: #84A11D;
+	color: #27ae60;
 	text-decoration: none;
 }
 a:focus,
 a:active,
 a:hover {
-	background:#84A11D;
+	background:#27ae60;
 	color:#fff;
 }
 a.image:hover, a.image:active, a.image:focus{
@@ -335,7 +369,7 @@ a.image:hover, a.image:active, a.image:focus{
 	z-index: 100000; /* Above WP toolbar */
 }
 .sticky{
-	background: #FFFEE6;
+	background: #ecf0f1;
 }
 .wp-caption{
 	
@@ -350,6 +384,12 @@ a.image:hover, a.image:active, a.image:focus{
 .gallery-item{
 	float:left;
 }
+.clearfix:after{
+	clear:both;
+	content:"-";
+	display:block;
+	visibility:hidden;
+}
 #wrapper{
 	position:relative;
 }
@@ -359,6 +399,7 @@ a.image:hover, a.image:active, a.image:focus{
 #site-title{
 	font-size:1.4em;
 	font-variant:normal;
+	margin:0;
 	padding:40px 0;
 	text-align:center;
 }
@@ -367,10 +408,7 @@ a.image:hover, a.image:active, a.image:focus{
 }
 #site-title a:hover, #site-title a:active, #site-title a:focus{
 	background:none;
-	color:#84A11D;
-}
-#site-title span{
-	color:#777777;
+	color:#27ae60;
 }
 #site-description{
 	font-size:1.2em;
@@ -380,8 +418,8 @@ a.image:hover, a.image:active, a.image:focus{
 }
 .js #branding .sidebar-button{
 	background:#fff;
-	background:rgba(255,255,255,.9);
-	font-size:1.2em;
+	font-size:2em;
+	font-weight:700;
 	padding:20px;
 	position:fixed;
 	right:0;
@@ -403,11 +441,11 @@ a.image:hover, a.image:active, a.image:focus{
 }
 article .entry-header, article .entry-content, article footer.entry-meta, #nav-single, .page-header, #author-info, #comments, .entry-summary, .nojs #sidebar, #share, .page-header, .page-content{
 	margin:0 auto;
-	width:936px;
+	width:800px;
 }
 article{
 	clear:both;
-	padding:30px 0 0 0;
+	padding:2em 0 0 0;
 }
 .entry-header{
 	position:relative;
@@ -417,14 +455,14 @@ article{
 	color:#777;
 }
 header .entry-meta a, header .entry-meta{
-	margin:10px 0;
+	line-height:2em;
 }
 .entry-meta a:hover, .entry-meta a:active, .entry-meta a:focus{
 	background:none;
 	color:#444;
 }
 .comments-trackbacks{
-	margin:10px 0;
+	line-height:2em;
 }
 .entry-content:after, .alignleft:after{
 	clear:both;
@@ -435,22 +473,21 @@ header .entry-meta a, header .entry-meta{
 	width:0;
 }
 .page-link{
-	margin:20px 0;
+	line-height:2em;
+	margin:2em 0;
 }
 .page-link a{
-	padding:5px;
+	padding:0 5px;
 }
 article footer.entry-meta{
 	border-top:thin solid #ccc;
 	font-style:italic;
-	line-height:1.2em;
-	margin-top:10px;
-	padding:1em 2em;
+	line-height:2em;
+	padding:2em;
 }
 ul.social{
 	padding:0;
 	margin:0;
-	margin-top:10px;
 }
 ul.social li{
 	list-style-type:none;
@@ -472,7 +509,6 @@ a.icon-facebook:hover, a.icon-facebook:active, a.icon-facebook:focus, #share .ic
 	background:none;
 	color:#3b5998;
 }
-
 a.icon-feed:hover, a.icon-feed:active, a.icon-feed:focus{
 	background:none;
 	color:#FF7400;
@@ -480,7 +516,7 @@ a.icon-feed:hover, a.icon-feed:active, a.icon-feed:focus{
 .wp-pagenavi, #nav-below{
 	margin:0 auto;
 	padding:30px 0;
-	width:936px;
+	width:800px;
 }
 .wp-pagenavi a, .wp-pagenavi span{
 	border:none !important;
@@ -489,7 +525,7 @@ a.icon-feed:hover, a.icon-feed:active, a.icon-feed:focus{
 	color:#777;
 }
 #nav-below div{
-	width:125px;
+	width:170px;
 }
 #nav-below .nav-previous{
 	float:left;
@@ -504,18 +540,15 @@ a.icon-feed:hover, a.icon-feed:active, a.icon-feed:focus{
 	position:relative;
 	width:100%;
 }
-#sidebar h4{
-	font-size:1.4em;
-	margin-bottom:1em;
-}
 #sidebar .widget{
+	line-height:2em;
 	margin:0 auto;
 	text-align:center;
 	width:50%;
 }
 #sidebar .widget ul{
 	margin:0;
-	margin-bottom:1.6em;
+	margin-bottom:2em;
 	padding:0;
 }
 #sidebar .widget li{
@@ -524,9 +557,6 @@ a.icon-feed:hover, a.icon-feed:active, a.icon-feed:focus{
 }
 #sidebar .widget p{
 	text-align:left;
-}
-#sidebar .widget li{
-	padding:5px 0;
 }
 
 /*********Siedbar mit JavaScript**********/
@@ -554,7 +584,7 @@ a.icon-feed:hover, a.icon-feed:active, a.icon-feed:focus{
 	width:100%;
 }
 .active-sidebar #sidebar{
-	border-left:5px solid #84A11D;	
+	border-left:5px solid #27ae60;	
 	min-height:100% !important;
 	height:auto;
 	left:40%;
@@ -565,18 +595,30 @@ a.icon-feed:hover, a.icon-feed:active, a.icon-feed:focus{
 
 
 /************* Single View ********/
-#author-info, #share{
-	margin-top:20px;
+#author-info h3{
+	margin-bottom:0;	
+}
+#author-description p{
+	font-size:.75em;
+	line-height:2.667em;
+	margin-bottom:0;
+	margin-left:102px;
+	margin-top:0;
+}
+#share .social{
+	font-size:1.5em;
+	line-height:1.333em;
+	margin:1.333em 0;
 }
 #author-avatar{
-	margin-right:10px;
+	height:100%;
+	margin:0 10px 0 0;
 }
 #nav-single{
-	height:1em;
-	padding:20px 0;
-}
-#nav-single span{
-	width:220px;
+	display:block;
+	line-height:2em;
+	margin-bottom:2em;
+	margin-top:2em;
 }
 #nav-single .nav-previous{
 	display:block;
@@ -588,7 +630,7 @@ a.icon-feed:hover, a.icon-feed:active, a.icon-feed:focus{
 }
 #respond{
 	clear:both;
-	margin-top:30px;
+	margin-top:2em;
 	padding-bottom:10px;
 }
 ol.commentlist{
@@ -599,8 +641,11 @@ ol.commentlist, ol.commentlist ol{
 }
 article.comment{
 	margin-bottom:0;
-	padding:20px;
+	padding:2em 20px;
 	position:relative;
+}
+.comment-meta{
+	line-height:2em;
 }
 .comment-meta .avatar{
 	float:left;
@@ -608,20 +653,12 @@ article.comment{
 }
 .comment-meta cite{
 	display:block;
-	padding-bottom:10px;
-}
-.comment-content{
-	margin-left:50px;
-	margin-top:20px;
 }
 .comment-awaiting-moderation{
 	font-weight:700;
 }
-p.edit-link{
-	margin-bottom:.5em;
-}
 .bypostauthor{
-	border-left:5px solid #84A11D;
+	border-left:5px solid #27ae60;
 }
 .bypostauthor header cite span{
 	bottom:0;
@@ -657,17 +694,17 @@ p.edit-link{
 	display:block;
 	width:94%;
 }
-#submit, input[type=submit]{
+input[type=submit], input[type=reset]{
 	background:#444;
 	border:none;
 	color:#fff;
 	padding:10px 15px;
 }
-input[type=submit]{
-	padding:5px 10px;
+input[type=submit], input[type=reset]{
+	padding:10px 15px;
 }
-#submit:hover, input[type=submit]:hover, #submit:active, input[type=submit]:active, #submit:focus, input[type=submit]:focus{
-	background:#84A11D;
+input[type=reset]:hover, input[type=submit]:hover, input[type=reset]:active, input[type=submit]:active, input[type=reset]:focus, input[type=submit]:focus{
+	background:#27ae60;
 }
 
 /**************Single View Ende***********/
@@ -680,10 +717,6 @@ input[type=submit]{
 /*********** author.php *********/
 #author-avatar{
 	float:left;
-}
-#author-description{
-	line-height:1.2em;
-	margin-left:78px;
 }
 /*********** author.php Ende ****/
 
@@ -823,7 +856,7 @@ a.icon-facebook:hover, a.icon-facebook:active, a.icon-facebook:focus{
 .format-image .entry-meta a:hover, .format-image .entry-meta a:active, .format-image .entry-meta a:focus{
 	color:#eee;
 }
-.format-gallery, .format-gallery footer.entry-meta{
+.format-image, .format-image footer.entry-meta{
 	border-color:#444;
 	color:#eee;
 }
@@ -873,17 +906,19 @@ a.icon-facebook:hover, a.icon-facebook:active, a.icon-facebook:focus{
 .format-status .entry-content .avatar{
 	display:inline;
 	float:left;
+	margin-bottom:2em;
 	margin-right:.5em;
+	margin-top:0;
 }
 .format-status{
-	background:#84A11D;
+	background:#27ae60;
 }
 .format-status header h1 a, .format-status header h1{
 	color:#fff;
 }
 .format-status header h1 a:hover, .format-status header h1 a:active, .format-status header h1 a:focus{
 	background:#fff;
-	color:#84A11D;
+	color:#27ae60;
 }
 .format-status .entry-content p{
 	color:#000;
@@ -983,170 +1018,19 @@ you can use the generic selector below, but it's slower:
 	content: "\e004";
 }
 
-/**
- * prism.js default theme for JavaScript, CSS and HTML
- * Based on dabblet (http://dabblet.com)
- * @author Lea Verou
- */
-
-code[class*="language-"],
-pre[class*="language-"] {
-	color: black;
-	text-shadow: 0 1px white;
-	font-family: Consolas, Monaco, 'Andale Mono', monospace;
-	direction: ltr;
-	text-align: left;
-	white-space: pre;
-	word-spacing: normal;
-	
-	-moz-tab-size: 4;
-	-o-tab-size: 4;
-	tab-size: 4;
-	
-	-webkit-hyphens: none;
-	-moz-hyphens: none;
-	-ms-hyphens: none;
-	hyphens: none;
-}
-
-@media print {
-	code[class*="language-"],
-	pre[class*="language-"] {
-		text-shadow: none;
-	}
-}
-
-/* Code blocks */
-pre[class*="language-"] {
-	padding: 1em;
-	margin: .5em 0;
-	overflow: auto;	
-}
-
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
-	background: #f5f2f0;
-}
-
-/* Inline code */
-:not(pre) > code[class*="language-"] {
-	padding: .1em;
-	border-radius: .3em;
-}
-
-.token.comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-	color: slategray;
-}
-
-.token.punctuation {
-	color: #999;
-}
-
-.namespace {
-	opacity: .7;
-}
-
-.token.property,
-.token.tag,
-.token.boolean,
-.token.number {
-	color: #905;
-}
-
-.token.selector,
-.token.attr-name,
-.token.string {
-	color: #690;
-}
-
-.token.operator,
-.token.entity,
-.token.url,
-.language-css .token.string,
-.style .token.string {
-	color: #a67f59;
-	background: hsla(0,0%,100%,.5);
-}
-
-.token.atrule,
-.token.attr-value,
-.token.keyword {
-	color: #07a;
-}
-
-
-.token.regex,
-.token.important {
-	color: #e90;
-}
-
-.token.important {
-	font-weight: bold;
-}
-
-.token.entity {
-	cursor: help;
-}
-pre[data-line] {
-	position: relative;
-	padding: 1em 0 1em 3em;
-}
-
-.line-highlight {
-	position: absolute;
-	left: 0;
-	right: 0;
-	padding: inherit 0;
-	margin-top: 1em; /* Same as .prism’s padding-top */
-
-	background: hsla(24, 20%, 50%,.08);
-	background: -moz-linear-gradient(left, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
-	background: -webkit-linear-gradient(left, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
-	background: -o-linear-gradient(left, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
-	background: linear-gradient(left, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
-	
-	pointer-events: none;
-	
-	line-height: inherit;
-	white-space: pre;
-}
-
-.line-highlight:before,
-.line-highlight[data-end]:after {
-	content: attr(data-start);
-	position: absolute;
-	top: .4em;
-	left: .6em;
-	min-width: 1em;
-	padding: 0 .5em;
-	color: #000;
-	font: bold 65%/1.5 sans-serif;
-	text-align: center;
-	vertical-align: .3em;
-	border-radius: 999px;
-	text-shadow: none;
-}
-.line-highlight[data-end]:after {
-	content: attr(data-end);
-	top: auto;
-	bottom: .4em;
-}
-@media screen and (max-width:1030px){
+@media screen and (max-width:898px){
 	article footer.entry-meta{
 		padding:1em 0em;
 	}
 
 }
-@media screen and (max-width:955px){
+@media screen and (max-width:843px){
 	article .entry-header, article .entry-content, article footer.entry-meta, #nav-single, .page-header, #author-info, #comments, .entry-summary, .nojs #sidebar, #share, .page-header, .page-content, #nav-below{
 		margin-left:auto;
 		margin-right:auto;
 		padding-left:0;
 		padding-right:0;
-		width:98%;
+		width:96%;
 	}
 	.js #branding .sidebar-button{
 		background:none;
@@ -1162,6 +1046,9 @@ pre[data-line] {
 		left:30%;
 		width:69%;
 	}
+	#sidebar .widget{
+		width:70%;
+	}	
 	.wp-pagenavi{
 		width:100%;
 	}
@@ -1174,18 +1061,18 @@ pre[data-line] {
 	ul, ol{
 		margin-left:1.5em;
 	}
-	#content, .js #branding .sidebar-button, #sidebar{
-		font-size:.9em;
-	}
 	.js #branding .sidebar-button{
 		padding:10px;
 	}
 	.active-sidebar #branding, .active-sidebar #main{
-		right:80%;
+		right:85%;
 	}
 	.active-sidebar #sidebar{
-		left:20%;
-		width:78%;
+		left:15%;
+		width:83%;
+	}
+	#sidebar .widget{
+		width:80%;
 	}
 	#nav-single span{
 		width:47%;

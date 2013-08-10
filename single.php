@@ -83,47 +83,43 @@
 			
 			<?php if ( get_the_author_meta( 'description' ) && ( ! function_exists( 'is_multi_author' ) || is_multi_author() ) ) : ?>
 				
-                <div id="author-info">
+                <div id="author-info" class="clearfix">
 					
                     <div id="author-avatar">
-						<?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'fanoe_author_bio_avatar_size', 68 ) ); ?>
+						<?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'fanoe_author_bio_avatar_size', 92 ) ); ?>
 					</div><!-- #author-avatar -->
 					
                     <div id="author-description">
-                        <h2><?php printf( __( 'About %s', 'fanoe' ), get_the_author() ); ?></h2>
-                        
-						<?php the_author_meta( 'description' ); ?>
-                        
-                        <div id="author-link">
-                            <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
-                                <?php printf( __( 'View all posts by %s <span class="meta-nav">&rarr;</span>', 'fanoe' ), get_the_author() ); ?>
-                            </a>
-                        </div><!-- #author-link	-->
-                    
+						<h2><?php printf( __( 'About %s', 'fanoe' ), get_the_author() ); ?></h2>
+						
+						<p><?php the_author_meta( 'description' ); ?><br>
+						
+							<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
+							<?php printf( __( 'View all posts by %s <span class="meta-nav">&rarr;</span>', 'fanoe' ), get_the_author() ); ?>
+							</a></p>
+					
                     </div><!-- #author-description -->
-                
+				
                 </div><!-- #author-info -->
 			
 			<?php endif; ?>
 			
 			<?php }else{if ( get_the_author_meta( 'description' )) :?>
 				
-                <div id="author-info">
+                <div id="author-info" class="clearfix">
 					
                     <div id="author-avatar">
-						<?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'fanoe_author_bio_avatar_size', 68 ) ); ?>
+						<?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'fanoe_author_bio_avatar_size', 92 ) ); ?>
 					</div><!-- #author-avatar -->
 					
                     <div id="author-description">
-						<h2><?php printf( __( 'About %s', 'fanoe' ), get_the_author() ); ?></h2>
+						<h3><?php printf( __( 'About %s', 'fanoe' ), get_the_author() ); ?></h3>
 						
-						<?php the_author_meta( 'description' ); ?>
+						<p><?php the_author_meta( 'description' ); ?><br>
 						
-                        <div id="author-link">
 							<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
 							<?php printf( __( 'View all posts by %s <span class="meta-nav">&rarr;</span>', 'fanoe' ), get_the_author() ); ?>
-							</a>
-						</div><!-- #author-link	-->
+							</a></p>
 					
                     </div><!-- #author-description -->
 				
@@ -131,7 +127,7 @@
 			
 			<?php endif; }?>
             
-            <nav id="nav-single">
+            <nav id="nav-single" class="clearfix">
                 <h3 class="assistive-text"><?php _e( 'Post navigation', 'fanoe' ); ?></h3>
                 <span class="nav-previous"><?php previous_post_link(); ?></span>
                 <span class="nav-next"><?php next_post_link(); ?></span>
