@@ -30,8 +30,20 @@
             if ( ! empty( $header_image ) ) : ?>
                 style="background:url('<?php echo esc_url( $header_image ); ?>') no-repeat 50% 0;<?php $background_size = get_option( 'background_size' ); if($background_size =='cover'){ ?>-webkit-background-size:cover;background-size:cover;<?php }elseif($background_size =='height'){ ?>-webkit-background-size:auto 100%;background-size:auto 100%;<?php } ?>"
             <?php endif; ?>>
-            <h1 id="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-            <h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
+            <?php
+		// Has the text been hidden?
+		$header_image = get_header_image();
+		if ( ! display_header_text() ) :
+			if ( ! empty( $header_image ) ) :
+			?>
+            	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" class="home-link"></a>
+            <?php
+			endif;
+			?>
+
+	<?php endif; ?>
+            <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+            <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
             
             <a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to content', 'fanoe' ); ?>"><?php _e( 'Skip to content', 'fanoe' ); ?></a>
             <a class="sidebar-button" href="#sidebar-menu">≡</a>

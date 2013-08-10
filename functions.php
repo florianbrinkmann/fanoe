@@ -494,11 +494,11 @@ class Fanoe_Social_Media_Widget extends WP_Widget
 		echo $after_widget;
 	}
 }
-add_action('widgets_init', function()
-{
-     return register_widget('Fanoe_Social_Media_Widget');
-});
-
+// register Fanoe_Social_Media_Widget
+function register_fanoe_social_media_widget() {
+    register_widget( 'Fanoe_Social_Media_Widget' );
+}
+add_action( 'widgets_init', 'register_fanoe_social_media_widget' );
 
 
 
@@ -694,6 +694,27 @@ function fanoe_link_to_menu_editor( $args )
 
 
 function fanoe_customize_register( $wp_customize ) {
+	$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
+	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
+	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+	
+	/**
+	 * Used by hook: 'customize_preview_init'
+	 * 
+	 * @see add_action('customize_preview_init',$func)
+	 */
+	function fanoe_customizer_live_preview()
+	{
+		wp_enqueue_script( 
+			  'fanoe-themecustomizer',			//Give the script an ID
+			  get_template_directory_uri().'/js/theme-customizer.js',//Point to file
+			  array( 'jquery','customize-preview' ),	//Define dependencies
+			  '',						//Define a version (optional) 
+			  true						//Put script in footer?
+		);
+	}
+	add_action( 'customize_preview_init', 'fanoe_customizer_live_preview' );
+	
 	$colors = array();
 	$colors[] = array(
 		'slug'=>'design_color', 
@@ -836,13 +857,50 @@ add_action( 'customize_register', 'fanoe_customize_register' );
 ?>
 <?php // Custom CSS for Link Colors
 function fanoe_insert_custom(){
-	
+	$text_color   = get_header_textcolor();
+	$header_image = get_header_image();
 	$design_color = get_option('design_color');
 	?>
     <style>::selection {background:<?php echo $design_color ; ?>;color: #fff;}::-moz-selection {background:<?php echo $design_color ; ?>;color: #fff;}a,.format-status header h1 a:hover, .format-status header h1 a:active, .format-status header h1 a:focus,#site-title a:hover, #site-title a:active, #site-title a:focus {color: <?php echo $design_color ; ?>;}a:focus,a:active,a:hover,.format-status,input[type=reset]:hover, input[type=submit]:hover, input[type=reset]:active, input[type=submit]:active, input[type=reset]:focus, input[type=submit]:focus{background:<?php echo $design_color ; ?>;}input[type=text]:hover,input[type=password]:hover,input[type=email]:hover,input[type=url]:hover,input[type=number]:hover,textarea:hover,input[type=text]:focus,input[type=password]:focus,input[type=email]:focus,input[type=url]:focus,input[type=number]:focus,textarea:focus {border-color:<?php echo $design_color ; ?>}.bypostauthor, .js #sidebar-content{border-left-color:<?php echo $design_color ; ?>}
-<?php echo get_theme_mod( 'custom_css', 'default_value' ); ?>
+<?php echo get_theme_mod( 'custom_css', 'default_value' );?>
+	</style>
+    <style type="text/css">
+	<?php
+		// Has the text been hidden?
+		if ( ! display_header_text() ) :
+	?>
+		.site-title,
+		.site-description {
+			position: absolute;
+			clip: rect(1px 1px 1px 1px); /* IE7 */
+			clip: rect(1px, 1px, 1px, 1px);
+		}
+		#branding{
+			height:122px;
+		}
+	<?php
+			if ( empty( $header_image ) ) :
+	?>
+		.site-header .home-link {
+			min-height: 0;
+		}
+		#branding{
+			height:0px;
+		}
+	<?php
+			endif;
+
+		// If the user has set a custom color for the text, use that.
+		elseif ( $text_color != get_theme_support( 'custom-header', 'default-text-color' ) ) :
+	?>
+		.site-title a,
+		.site-description {
+			color: #<?php echo esc_attr( $text_color ); ?>;
+		}
+	<?php endif; ?>
 	</style>
     <?php
+   
 } 
 
 add_action('wp_head', 'fanoe_insert_custom');?>

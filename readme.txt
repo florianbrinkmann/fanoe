@@ -5,6 +5,17 @@ For a detailed documentation visit: http://themes.webdesign-florian-brinkmann.de
 Changelog:
 ||||||||||||||
 
+Version 1.2.4 — 10.08.2013
+---
+- french Translation, thanks to François Charlet
+- fixed the Problem, that the Header Text couldn't be hidden in the Theme Customizer
+- fixed a PHP Error, displayed with older PHP Versions
+- if the Header-Text is not visible, but an background-image for the Header is set, a link to the Homepage is set
+
+
+
+
+
 Version 1.2.3 — 08.08.2013
 ---
 - fixed a PHP warning
