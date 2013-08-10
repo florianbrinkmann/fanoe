@@ -5,6 +5,13 @@ For a detailed documentation visit: http://themes.webdesign-florian-brinkmann.de
 Changelog:
 ||||||||||||||
 
+Version 1.2.2 — 08.08.2013
+---
+- fixed a little problem with floating images on small displays
+
+
+
+
 Version 1.2.1 — 08.08.2013
 ---
 - now the size of the background-Image can be changed in the Theme Customizer. You can choose, that the Image is displayes normal, or it fills out the whole header, or it has a 100% height and a auto width.
