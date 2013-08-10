@@ -40,7 +40,6 @@ function fanoe_setup() {
 	$args = array(
 		'flex-width'    => true,
 		'flex-height'    => true,
-		'height'        => 122,
 		'uploads'       => true,
 	);
 	add_theme_support( 'custom-header', $args );
@@ -757,6 +756,35 @@ function fanoe_customize_register( $wp_customize ) {
 			'type'       => 'checkbox',
 		));
 		
+	}
+	$backgrounds = array();
+	$backgrounds[] = array(
+		'slug'=>'background_size', 
+		'default' => 'standard',
+		'label' => __( 'Change the Size of the Header Background Image', 'fanoe' )
+	);
+	foreach( $backgrounds as $background ) {
+		// SETTINGS
+		$wp_customize->add_setting(
+			$background['slug'], array(
+				'default' => $background['default'],
+				'type' => 'option', 
+				'capability' => 
+				'edit_theme_options',
+			)
+		);
+		// CONTROLS
+		$wp_customize->add_control('sidebar_position', array(
+			'label'      => $background['label'],
+			'section'    => 'header_image',
+			'settings'   => $background['slug'],
+			'type'       => 'radio',
+			'choices'    => array(
+				'standard'   => 'Standard',
+				'cover' => __('The Image fills out the whole header', 'fanoe'),
+				'height' => __('100% Height, Auto Width', 'fanoe'),
+			),
+		));
 	}
 	class fanoe_Customize_Textarea_Control extends WP_Customize_Control {
 		public $type = 'textarea';

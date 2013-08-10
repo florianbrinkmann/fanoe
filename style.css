@@ -4,7 +4,7 @@ Theme URI: http://themes.webdesign-florian-brinkmann.de/fanoe/
 Author: Florian Brinkmann
 Author URI: http://webdesign-florian-brinkmann.de
 Description: The Fanoe Theme is a fully responsive theme with a off canvas sidebar. The post-formats are highlighted with different background colors. The main color of the design can be changed in the theme-options. 
-Version: 1.2
+Version: 1.2.1
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: post-formats, one-column, custom-background, light, flexible-width, sticky-post, theme-options, translation-ready, threaded-comments, white, custom-colors
@@ -48,8 +48,12 @@ html{
 body {
 	background: #fff;
 	font-family:Libre Baskerville;
-	font-size:1em;
+	font-size:.625em;
 	letter-spacing:1px;
+}
+#wrapper{
+	position:relative;
+	font-size:1.6em;
 }
 ol, ul {
 	list-style: none;
@@ -93,22 +97,21 @@ footer, header, hgroup, menu, nav, section {
 	display: inline;
 	float: left;
 	height:auto;
-	margin-right: 1.625em;
+	margin: 2em 1.625em 2em 0;
 	max-width:100%;
 }
 .alignright {
 	display: inline;
 	float: right;
 	height:auto;
-	margin-left: 1.625em;
+	margin: 2em 0 2em 1.625em;
 	max-width:100%;
 }
 .aligncenter{
 	clear: both;
 	display: block;
 	height:auto;
-	margin-left: auto;
-	margin-right: auto;
+	margin:2em auto;
 	max-width:100%;
 }
 .wp-caption img{
@@ -116,8 +119,9 @@ footer, header, hgroup, menu, nav, section {
 	max-width:100%;
 }
 .alignnone{
+	display:block;
 	height:auto;
-	margin:0 .5em 0 0;
+	margin:2em 0;
 	max-width:100%;
 }
 h1,h2,h3,h4,h5,h6 {
@@ -396,7 +400,6 @@ a.image:hover, a.image:active, a.image:focus{
 	position:relative;
 }
 #branding{
-	height:122px;
 	position:relative;
 }
 #site-title{
@@ -416,7 +419,9 @@ a.image:hover, a.image:active, a.image:focus{
 #site-description{
 	font-size:1.2em;
 	font-weight:400;
+	margin-bottom:0;
 	margin-top:-30px;
+	padding-bottom:1.231em;
 	text-align:center;
 }
 .js #branding .sidebar-button{
@@ -551,11 +556,13 @@ a.icon-feed:hover, a.icon-feed:active, a.icon-feed:focus{
 }
 #sidebar .widget ul{
 	margin-bottom:2em;
+	margin-left:0;
 	margin-top:0;
 	padding:0;
 }
 #sidebar .widget ul ul{
 	margin-bottom:0;
+	margin-left:2em;
 }
 #sidebar .widget li{
 	list-style-type:none;
@@ -793,8 +800,7 @@ figure.gallery-thumb{
 }
 .gallery-item {
 	float: left;
-	margin:15px;
-	margin-top: 10px;
+	margin:10px 23px 15px;
 	text-align: center;
 }
 .gallery img {
@@ -1026,17 +1032,18 @@ you can use the generic selector below, but it's slower:
 
 @media screen and (max-width:898px){
 	article footer.entry-meta{
-		padding:1em 0em;
+		padding-left:0;
+		padding-right:0;
 	}
 
 }
-@media screen and (max-width:843px){
+@media screen and (max-width:890px){
 	article .entry-header, article .entry-content, article footer.entry-meta, #nav-single, .page-header, #author-info, #comments, .entry-summary, .nojs #sidebar, #share, .page-header, .page-content, #nav-below{
 		margin-left:auto;
 		margin-right:auto;
 		padding-left:0;
 		padding-right:0;
-		width:96%;
+		width:90%;
 	}
 	.js #branding .sidebar-button{
 		background:none;
@@ -1060,18 +1067,9 @@ you can use the generic selector below, but it's slower:
 	}
 
 }
-@media screen and (max-width:452px){
-	body{
-		font-size:.9em;
-	}
-	blockquote {
-		margin: 0 2em;
-	}
-	ul, ol{
-		margin-left:1.5em;
-	}
-	.js #branding .sidebar-button{
-		padding:10px;
+@media screen and (max-width:600px){
+	#wrapper{
+		font-size:1.4em;
 	}
 	.active-sidebar #branding, .active-sidebar #main{
 		right:85%;
@@ -1082,6 +1080,26 @@ you can use the generic selector below, but it's slower:
 	}
 	#sidebar .widget{
 		width:80%;
+	}
+}
+@media screen and (max-width:470px){
+	#wrapper{
+		font-size:1.2em;
+	}
+	.alignright, .alignleft,.attachment-post-thumbnail{
+		display:block;
+		float:none;
+		margin-left:0;
+		margin-right:0;
+	}
+	blockquote {
+		margin: 0 2em;
+	}
+	ul, ol{
+		margin-left:1.5em;
+	}
+	.js #branding .sidebar-button{
+		padding:10px;
 	}
 	#nav-single span{
 		width:47%;

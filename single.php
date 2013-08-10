@@ -90,7 +90,7 @@
 					</div><!-- #author-avatar -->
 					
                     <div id="author-description">
-						<h2><?php printf( __( 'About %s', 'fanoe' ), get_the_author() ); ?></h2>
+						<h3><?php printf( __( 'About %s', 'fanoe' ), get_the_author() ); ?></h3>
 						
 						<p><?php the_author_meta( 'description' ); ?><br>
 						

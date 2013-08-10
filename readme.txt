@@ -5,6 +5,14 @@ For a detailed documentation visit: http://themes.webdesign-florian-brinkmann.de
 Changelog:
 ||||||||||||||
 
+Version 1.2.1 — 08.08.2013
+---
+- now the size of the background-Image can be changed in the Theme Customizer. You can choose, that the Image is displayes normal, or it fills out the whole header, or it has a 100% height and a auto width.
+- changed a few things in the style.css
+
+
+
+
 Version 1.2 — 06.08.2013
 ---
 - Replaced the Theme Options Page with the WordPress Theme Customizer. All Changes, which were possible at the Theme Options Page, can now be done over the "Customize" Link under the Theme on the Theme-Page
