@@ -4,7 +4,7 @@ Theme URI: http://themes.webdesign-florian-brinkmann.de/fanoe/
 Author: Florian Brinkmann
 Author URI: http://webdesign-florian-brinkmann.de
 Description: The Fanoe Theme is a fully responsive theme with a off canvas sidebar. The post-formats are highlighted with different background colors. The main color of the design can be changed in the theme-options. 
-Version: 1.1.1
+Version: 1.1.2
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: post-formats, one-column, custom-background, light, flexible-width, sticky-post, theme-options, translation-ready, threaded-comments, white, custom-colors
@@ -63,6 +63,7 @@ table{
 	margin:2em;
 }
 th, td{
+	padding:0 .5em;
 }
 th{
 	font-style:italic;
@@ -178,6 +179,7 @@ ul, ol {
 }
 ul ul, ol ol, ul ol, ol ul{
 	margin-bottom:0;
+	margin-left:1.5em;
 	margin-top:0;
 }
 ul {
@@ -547,9 +549,12 @@ a.icon-feed:hover, a.icon-feed:active, a.icon-feed:focus{
 	width:50%;
 }
 #sidebar .widget ul{
-	margin:0;
 	margin-bottom:2em;
+	margin-top:0;
 	padding:0;
+}
+#sidebar .widget ul ul{
+	margin-bottom:0;
 }
 #sidebar .widget li{
 	list-style-type:none;
