@@ -88,7 +88,9 @@ function fanoe_scripts_styles() {
 	 * Adds JavaScript for handling the navigation menu hide-and-show behavior.
 	 */
 	 if(!is_admin())
-	 wp_enqueue_script( 'fanoe-sidebar', get_template_directory_uri() . '/js/sidebar.js', array(), false, true );
+	 wp_enqueue_script( 'fanoe-sidebar', get_template_directory_uri() . '/js/sidebar.js', array( 'jquery' ), false, true );
+	 
+    	 
 
 	/*
 	 * Loads our special font CSS file.
@@ -121,7 +123,7 @@ function fanoe_scripts_styles() {
 
 		$protocol = is_ssl() ? 'https' : 'http';
 		$query_args = array(
-			'family' => 'Source+Code+Pro|Source+Sans+Pro:400,700,400italic',
+			'family' => 'Source+Code+Pro|Source+Sans+Pro:400,700,400italic|Gentium+Basic:400,400italic',
 			'subset' => $subsets,
 		);
 		wp_enqueue_style( 'fanoe-fonts', add_query_arg( $query_args, "$protocol://fonts.googleapis.com/css" ), array(), null );
@@ -363,15 +365,17 @@ endif;
 	if ( isset($req) && isset($commenter) && isset($aria_req)) {
 	$fields['author'] = '<p class="comment-form-author">' . '<label for="author">' . __( 'Name*', 'fanoe' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) .
 	                    '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>';
-	                     
+	}
+	if ( isset($req) && isset($commenter) && isset($aria_req)) {
 	$fields['email'] = '<p class="comment-form-email"><label for="email">' . __( 'Email*', 'fanoe' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) .
 	                    '<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></p>';
-	                     
+	}
+	if ( isset($req) && isset($commenter) && isset($aria_req)) {
 	$fields['url'] = '<p class="comment-form-url"><label for="url">' . __( 'Website', 'fanoe' ) . '</label>' .
 	                    '<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></p>';
-	 
-	return $fields;
 	}
+	return $fields;
+	
 	}
 	add_filter('comment_form_default_fields','fanoe_fields');
 ?>

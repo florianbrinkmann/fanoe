@@ -31,7 +31,7 @@
             <h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
             
             <a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to content', 'fanoe' ); ?>"><?php _e( 'Skip to content', 'fanoe' ); ?></a>
-            <a class="sidebar-button" href="#sidebar-menu"><?php _e( 'Menu', 'fanoe' ); ?></a>
+            <a class="sidebar-button" href="#sidebar-menu"><?php _e('Menu', 'fanoe')?></a>
             
             <?php $header_image = get_header_image();
             if ( ! empty( $header_image ) ) : ?>

@@ -5,6 +5,25 @@ For a detailed documentation visit: http://themes.webdesign-florian-brinkmann.de
 Changelog:
 ||||||||||||||
 
+Version 1.0.6 — 28.07.2013
+---
+- replaced jQuery from Google with one from WordPress
+
+
+
+Version 1.0.5 — 19.07.2013
+---
+- replaced the Menu Link
+- fixed a problem with the Comment Form
+
+
+
+Version 1.0.4 — 18.07.2013
+---
+- created a function for wp_title
+
+
+
 Version 1.0.3 — 15.07.2013
 ---
 - enqueue all stylesheets and scripts from the functions.php, have forgotten a few in Version 1.0.2
