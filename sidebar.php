@@ -8,7 +8,7 @@
 		
         <div class="widget copyright">
 			<h4>Copyright</h4>
-			<p><?php $copyright = get_theme_mod( 'copyright' ); if($copyright !=''){echo $copyright;}else{?>&copy; <?php echo date(Y); ?>  <?php bloginfo( 'name' ); ?><?php }?>  | <?php _e('Theme: Fanoe by <a href="http://webdesign-florian-brinkmann.de">Webdesign Florian Brinkmann</a>', 'fanoe')?></p> 
+			<p><?php $copyright = get_theme_mod( 'copyright' ); if($copyright !=''){echo $copyright;}else{?>&copy; <?php echo date('Y'); ?>  <?php bloginfo( 'name' ); ?><?php }?>  | <?php _e('Theme: Fanoe by <a href="http://webdesign-florian-brinkmann.de">Webdesign Florian Brinkmann</a>', 'fanoe')?></p> 
         </div>
     </div>
 </aside>

@@ -5,6 +5,13 @@ For a detailed documentation visit: http://themes.webdesign-florian-brinkmann.de
 Changelog:
 ||||||||||||||
 
+Version 1.2.3 — 08.08.2013
+---
+- fixed a PHP warning
+
+
+
+
 Version 1.2.2 — 08.08.2013
 ---
 - fixed a little problem with floating images on small displays
