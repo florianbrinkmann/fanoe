@@ -5,6 +5,24 @@ For a detailed documentation visit: http://themes.webdesign-florian-brinkmann.de
 Changelog:
 ||||||||||||||
 
+Version 1.2.6 — 11.08.2013
+---
+- Fixed a Problem with HTML in the Copyright-Field
+
+
+
+
+
+
+Version 1.2.5 — 10.08.2013
+---
+- Theme supports custom backgrounds
+
+
+
+
+
+
 Version 1.2.4 — 10.08.2013
 ---
 - french Translation, thanks to François Charlet

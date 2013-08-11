@@ -48,6 +48,8 @@ function fanoe_setup() {
 	// This theme uses Featured Images (also known as post thumbnails) for per-post/per-page Custom Header images
 	add_theme_support( 'post-thumbnails' );
 	
+	add_theme_support( 'custom-background' );
+	
 	
 }
 endif; // fanoe_setup
@@ -827,7 +829,7 @@ function fanoe_customize_register( $wp_customize ) {
 	
 		<label>
 			<span class="customize-control-title"><?php echo __('Copyright', 'fanoe') ?></span>
-			<input type="text" value="<?php echo get_theme_mod( 'copyright' );?>" style="width:100%;" <?php $this->link(); ?>></input>
+			<input type="text" value="<?php echo htmlspecialchars(get_theme_mod( 'copyright' ));?>" style="width:100%;" <?php $this->link(); ?>></input>
 		</label>
 	
 	<?php
