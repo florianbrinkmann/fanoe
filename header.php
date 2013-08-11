@@ -28,7 +28,7 @@
 	<div id="wrapper">
 		<header id="branding" role="banner" <?php $header_image = get_header_image();
             if ( ! empty( $header_image ) ) : ?>
-                style="background:url('<?php echo esc_url( $header_image ); ?>') no-repeat 50% 0;<?php $background_size = get_option( 'background_size' ); if($background_size =='cover'){ ?>-webkit-background-size:cover;background-size:cover;<?php }elseif($background_size =='height'){ ?>-webkit-background-size:auto 100%;background-size:auto 100%;<?php } ?>"
+                style="background:url('<?php echo esc_url( $header_image ); ?>') no-repeat 50% 0;<?php $background_size = get_theme_mod( 'background_size' ); if($background_size =='cover'){ ?>-webkit-background-size:cover;background-size:cover;<?php }elseif($background_size =='height'){ ?>-webkit-background-size:auto 100%;background-size:auto 100%;<?php } ?>"
             <?php endif; ?>>
             <?php
 		// Has the text been hidden?

@@ -65,7 +65,7 @@
             
             </article><!-- #post-<?php the_ID(); ?> -->
         
-		<?php $share_btns_singleview = get_option( 'share_btns_singleview' ); if($share_btns_singleview =='0'){}else{ ?>
+		<?php $share_btns_singleview = get_theme_mod( 'share_btns_singleview' ); if($share_btns_singleview == 0){}else{ ?>
 		
             <div id="share">
                 <h2 class="share"><?php _e('Share this Article', 'fanoe')?></h2>
@@ -79,7 +79,7 @@
 		
 		<?php } ?>
 
-		<?php $author_bio = get_option( 'author_bio' );if($author_bio =='0'){?>
+		<?php $author_bio = get_theme_mod( 'author_bio' );if($author_bio ==0){?>
 			
 			<?php if ( get_the_author_meta( 'description' ) && ( ! function_exists( 'is_multi_author' ) || is_multi_author() ) ) : ?>
 				

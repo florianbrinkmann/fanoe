@@ -1,7 +1,7 @@
 <?php
 	
 add_action( 'after_setup_theme', 'fanoe_setup' );
-if ( ! isset( $content_width ) ) $content_width = 900;
+if ( ! isset( $content_width ) ) $content_width = 800;
 
 if ( ! function_exists( 'fanoe_setup' ) ):
 /**
@@ -123,32 +123,6 @@ if(!is_admin()){
 	add_action('wp_head', 'fanoe_add_ie_conditional');
 }
 	
- /** 
- * Collects our theme options 
- * 
- * @return array 
- */  
-function fanoe_get_global_options(){  
-	  
-	$fanoe_option = array();  
-  
-	$fanoe_option  = get_option('fanoe_options');  
-	  
-return $fanoe_option;  
-}  
-  
- /** 
- * Call the function and collect in variable 
- * 
- * Should be used in template files like this: 
- * <?php echo $fanoe_option['fanoe_txt_input']; ?> 
- * 
- * Note: Should you notice that the variable ($fanoe_option) is empty when used in certain templates such as header.php, sidebar.php and footer.php 
- * you will need to call the function (copy the line below and paste it) at the top of those documents (within php tags)! 
- */   
-$fanoe_option = fanoe_get_global_options();  
-
-
 
 function fanoe_menus() {
   register_nav_menus(
@@ -212,42 +186,6 @@ function fanoe_page_menu_args( $args ) {
 	return $args;
 }
 add_filter( 'wp_page_menu_args', 'fanoe_page_menu_args' );
-
-
-/**
- * Count the number of footer sidebars to enable dynamic classes for the footer
- */
-function fanoe_footer_sidebar_class() {
-	$count = 0;
-
-	if ( is_active_sidebar( 'sidebar-3' ) )
-		$count++;
-
-	if ( is_active_sidebar( 'sidebar-4' ) )
-		$count++;
-
-	if ( is_active_sidebar( 'sidebar-5' ) )
-		$count++;
-
-	$class = '';
-
-	switch ( $count ) {
-		case '1':
-			$class = 'one';
-			break;
-		case '2':
-			$class = 'two';
-			break;
-		case '3':
-			$class = 'three';
-			break;
-	}
-
-	if ( $class )
-		echo 'class="' . $class . '"';
-}
-
-
 
 
 function fanoe_remove_more_jump_link($link) { 
@@ -696,27 +634,6 @@ function fanoe_link_to_menu_editor( $args )
 
 
 function fanoe_customize_register( $wp_customize ) {
-	$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
-	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
-	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
-	
-	/**
-	 * Used by hook: 'customize_preview_init'
-	 * 
-	 * @see add_action('customize_preview_init',$func)
-	 */
-	function fanoe_customizer_live_preview()
-	{
-		wp_enqueue_script( 
-			  'fanoe-themecustomizer',			//Give the script an ID
-			  get_template_directory_uri().'/js/theme-customizer.js',//Point to file
-			  array( 'jquery','customize-preview' ),	//Define dependencies
-			  '',						//Define a version (optional) 
-			  true						//Put script in footer?
-		);
-	}
-	add_action( 'customize_preview_init', 'fanoe_customizer_live_preview' );
-	
 	$colors = array();
 	$colors[] = array(
 		'slug'=>'design_color', 
@@ -728,7 +645,6 @@ function fanoe_customize_register( $wp_customize ) {
 		$wp_customize->add_setting(
 			$color['slug'], array(
 				'default' => $color['default'],
-				'type' => 'option', 
 				'capability' => 
 				'edit_theme_options',
 			)
@@ -748,37 +664,30 @@ function fanoe_customize_register( $wp_customize ) {
 	$contents = array();
 	$contents[] = array(
 		'slug'=>'share_btns_blogview', 
-		'default' => '1',
+		'default'=>1,
 		'label' => __( 'Share Buttons in the blog view', 'fanoe' )
 	);
 	$contents[] = array(
 		'slug'=>'share_btns_singleview', 
-		'default' => '1',
+		'default'=>1,
 		'label' => __( 'Share Buttons in the single view', 'fanoe' )
 	);
 	$contents[] = array(
 		'slug'=>'author_bio', 
-		'default' => '1',
+		'default'=>1,
 		'label' => __( 'Diplay the Author Bio in the single view also on a single-author blog.', 'fanoe' )
 	);
 	foreach( $contents as $content ) {
-		// SETTINGS
-		$wp_customize->add_setting(
-			$content['slug'], array(
-				'default' => $content['default'],
-				'type' => 'option', 
-				'capability' => 
-				'edit_theme_options',
-			)
-		);
-		// CONTROLS
-		$wp_customize->add_control($content['slug'], array(
-			'label'      => $content['label'],
-			'section'    => 'content',
-			'settings'   => $content['slug'],
-			'type'       => 'checkbox',
-		));
-		
+		$wp_customize->add_setting( $content['slug'], array(
+			'default' => $content['default'],
+		) );	
+			 
+		$wp_customize->add_control( $content['slug'], array(
+			'settings' => $content['slug'],
+			'label'    => $content['label'],
+			'section'  => 'content',
+			'type'     => 'checkbox',
+		) );		
 	}
 	$backgrounds = array();
 	$backgrounds[] = array(
@@ -791,13 +700,12 @@ function fanoe_customize_register( $wp_customize ) {
 		$wp_customize->add_setting(
 			$background['slug'], array(
 				'default' => $background['default'],
-				'type' => 'option', 
 				'capability' => 
 				'edit_theme_options',
 			)
 		);
 		// CONTROLS
-		$wp_customize->add_control('sidebar_position', array(
+		$wp_customize->add_control($background['slug'], array(
 			'label'      => $background['label'],
 			'section'    => 'header_image',
 			'settings'   => $background['slug'],
@@ -861,7 +769,7 @@ add_action( 'customize_register', 'fanoe_customize_register' );
 function fanoe_insert_custom(){
 	$text_color   = get_header_textcolor();
 	$header_image = get_header_image();
-	$design_color = get_option('design_color');
+	$design_color = get_theme_mod('design_color');
 	?>
     <style>::selection {background:<?php echo $design_color ; ?>;color: #fff;}::-moz-selection {background:<?php echo $design_color ; ?>;color: #fff;}a,.format-status header h1 a:hover, .format-status header h1 a:active, .format-status header h1 a:focus,#site-title a:hover, #site-title a:active, #site-title a:focus {color: <?php echo $design_color ; ?>;}a:focus,a:active,a:hover,.format-status,input[type=reset]:hover, input[type=submit]:hover, input[type=reset]:active, input[type=submit]:active, input[type=reset]:focus, input[type=submit]:focus{background:<?php echo $design_color ; ?>;}input[type=text]:hover,input[type=password]:hover,input[type=email]:hover,input[type=url]:hover,input[type=number]:hover,textarea:hover,input[type=text]:focus,input[type=password]:focus,input[type=email]:focus,input[type=url]:focus,input[type=number]:focus,textarea:focus {border-color:<?php echo $design_color ; ?>}.bypostauthor, .js #sidebar-content{border-left-color:<?php echo $design_color ; ?>}
 <?php echo get_theme_mod( 'custom_css', 'default_value' );?>

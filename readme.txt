@@ -5,6 +5,15 @@ For a detailed documentation visit: http://themes.webdesign-florian-brinkmann.de
 Changelog:
 ||||||||||||||
 
+Version 1.2.7 — 11.08.2013
+---
+- fixed a problem with the theme-customizer. The checkboxes in the "content" section were defect
+
+
+
+
+
+
 Version 1.2.6 — 11.08.2013
 ---
 - Fixed a Problem with HTML in the Copyright-Field
