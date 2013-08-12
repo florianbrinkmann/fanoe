@@ -5,6 +5,16 @@ For a detailed documentation visit: http://themes.webdesign-florian-brinkmann.de
 Changelog:
 ||||||||||||||
 
+Version 1.2.8 — 12.08.2013
+---
+- dutch Translation, thanks to Pauline van der Sluijs
+- fixed a little problem with the option "Design Color" in the Theme Customizer (left-border color of the sidebar and active/hover/focus color of the title weren't changed
+
+
+
+
+
+
 Version 1.2.7 — 11.08.2013
 ---
 - fixed a problem with the theme-customizer. The checkboxes in the "content" section were defect
