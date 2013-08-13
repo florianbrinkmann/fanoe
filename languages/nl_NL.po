@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Fanoe v1.2.8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2013-08-12 08:04:22+0000\n"
+"PO-Revision-Date: 2013-08-13 18:31:13+0000\n"
 "Last-Translator: admin <paulinevandersluijs@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -397,67 +397,62 @@ msgstr " Trackback"
 msgid " Trackbacks"
 msgstr " Trackbacks"
 
-#: functions.php:341
-#@ fanoe
-msgid "Here you can add your social media channels of Google Plus, Twitter, Facebook and your RSS Feed to display the Icons in the Sidebar."
-msgstr "Hier kun je je social media zoals Google Plus, Twitter, Facebook en uw RSS-feed toevoegen, zodat de iconen in de zijbalk worden weergegeven."
-
-#: functions.php:364
+#: functions.php:400
 #@ fanoe
 msgid "Title:"
 msgstr "Titel:"
 
-#: functions.php:607
+#: functions.php:804
 #@ fanoe
 msgid "Add a menu"
 msgstr "Voeg een menu toe"
 
-#: functions.php:641
+#: functions.php:838
 #@ fanoe
 msgid "Main Color of the Design"
 msgstr "Hoofdkleur van het Ontwerp"
 
-#: functions.php:668
+#: functions.php:865
 #@ fanoe
 msgid "Share Buttons in the blog view"
 msgstr "Deel knoppen in de blog weergave"
 
-#: functions.php:673
+#: functions.php:870
 #@ fanoe
 msgid "Share Buttons in the single view"
 msgstr "Deel knoppen in enkele weergave"
 
-#: functions.php:678
+#: functions.php:875
 #@ fanoe
 msgid "Diplay the Author Bio in the single view also on a single-author blog."
 msgstr "Toon de Auteur Bio in de enkele weergave ook op de blog van de auteur, ook al is hij/zij de enige auteur."
 
-#: functions.php:696
+#: functions.php:893
 #@ fanoe
 msgid "Change the Size of the Header Background Image"
 msgstr "Verander de Grootte van de Header Achtergrond Afbeelding"
 
-#: functions.php:715
+#: functions.php:912
 #@ fanoe
 msgid "The Image fills out the whole header"
 msgstr "De afbeelding vult de volle breedte van de header"
 
-#: functions.php:716
+#: functions.php:913
 #@ fanoe
 msgid "100% Height, Auto Width"
 msgstr "100% Hoogte, Auto Breedte"
 
-#: functions.php:739
+#: functions.php:936
 #@ fanoe
 msgid "Copyright"
 msgstr "Auteursrecht"
 
-#: functions.php:753
+#: functions.php:950
 #@ fanoe
 msgid "CSS"
 msgstr "CSS"
 
-#: functions.php:762
+#: functions.php:959
 #@ fanoe
 msgid "Content"
 msgstr "Inhoud (content)"
@@ -530,4 +525,9 @@ msgstr "Berichtennavigatie"
 #@ fanoe
 msgid "Tag Archives: %s"
 msgstr "Tag Archief: %s"
+
+#: functions.php:341
+#@ fanoe
+msgid "Here you can add your social media channels."
+msgstr "Voeg hier je social media kanalen toe."
 

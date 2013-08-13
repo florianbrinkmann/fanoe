@@ -102,6 +102,9 @@ function fanoe_scripts_styles() {
 	 * Loads our main stylesheet.
 	 */
 	wp_enqueue_style( 'fanoe-style', get_stylesheet_uri(), array(), null );
+	
+	wp_enqueue_style( 'fanoe-ie', get_template_directory_uri() . '/conditional/lte-ie7.css');
+	wp_style_add_data( 'fanoe-ie', 'conditional', 'lt IE 8' );
 
 }
 add_action( 'wp_enqueue_scripts', 'fanoe_scripts_styles' );
@@ -114,9 +117,6 @@ if(!is_admin()){
 			echo '<!--[if lt IE 9]>';
 			echo '<script src="'.get_template_directory_uri() .'/js/html5.js"></script>';
 			echo '<script src="'.get_template_directory_uri() .'/conditional/matchmedia.js"></script>';
-			echo '<![endif]-->';
-			echo '<!--[if lt IE 8]>';
-			echo '<script src="'.get_template_directory_uri() .'/conditional/lte-ie7.js" type="text/javascript"></script>';
 			echo '<![endif]-->';
 		}
 	}
@@ -338,7 +338,7 @@ class Fanoe_Social_Media_Widget extends WP_Widget
 			'fanoe_social_media_widget',
 			'Social Media Widget',
 			array(
-				'description' => __('Here you can add your social media channels of Google Plus, Twitter, Facebook and your RSS Feed to display the Icons in the Sidebar.', 'fanoe')
+				'description' => __('Here you can add your social media channels.', 'fanoe')
 			)
 	    );
 	}
@@ -350,17 +350,53 @@ class Fanoe_Social_Media_Widget extends WP_Widget
 			'google_plus' => '', 
 			'twitter' => '',
 			'facebook' => '',
+			'tumblr' => '',
+			'pinterest' => '',
+			'dribbble' => '',
+			'flickr' => '',
+			'instagram' => '',
+			'picasa' => '',
+			'deviantart' => '',
+			'youtube' => '',
+			'vimeo' => '',
+			'soundcloud' => '',
+			'lastfm' => '',
+			'foursquare' => '',
+			'appnet' => '',
+			'github' => '',
+			'wordpress' => '',
+			'xing' => '',
+			'linkedin' => '',
+			'behance' => '',
 			'rss' => ''
 	    );
-	    $instance = wp_parse_args((array)$instance, $defaults);
+		$instance = wp_parse_args((array)$instance, $defaults);
 
 	    $title = $instance['title'];
 	    $google_plus = $instance['google_plus'];
 	    $twitter = $instance['twitter'];
 		$facebook = $instance['facebook'];
+		$tumblr = $instance['tumblr'];
+		$pinterest = $instance['pinterest'];
+		$dribbble = $instance['dribbble'];
+		$flickr = $instance['flickr'];
+		$instagram = $instance['instagram'];
+		$picasa = $instance['picasa'];
+		$deviantart = $instance['deviantart'];
+		$youtube = $instance['youtube'];
+		$vimeo = $instance['vimeo'];
+		$soundcloud = $instance['soundcloud'];
+		$lastfm = $instance['lastfm'];
+		$foursquare = $instance['foursquare'];
+		$appnet = $instance['appnet'];
+		$github = $instance['github'];
+		$wordpress = $instance['wordpress'];
+		$xing = $instance['xing'];
+		$linkedin = $instance['linkedin'];
+		$behance = $instance['behance'];
 		$rss = $instance['rss'];
 	    ?>
-		<p>
+        <p>
 			<label for="<?php echo $this->get_field_id('title'); ?>"><?php echo __('Title:', 'fanoe'); ?></label> 
 			<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
 		</p>
@@ -376,11 +412,82 @@ class Fanoe_Social_Media_Widget extends WP_Widget
 			<label for="<?php echo $this->get_field_id('facebook'); ?>"><?php echo 'Facebook:'; ?></label> 
 			<input class="widefat" id="<?php echo $this->get_field_id('facebook'); ?>" name="<?php echo $this->get_field_name('facebook'); ?>" type="text" value="<?php echo esc_attr($facebook); ?>" />
 		</p>
+         <p>
+			<label for="<?php echo $this->get_field_id('tumblr'); ?>"><?php echo 'Tumblr:'; ?></label> 
+			<input class="widefat" id="<?php echo $this->get_field_id('tumblr'); ?>" name="<?php echo $this->get_field_name('tumblr'); ?>" type="text" value="<?php echo esc_attr($tumblr); ?>" />
+		</p>
         <p>
+			<label for="<?php echo $this->get_field_id('pinterest'); ?>"><?php echo 'Pinterest:'; ?></label> 
+			<input class="widefat" id="<?php echo $this->get_field_id('pinterest'); ?>" name="<?php echo $this->get_field_name('pinterest'); ?>" type="text" value="<?php echo esc_attr($pinterest); ?>" />
+		</p>
+        <p>
+			<label for="<?php echo $this->get_field_id('dribbble'); ?>"><?php echo 'Dribbble:'; ?></label> 
+			<input class="widefat" id="<?php echo $this->get_field_id('dribbble'); ?>" name="<?php echo $this->get_field_name('dribbble'); ?>" type="text" value="<?php echo esc_attr($dribbble); ?>" />
+		</p>
+        <p>
+			<label for="<?php echo $this->get_field_id('flickr'); ?>"><?php echo 'Flickr:'; ?></label> 
+			<input class="widefat" id="<?php echo $this->get_field_id('flickr'); ?>" name="<?php echo $this->get_field_name('flickr'); ?>" type="text" value="<?php echo esc_attr($flickr); ?>" />
+		</p>
+        <p>
+			<label for="<?php echo $this->get_field_id('instagram'); ?>"><?php echo 'Instagram:'; ?></label> 
+			<input class="widefat" id="<?php echo $this->get_field_id('instagram'); ?>" name="<?php echo $this->get_field_name('instagram'); ?>" type="text" value="<?php echo esc_attr($instagram); ?>" />
+		</p>
+        <p>
+			<label for="<?php echo $this->get_field_id('picasa'); ?>"><?php echo 'Picasa:'; ?></label> 
+			<input class="widefat" id="<?php echo $this->get_field_id('picasa'); ?>" name="<?php echo $this->get_field_name('picasa'); ?>" type="text" value="<?php echo esc_attr($picasa); ?>" />
+		</p>
+        <p>
+			<label for="<?php echo $this->get_field_id('deviantart'); ?>"><?php echo 'Deviantart:'; ?></label> 
+			<input class="widefat" id="<?php echo $this->get_field_id('deviantart'); ?>" name="<?php echo $this->get_field_name('deviantart'); ?>" type="text" value="<?php echo esc_attr($deviantart); ?>" />
+		</p>
+        <p>
+			<label for="<?php echo $this->get_field_id('youtube'); ?>"><?php echo 'YouTube:'; ?></label> 
+			<input class="widefat" id="<?php echo $this->get_field_id('youtube'); ?>" name="<?php echo $this->get_field_name('youtube'); ?>" type="text" value="<?php echo esc_attr($youtube); ?>" />
+		</p>
+        <p>
+			<label for="<?php echo $this->get_field_id('vimeo'); ?>"><?php echo 'Vimeo:'; ?></label> 
+			<input class="widefat" id="<?php echo $this->get_field_id('vimeo'); ?>" name="<?php echo $this->get_field_name('vimeo'); ?>" type="text" value="<?php echo esc_attr($vimeo); ?>" />
+		</p>
+        <p>
+			<label for="<?php echo $this->get_field_id('soundcloud'); ?>"><?php echo 'Soundcloud:'; ?></label> 
+			<input class="widefat" id="<?php echo $this->get_field_id('soundcloud'); ?>" name="<?php echo $this->get_field_name('soundcloud'); ?>" type="text" value="<?php echo esc_attr($soundcloud); ?>" />
+		</p>
+        <p>
+			<label for="<?php echo $this->get_field_id('lastfm'); ?>"><?php echo 'last.fm:'; ?></label> 
+			<input class="widefat" id="<?php echo $this->get_field_id('lastfm'); ?>" name="<?php echo $this->get_field_name('lastfm'); ?>" type="text" value="<?php echo esc_attr($lastfm); ?>" />
+		</p>
+        <p>
+			<label for="<?php echo $this->get_field_id('foursquare'); ?>"><?php echo 'Foursquare:'; ?></label> 
+			<input class="widefat" id="<?php echo $this->get_field_id('foursquare'); ?>" name="<?php echo $this->get_field_name('foursquare'); ?>" type="text" value="<?php echo esc_attr($foursquare); ?>" />
+		</p>
+        <p>
+			<label for="<?php echo $this->get_field_id('appnet'); ?>"><?php echo 'app.net:'; ?></label> 
+			<input class="widefat" id="<?php echo $this->get_field_id('appnet'); ?>" name="<?php echo $this->get_field_name('appnet'); ?>" type="text" value="<?php echo esc_attr($appnet); ?>" />
+		</p>
+        <p>
+			<label for="<?php echo $this->get_field_id('github'); ?>"><?php echo 'Github:'; ?></label> 
+			<input class="widefat" id="<?php echo $this->get_field_id('github'); ?>" name="<?php echo $this->get_field_name('github'); ?>" type="text" value="<?php echo esc_attr($github); ?>" />
+		</p>
+        <p>
+			<label for="<?php echo $this->get_field_id('wordpress'); ?>"><?php echo 'WordPress:'; ?></label> 
+			<input class="widefat" id="<?php echo $this->get_field_id('wordpress'); ?>" name="<?php echo $this->get_field_name('wordpress'); ?>" type="text" value="<?php echo esc_attr($wordpress); ?>" />
+		</p>
+        <p>
+			<label for="<?php echo $this->get_field_id('xing'); ?>"><?php echo 'Xing:'; ?></label> 
+			<input class="widefat" id="<?php echo $this->get_field_id('xing'); ?>" name="<?php echo $this->get_field_name('xing'); ?>" type="text" value="<?php echo esc_attr($xing); ?>" />
+		</p>
+        <p>
+			<label for="<?php echo $this->get_field_id('linkedin'); ?>"><?php echo 'LinkedIn:'; ?></label> 
+			<input class="widefat" id="<?php echo $this->get_field_id('linkedin'); ?>" name="<?php echo $this->get_field_name('linkedin'); ?>" type="text" value="<?php echo esc_attr($linkedin); ?>" />
+		</p>
+        <p>
+			<label for="<?php echo $this->get_field_id('behance'); ?>"><?php echo 'Behance:'; ?></label> 
+			<input class="widefat" id="<?php echo $this->get_field_id('behance'); ?>" name="<?php echo $this->get_field_name('behance'); ?>" type="text" value="<?php echo esc_attr($behance); ?>" />
+	   </p>
+       <p>
 			<label for="<?php echo $this->get_field_id('rss'); ?>"><?php echo 'RSS Feed:'; ?></label> 
 			<input class="widefat" id="<?php echo $this->get_field_id('rss'); ?>" name="<?php echo $this->get_field_name('rss'); ?>" type="text" value="<?php echo esc_attr($rss); ?>" />
 		</p>
-
 		<?php
 	}
 	
@@ -392,6 +499,24 @@ class Fanoe_Social_Media_Widget extends WP_Widget
 		$instance['google_plus'] = strip_tags($new_instance['google_plus']);
 		$instance['twitter'] = strip_tags($new_instance['twitter']);
 		$instance['facebook'] = strip_tags($new_instance['facebook']);
+		$instance['tumblr'] = strip_tags($new_instance['tumblr']);
+		$instance['pinterest'] = strip_tags($new_instance['pinterest']);
+		$instance['dribbble'] = strip_tags($new_instance['dribbble']);
+		$instance['flickr'] = strip_tags($new_instance['flickr']);
+		$instance['instagram'] = strip_tags($new_instance['instagram']);
+		$instance['picasa'] = strip_tags($new_instance['picasa']);
+		$instance['deviantart'] = strip_tags($new_instance['deviantart']);
+		$instance['youtube'] = strip_tags($new_instance['youtube']);
+		$instance['vimeo'] = strip_tags($new_instance['vimeo']);
+		$instance['soundcloud'] = strip_tags($new_instance['soundcloud']);
+		$instance['lastfm'] = strip_tags($new_instance['lastfm']);
+		$instance['foursquare'] = strip_tags($new_instance['foursquare']);
+		$instance['appnet'] = strip_tags($new_instance['appnet']);
+		$instance['github'] = strip_tags($new_instance['github']);
+		$instance['wordpress'] = strip_tags($new_instance['wordpress']);
+		$instance['xing'] = strip_tags($new_instance['xing']);
+		$instance['linkedin'] = strip_tags($new_instance['linkedin']);
+		$instance['behance'] = strip_tags($new_instance['behance']);
 		$instance['rss'] = strip_tags($new_instance['rss']);
  
 		return $instance;
@@ -404,6 +529,24 @@ class Fanoe_Social_Media_Widget extends WP_Widget
 		$google_plus = $instance['google_plus'];
 		$twitter = $instance['twitter'];
 		$facebook = $instance['facebook'];
+		$tumblr = $instance['tumblr'];
+		$pinterest = $instance['pinterest'];
+		$dribbble = $instance['dribbble'];
+		$flickr = $instance['flickr'];
+		$instagram = $instance['instagram'];
+		$picasa = $instance['picasa'];
+		$deviantart = $instance['deviantart'];
+		$youtube = $instance['youtube'];
+		$vimeo = $instance['vimeo'];
+		$soundcloud = $instance['soundcloud'];
+		$lastfm = $instance['lastfm'];
+		$foursquare = $instance['foursquare'];
+		$appnet = $instance['appnet'];
+		$github = $instance['github'];
+		$wordpress = $instance['wordpress'];
+		$xing = $instance['xing'];
+		$linkedin = $instance['linkedin'];
+		$behance = $instance['behance'];
 		$rss = $instance['rss'];
  
 		echo $before_widget;
@@ -417,16 +560,70 @@ class Fanoe_Social_Media_Widget extends WP_Widget
 
 		echo "<ul class='social'>";
 		if(!empty($google_plus)){
-			echo "<li><a class='icon-google-plus' href='".$google_plus ."' rel='publisher'></a></li>";			
+			echo "<li><a class='icon-gplus' title='Google Plus' href='".$google_plus ."' rel='publisher'></a></li>";			
 		}
 		if(!empty($twitter)){
-			echo "<li><a class='icon-twitter' href='".$twitter ."'></a></li>";			
+			echo "<li><a class='icon-twitter' title='Twitter' href='".$twitter ."'></a></li>";			
 		}
 		if(!empty($facebook)){
-			echo "<li><a class='icon-facebook' href='".$facebook ."'></a></li>";			
+			echo "<li><a class='icon-facebook' title='Facebook' href='".$facebook ."'></a></li>";			
+		}
+		if(!empty($tumblr)){
+			echo "<li><a class='icon-tumblr' title='Tumblr' href='".$tumblr ."'></a></li>";			
+		}
+		if(!empty($pinterest)){
+			echo "<li><a class='icon-pinterest' title='Pinterest' href='".$pinterest ."'></a></li>";			
+		}
+		if(!empty($dribbble)){
+			echo "<li><a class='icon-dribbble' title='dribbble' href='".$dribbble ."'></a></li>";			
+		}
+		if(!empty($flickr)){
+			echo "<li><a class='icon-flickr' title='Flickr' href='".$flickr ."'></a></li>";			
+		}
+		if(!empty($instagram)){
+			echo "<li><a class='icon-instagram' title='Instagram' href='".$instagram ."'></a></li>";			
+		}
+		if(!empty($picasa)){
+			echo "<li><a class='icon-picasa' title='Picasa' href='".$picasa ."'></a></li>";			
+		}
+		if(!empty($deviantart)){
+			echo "<li><a class='icon-deviantart' title='Deviantart' href='".$deviantart ."'></a></li>";			
+		}
+		if(!empty($youtube)){
+			echo "<li><a class='icon-youtube' title='YouTube' href='".$youtube ."'></a></li>";			
+		}
+		if(!empty($vimeo)){
+			echo "<li><a class='icon-vimeo' title='Vimeo' href='".$vimeo ."'></a></li>";			
+		}
+		if(!empty($soundcloud)){
+			echo "<li><a class='icon-soundcloud' title='Soundcloud' href='".$soundcloud ."'></a></li>";			
+		}
+		if(!empty($lastfm)){
+			echo "<li><a class='icon-lastfm' title='last.fm' href='".$lastfm ."'></a></li>";			
+		}
+		if(!empty($foursquare)){
+			echo "<li><a class='icon-foursquare' title='Foursquare' href='".$foursquare ."'></a></li>";			
+		}
+		if(!empty($appnet)){
+			echo "<li><a class='icon-appnet' title='app.net' href='".$appnet ."'></a></li>";			
+		}
+		if(!empty($github)){
+			echo "<li><a class='icon-github-circled' title='Github' href='".$github ."'></a></li>";			
+		}
+		if(!empty($wordpress)){
+			echo "<li><a class='icon-wordpress' title='WordPress' href='".$wordpress ."'></a></li>";			
+		}
+		if(!empty($xing)){
+			echo "<li><a class='icon-xing' title='Xing' href='".$xing ."'></a></li>";			
+		}
+		if(!empty($linkedin)){
+			echo "<li><a class='icon-linkedin' title='LinkedIn' href='".$linkedin ."'></a></li>";			
+		}
+		if(!empty($behance)){
+			echo "<li><a class='icon-behance' title='Behance' href='".$behance ."'></a></li>";			
 		}
 		if(!empty($rss)){
-			echo "<li><a class='icon-feed' href='".$rss ."'></a></li>";			
+			echo "<li><a class='icon-feed' title='RSS Feed' href='".$rss ."'></a></li>";			
 		}
 		
 		echo "</ul>";

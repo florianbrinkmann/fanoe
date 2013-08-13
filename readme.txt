@@ -5,6 +5,16 @@ For a detailed documentation visit: http://themes.webdesign-florian-brinkmann.de
 Changelog:
 ||||||||||||||
 
+Version 1.2.9 — 13.08.2013
+---
+- added more social media channels to the "social media" widget
+- changed the icon font
+
+
+
+
+
+
 Version 1.2.8 — 12.08.2013
 ---
 - dutch Translation, thanks to Pauline van der Sluijs
@@ -363,8 +373,43 @@ Source Code Pro
 
 
 
-Icon Set: IcoMoon - Free -- http://keyamoon.com/icomoon/
-License: CC BY 3.0 -- http://creativecommons.org/licenses/by/3.0/
+Icon Font license info
+
+
+## Zocial
+
+   Copyright (C) 2012 by Sam Collins
+
+   Author:    Sam Collins
+   License:   MIT (http://opensource.org/licenses/mit-license.php)
+   Homepage:  http://zocial.smcllns.com/
+
+
+## Font Awesome
+
+   Copyright (C) 2012 by Dave Gandy
+
+   Author:    Dave Gandy
+   License:   SIL ()
+   Homepage:  http://fortawesome.github.com/Font-Awesome/
+
+
+## Entypo
+
+   Copyright (C) 2012 by Daniel Bruce
+
+   Author:    Daniel Bruce
+   License:   CC BY-SA (http://creativecommons.org/licenses/by-sa/2.0/)
+   Homepage:  http://www.entypo.com
+
+
+## Brandico
+
+   (C) 2012 by Vitaly Puzrin
+
+   Author:    Crowdsourced, for Fontello project
+   License:   SIL (http://scripts.sil.org/OFL)
+   Homepage:  
 
 
 

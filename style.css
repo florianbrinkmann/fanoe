@@ -3,11 +3,11 @@ Theme Name: Fanoe
 Theme URI: http://themes.webdesign-florian-brinkmann.de/fanoe/
 Author: Florian Brinkmann
 Author URI: http://webdesign-florian-brinkmann.de
-Description: The Fanoe Theme is a fully responsive theme with a off canvas sidebar. The post-formats are highlighted with different background colors. The main color of the design can be changed in the theme-options. 
-Version: 1.2.8
+Description: The Fanoe Theme is a fully responsive theme with a off canvas sidebar. The post-formats are highlighted with different background colors. In the Theme Customizer you can change things like the Design Color, visibility of the share buttons in blog- and singleview, background-image for the header text and so on. Social Media Channels can be added with the Social Media Widget.
+Version: 1.2.9
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: post-formats, one-column, custom-background, light, flexible-width, sticky-post, theme-options, translation-ready, threaded-comments, white, custom-colors
+Tags: post-formats, one-column, custom-background, light, flexible-width, sticky-post, theme-options, translation-ready, threaded-comments, white, custom-colors, custom-header
 Text Domain: fanoe
 */
 /* =Reset default browser CSS. Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html
@@ -513,7 +513,7 @@ ul.social li a{
 	color:#bbb;
 	padding:5px;
 }
-a.icon-google-plus:hover, a.icon-google-plus:active, a.icon-google-plus:focus, #share .icon-google-plus{
+a.icon-gplus:hover, a.icon-gplus:active, a.icon-gplus:focus, #share .icon-gplus{
 	background:none;
 	color:#d34836;
 }
@@ -524,6 +524,86 @@ a.icon-twitter:hover, a.icon-twitter:active, a.icon-twitter:focus, #share .icon-
 a.icon-facebook:hover, a.icon-facebook:active, a.icon-facebook:focus, #share .icon-facebook{
 	background:none;
 	color:#3b5998;
+}
+a.icon-youtube:hover, a.icon-youtube:active, a.icon-youtube:focus{
+	background:none;
+	color:#bb0000;
+}
+a.icon-youtube:hover, a.icon-youtube:active, a.icon-youtube:focus{
+	background:none;
+	color:#bb0000;
+}
+a.icon-linkedin:hover, a.icon-linkedin:active, a.icon-linkedin:focus{
+	background:none;
+	color:#007bb6;
+}
+a.icon-instagram:hover, a.icon-instagram:active, a.icon-instagram:focus{
+	background:none;
+	color:#517fa4;
+}
+a.icon-pinterest:hover, a.icon-pinterest:active, a.icon-pinterest:focus{
+	background:none;
+	color:#cb2027;
+}
+a.icon-flickr:hover, a.icon-flickr:active, a.icon-flickr:focus{
+	background:none;
+	color:#ff0084;
+}
+a.icon-tumblr:hover, a.icon-tumblr:active, a.icon-tumblr:focus{
+	background:none;
+	color:#32506d;
+}
+a.icon-vimeo:hover, a.icon-vimeo:active, a.icon-vimeo:focus{
+	background:none;
+	color:#aad450;
+}
+a.icon-foursquare:hover, a.icon-foursquare:active, a.icon-foursquare:focus{
+	background:none;
+	color:#0072b1;
+}
+a.icon-github-circled:hover, a.icon-github-circled:active, a.icon-github-circled:focus{
+	background:none;
+	color:#000;
+}
+a.icon-wordpress:hover, a.icon-wordpress:active, a.icon-wordpress:focus{
+	background:none;
+	color:#03779E;
+}
+a.icon-picasa:hover, a.icon-picasa:active, a.icon-picasa:focus{
+	background:none;
+	color:#4B5D5F;
+}
+a.icon-lastfm:hover, a.icon-lastfm:active, a.icon-lastfm:focus{
+	background:none;
+	color:#CF2127;
+}
+a.icon-picasa:hover, a.icon-picasa:active, a.icon-picasa:focus{
+	background:none;
+	color:#4B5D5F;
+}
+a.icon-appnet:hover, a.icon-appnet:active, a.icon-appnet:focus{
+	background:none;
+	color:#A6A5A7;
+}
+a.icon-soundcloud:hover, a.icon-soundcloud:active, a.icon-soundcloud:focus{
+	background:none;
+	color:#FF4C00;
+}
+a.icon-deviantart:hover, a.icon-deviantart:active, a.icon-deviantart:focus{
+	background:none;
+	color:#D0DE21;
+}
+a.icon-xing:hover, a.icon-xing:active, a.icon-xing:focus{
+	background:none;
+	color:#026466;
+}
+a.icon-behance:hover, a.icon-behance:active, a.icon-behance:focus{
+	background:none;
+	color:#1B1B1B;
+}
+a.icon-dribbble:hover, a.icon-dribbble:active, a.icon-dribbble:focus{
+	background:none;
+	color:#CC3B71;
 }
 a.icon-feed:hover, a.icon-feed:active, a.icon-feed:focus{
 	background:none;
@@ -578,6 +658,12 @@ a.icon-feed:hover, a.icon-feed:active, a.icon-feed:focus{
 }
 #sidebar .widget p{
 	text-align:left;
+}
+#sidebar .social a:hover, #sidebar .social a:focus, #sidebar .social a:active{
+	background:none;
+}
+#sidebar .social a{
+	font-size:1.9em;
 }
 
 /*********Siedbar mit JavaScript**********/
@@ -987,57 +1073,59 @@ a.icon-facebook:hover, a.icon-facebook:active, a.icon-facebook:focus{
 
 
 @font-face {
-	font-family: 'icomoon';
-	src:url('fonts/icomoon.eot');
-	src:url('fonts/icomoon.eot?#iefix') format('embedded-opentype'),
-		url('fonts/icomoon.woff') format('woff'),
-		url('fonts/icomoon.ttf') format('truetype'),
-		url('fonts/icomoon.svg#icomoon') format('svg');
-	font-weight: normal;
-	font-style: normal;
+  font-family: 'fontello';
+  src: url('font/fontello.eot?3743398');
+  src: url('font/fontello.eot?3743398#iefix') format('embedded-opentype'),
+       url('font/fontello.woff?3743398') format('woff'),
+       url('font/fontello.ttf?3743398') format('truetype'),
+       url('font/fontello.svg?3743398#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
 /* Use the following CSS code if you want to use data attributes for inserting your icons */
-[data-icon]:before {
-	font-family: 'icomoon';
-	content: attr(data-icon);
-	speak: none;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-	-webkit-font-smoothing: antialiased;
-}
-
-/* Use the following CSS code if you want to have a class per icon */
-/*
-Instead of a list of all class selectors,
-you can use the generic selector below, but it's slower:
-[class*="icon-"] {
-*/
-.icon-google-plus, .icon-twitter, .icon-feed, .icon-facebook {
-	font-family: 'icomoon';
-	speak: none;
+[class^="icon-"]:before, [class*=" icon-"]:before {
+	font-family: "fontello";
 	font-style: normal;
 	font-weight: normal;
+	speak: none;
+ 
+	display: inline-block;
+	text-decoration: inherit;
+	width: 1em;
+	margin-right: .2em;
+	text-align: center;
+	/* opacity: .8; */
+   
+	/* For safety - reset parent styles, that can break glyph codes*/
 	font-variant: normal;
 	text-transform: none;
-	line-height: 1;
-	-webkit-font-smoothing: antialiased;
+	   
+	/* fix buttons height, for twitter bootstrap */
+	line-height: 2em;
 }
-.icon-google-plus:before {
-	content: "\e000";
-}
-.icon-twitter:before {
-	content: "\e001";
-}
-.icon-feed:before {
-	content: "\e002";
-}
-.icon-facebook:before {
-	content: "\e004";
-}
-
+.icon-foursquare:before { content: '\e80e'; } /* '' */
+.icon-xing:before { content: '\e80f'; } /* '' */
+.icon-wordpress:before { content: '\e80d'; } /* '' */
+.icon-appnet:before { content: '\e810'; } /* '' */
+.icon-github-circled:before { content: '\e811'; } /* '' */
+.icon-twitter:before { content: '\f099'; } /* '' */
+.icon-facebook:before { content: '\f09a'; } /* '' */
+.icon-rss:before { content: '\f09e'; } /* '' */
+.icon-gplus:before { content: '\f0d5'; } /* '' */
+.icon-youtube:before { content: '\e809'; } /* '' */
+.icon-flickr:before { content: '\e800'; } /* '' */
+.icon-vimeo:before { content: '\e801'; } /* '' */
+.icon-pinterest:before { content: '\e802'; } /* '' */
+.icon-tumblr:before { content: '\e803'; } /* '' */
+.icon-deviantart:before { content: '\e808'; } /* '' */
+.icon-linkedin:before { content: '\e804'; } /* '' */
+.icon-dribbble:before { content: '\e805'; } /* '' */
+.icon-lastfm:before { content: '\e806'; } /* '' */
+.icon-instagram:before { content: '\e807'; } /* '' */
+.icon-picasa:before { content: '\e80b'; } /* '' */
+.icon-soundcloud:before { content: '\e80c'; } /* '' */
+.icon-behance:before { content: '\e80a'; } /* '' */
 @media screen and (max-width:898px){
 	article footer.entry-meta{
 		padding-left:0;
