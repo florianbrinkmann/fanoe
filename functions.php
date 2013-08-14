@@ -623,7 +623,7 @@ class Fanoe_Social_Media_Widget extends WP_Widget
 			echo "<li><a class='icon-behance' title='Behance' href='".$behance ."'></a></li>";			
 		}
 		if(!empty($rss)){
-			echo "<li><a class='icon-feed' title='RSS Feed' href='".$rss ."'></a></li>";			
+			echo "<li><a class='icon-rss' title='RSS Feed' href='".$rss ."'></a></li>";			
 		}
 		
 		echo "</ul>";

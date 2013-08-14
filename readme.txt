@@ -5,6 +5,15 @@ For a detailed documentation visit: http://themes.webdesign-florian-brinkmann.de
 Changelog:
 ||||||||||||||
 
+Version 1.2.10 — 14.08.2013
+---
+- fixed the problem, that the rss-icon wasn't displayed
+
+
+
+
+
+
 Version 1.2.9 — 13.08.2013
 ---
 - added more social media channels to the "social media" widget
