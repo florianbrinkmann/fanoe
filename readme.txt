@@ -5,6 +5,16 @@ For a detailed documentation visit: http://themes.webdesign-florian-brinkmann.de
 Changelog:
 ||||||||||||||
 
+Version 1.2.11 — 05.09.2013
+---
+- added smooth hover
+- replaced the screenshot.png
+
+
+
+
+
+
 Version 1.2.10 — 14.08.2013
 ---
 - fixed the problem, that the rss-icon wasn't displayed
