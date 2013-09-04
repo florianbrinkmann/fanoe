@@ -343,6 +343,9 @@ video {
 /* Links */
 a {
 	color: #27ae60;
+	-moz-transition:all .3s linear;
+	-webkit-transition:all .3s linear;
+	transition:all .3s linear;
 	text-decoration: none;
 }
 a:focus,
