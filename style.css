@@ -351,15 +351,18 @@ a:hover {
 	background:#27ae60;
 	color:#fff;
 }
+a:focus,
+a:hover {
+	-moz-transition:all .3s linear;
+	-webkit-transition:all .3s linear;
+	transition:all .3s linear;
+}
 a.image:hover, a.image:active, a.image:focus{
 	background:none;
 }
 .assistive-text{
 	position: absolute !important;
 	clip: rect(1px, 1px, 1px, 1px);
-}
-a:hover {
-	transition: .3s linear;
 }
 .assistive-text:hover,
 .assistive-text:active,
