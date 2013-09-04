@@ -358,6 +358,9 @@ a.image:hover, a.image:active, a.image:focus{
 	position: absolute !important;
 	clip: rect(1px, 1px, 1px, 1px);
 }
+a:hover {
+	transition: .3s linear;
+}
 .assistive-text:hover,
 .assistive-text:active,
 .assistive-text:focus {
