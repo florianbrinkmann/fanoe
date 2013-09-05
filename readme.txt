@@ -5,6 +5,24 @@ For a detailed documentation visit: http://themes.webdesign-florian-brinkmann.de
 Changelog:
 ||||||||||||||
 
+Version 1.2.13 — 05.09.2013
+---
+- updated the readme.txt for 1.2.12
+
+
+
+
+
+
+Version 1.2.12 — 05.09.2013
+---
+- fixed a little problem in the style.css
+
+
+
+
+
+
 Version 1.2.11 — 05.09.2013
 ---
 - added smooth hover
