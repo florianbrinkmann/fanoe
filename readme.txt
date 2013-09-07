@@ -5,6 +5,15 @@ For a detailed documentation visit: http://themes.webdesign-florian-brinkmann.de
 Changelog:
 ||||||||||||||
 
+Version 1.2.14 — 07.09.2013
+---
+- removed the smooth effect from the sidebar button
+
+
+
+
+
+
 Version 1.2.13 — 05.09.2013
 ---
 - updated the readme.txt for 1.2.12
