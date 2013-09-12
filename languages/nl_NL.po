@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Fanoe v1.2.8\n"
+"Project-Id-Version: Fanoe v1.2.14\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2013-08-13 18:31:13+0000\n"
+"PO-Revision-Date: 2013-09-11 15:56:54+0000\n"
 "Last-Translator: admin <paulinevandersluijs@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -442,7 +442,7 @@ msgstr "De afbeelding vult de volle breedte van de header"
 msgid "100% Height, Auto Width"
 msgstr "100% Hoogte, Auto Breedte"
 
-#: functions.php:936
+#: functions.php:954
 #@ fanoe
 msgid "Copyright"
 msgstr "Auteursrecht"
@@ -452,7 +452,7 @@ msgstr "Auteursrecht"
 msgid "CSS"
 msgstr "CSS"
 
-#: functions.php:959
+#: functions.php:965
 #@ fanoe
 msgid "Content"
 msgstr "Inhoud (content)"
@@ -530,4 +530,14 @@ msgstr "Tag Archief: %s"
 #@ fanoe
 msgid "Here you can add your social media channels."
 msgstr "Voeg hier je social media kanalen toe."
+
+#: functions.php:960
+#@ fanoe
+msgid "Replace the Sidebar Button with your text"
+msgstr "Vervang de Sidebar Knop met uw tekst"
+
+#: functions.php:945
+#@ fanoe
+msgid "Custom CSS"
+msgstr "Eigen CSS"
 

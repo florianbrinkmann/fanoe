@@ -5,6 +5,16 @@ For a detailed documentation visit: http://themes.webdesign-florian-brinkmann.de
 Changelog:
 ||||||||||||||
 
+Version 1.2.15 — 12.09.2013
+---
+- now you can replace the Sidebar Button (the stripes) with your own Text in the Theme Customizer
+- replaced the Sharing Buttons in the Single View, so they are displayed next the Sharing-Text
+
+
+
+
+
+
 Version 1.2.14 — 07.09.2013
 ---
 - removed the smooth effect from the sidebar button

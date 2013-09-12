@@ -4,7 +4,7 @@ Theme URI: http://themes.webdesign-florian-brinkmann.de/fanoe/
 Author: Florian Brinkmann
 Author URI: http://webdesign-florian-brinkmann.de
 Description: The Fanoe Theme is a fully responsive theme with a off canvas sidebar. The post-formats are highlighted with different background colors. In the Theme Customizer you can change things like the Design Color, visibility of the share buttons in blog- and singleview, background-image for the header text and so on. Social Media Channels can be added with the Social Media Widget.
-Version: 1.2.14
+Version: 1.2.15
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: post-formats, one-column, custom-background, light, flexible-width, sticky-post, theme-options, translation-ready, threaded-comments, white, custom-colors, custom-header
@@ -448,11 +448,18 @@ a.image:hover, a.image:active, a.image:focus{
 	padding:20px;
 	position:fixed;
 	right:0;
-	top:20px;
+	top:0;
 	-moz-transition:color .3s linear;
 	-webkit-transition:color .3s linear;
 	transition:color .3s linear;
 	z-index:100;
+}
+.js #branding .sidebar-button.text{
+	font-size:1em;
+	line-height:2em;
+}
+.js #branding .sidebar-button.admin-bar{
+	top:20px;
 }
 .js #branding .sidebar-button:hover, .js #branding .sidebar-button:focus, .js #branding .sidebar-button:active{
 	color:#444;
@@ -728,10 +735,15 @@ a.icon-rss:hover, a.icon-rss:active, a.icon-rss:focus{
 	margin-left:102px;
 	margin-top:0;
 }
+#share h2{
+	float:left;
+}
 #share .social{
+	float:left;
 	font-size:1.5em;
 	line-height:1.333em;
-	margin:1.333em 0;
+	margin-left:1em;
+	margin-top:1em;
 }
 #author-avatar{
 	height:100%;
@@ -1161,6 +1173,9 @@ a.icon-facebook:hover, a.icon-facebook:active, a.icon-facebook:focus{
 		background:none;
 		position:absolute;
 	}
+	.js #branding .sidebar-button.admin-bar{
+		top:-10px;
+	}
 	.active-sidebar #branding .sidebar-button{
 		right:0;
 	}
@@ -1249,7 +1264,7 @@ a.icon-facebook:hover, a.icon-facebook:active, a.icon-facebook:focus{
 	}
 
 }
-@media screen and (max-width:350px){
+@media screen and (max-width:370px){
 	.alignright, .alignleft,.attachment-post-thumbnail{
 		display:block;
 		float:none;
@@ -1257,4 +1272,11 @@ a.icon-facebook:hover, a.icon-facebook:active, a.icon-facebook:focus{
 		margin-right:0;
 		max-width:100%;
 	}
+	#share .social{
+		clear:both;
+		line-height:1.333em;
+		margin-left:0;
+		margin-top:0;
+	}
+
 }

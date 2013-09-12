@@ -46,7 +46,7 @@
             <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
             
             <a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to content', 'fanoe' ); ?>"><?php _e( 'Skip to content', 'fanoe' ); ?></a>
-            <a class="sidebar-button" href="#sidebar-menu">≡</a>
+            <a class="sidebar-button<?php $sidebar_btn = get_theme_mod( 'sidebar_btn' ); if ($sidebar_btn != ""){echo " text";}else{echo " stripes";}?><?php if ( is_admin_bar_showing() ) { echo " admin-bar"; }?>" href="#sidebar-menu"><?php if ($sidebar_btn != ""){echo $sidebar_btn;}else{?>≡<?php }?></a>
             
             
 		</header>

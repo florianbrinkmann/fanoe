@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Fanoe v1.2.9\n"
+"Project-Id-Version: Fanoe v1.2.14\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2013-08-13 12:53:47+0000\n"
+"PO-Revision-Date: 2013-09-10 14:36:08+0000\n"
 "Last-Translator: admin <kontakt@webdesign-florian-brinkmann.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -501,12 +501,12 @@ msgstr "Afficher les boutons de partage sur chaque article"
 msgid "Diplay the Author Bio in the single view also on a single-author blog."
 msgstr "Afficher la biographie de l'auteur sur chaque article, même sur un site avec un seul auteur."
 
-#: functions.php:936
+#: functions.php:954
 #@ fanoe
 msgid "Copyright"
 msgstr "Copyright"
 
-#: functions.php:959
+#: functions.php:965
 #@ fanoe
 msgid "Content"
 msgstr "Contenu"
@@ -530,4 +530,9 @@ msgstr "L'image remplit tout l'en-tête"
 #@ fanoe
 msgid "100% Height, Auto Width"
 msgstr " Hauteur à 100%, largeur automatique"
+
+#: functions.php:960
+#@ fanoe
+msgid "Replace the Sidebar Button with your text"
+msgstr "Remplacer le bouton de la barre latérale avec votre texte"
 

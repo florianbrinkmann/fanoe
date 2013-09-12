@@ -67,7 +67,7 @@
         
 		<?php $share_btns_singleview = get_theme_mod( 'share_btns_singleview' ); if($share_btns_singleview == 0){}else{ ?>
 		
-            <div id="share">
+            <div id="share" class="clearfix">
                 <h2 class="share"><?php _e('Share this Article', 'fanoe')?></h2>
                 <ul class="social">
                     <li><a class="icon-gplus" href="https://plus.google.com/share?url=<?php echo urlencode(get_permalink($post->ID)); ?>&amp;title=<?php echo rawurlencode(strip_tags(get_the_title())) ?>" target="blank" title="<?php _e('Share on Google +', 'fanoe')?>"></a></li>

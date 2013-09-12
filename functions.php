@@ -933,8 +933,8 @@ function fanoe_customize_register( $wp_customize ) {
 	?>
 	
 		<label>
-			<span class="customize-control-title"><?php echo __('Copyright', 'fanoe') ?></span>
-			<input type="text" value="<?php echo htmlspecialchars(get_theme_mod( 'copyright' ));?>" style="width:100%;" <?php $this->link(); ?>></input>
+			<span class="customize-control-title"><?php echo $this->label ?></span>
+			<input type="text" value="<?php echo htmlspecialchars(get_theme_mod( $this->value() ));?>" style="width:100%;" <?php $this->link(); ?>></input>
 		</label>
 	
 	<?php
@@ -942,7 +942,7 @@ function fanoe_customize_register( $wp_customize ) {
 	}
 	$wp_customize->add_setting('custom_css', array('default' => '',));
 	$wp_customize->add_control(new fanoe_Customize_Textarea_Control($wp_customize, 'custom_css', array(
-		'label' => 'Custom CSS',
+		'label' => __('Custom CSS', 'fanoe'),
 		'section' => 'css',
 		'settings' => 'custom_css',
 	)));
@@ -951,9 +951,15 @@ function fanoe_customize_register( $wp_customize ) {
 	));
 	$wp_customize->add_setting('copyright', array('default' => '',));
 	$wp_customize->add_control(new fanoe_Customize_Input_Control($wp_customize, 'copyright', array(
-		'label' => 'Copyright',
+		'label' => __('Copyright', 'fanoe'),
 		'section' => 'content',
 		'settings' => 'copyright',
+	)));
+	$wp_customize->add_setting('sidebar_btn', array('default' => '',));
+	$wp_customize->add_control(new fanoe_Customize_Input_Control($wp_customize, 'sidebar_btn', array(
+		'label' => __('Replace the Sidebar Button with your text', 'fanoe'),
+		'section' => 'content',
+		'settings' => 'sidebar_btn',
 	)));
 	$wp_customize->add_section('content' , array(
 		'title' => __('Content','fanoe'),
