@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Fanoe v1.2.14\n"
+"Project-Id-Version: Fanoe v1.2.15\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2013-09-10 14:36:08+0000\n"
+"PO-Revision-Date: 2013-09-12 07:59:28+0000\n"
 "Last-Translator: admin <kontakt@webdesign-florian-brinkmann.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -535,4 +535,9 @@ msgstr " Hauteur à 100%, largeur automatique"
 #@ fanoe
 msgid "Replace the Sidebar Button with your text"
 msgstr "Remplacer le bouton de la barre latérale avec votre texte"
+
+#: functions.php:945
+#@ fanoe
+msgid "Custom CSS"
+msgstr "CSS personnalisé"
 
