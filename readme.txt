@@ -5,6 +5,15 @@ For a detailed documentation visit: http://themes.webdesign-florian-brinkmann.de
 Changelog:
 ||||||||||||||
 
+Version 1.2.17 — 31.01.2014
+---
+- added the "responsive-layout" Tag to the style.css
+
+
+
+
+
+
 Version 1.2.16 — 31.01.2014
 ---
 - changed the line-height and margins for h1 Headings
