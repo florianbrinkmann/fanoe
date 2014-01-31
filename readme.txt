@@ -5,6 +5,16 @@ For a detailed documentation visit: http://themes.webdesign-florian-brinkmann.de
 Changelog:
 ||||||||||||||
 
+Version 1.2.16 — 31.01.2014
+---
+- changed the line-height and margins for h1 Headings
+- supports ininite scroll from Jetpack
+
+
+
+
+
+
 Version 1.2.15 — 12.09.2013
 ---
 - now you can replace the Sidebar Button (the stripes) with your own Text in the Theme Customizer

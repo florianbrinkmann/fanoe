@@ -4,7 +4,7 @@ Theme URI: http://themes.webdesign-florian-brinkmann.de/fanoe/
 Author: Florian Brinkmann
 Author URI: http://webdesign-florian-brinkmann.de
 Description: The Fanoe Theme is a fully responsive theme with a off canvas sidebar. The post-formats are highlighted with different background colors. In the Theme Customizer you can change things like the Design Color, visibility of the share buttons in blog- and singleview, background-image for the header text and so on. Social Media Channels can be added with the Social Media Widget.
-Version: 1.2.15
+Version: 1.2.16
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: post-formats, one-column, custom-background, light, flexible-width, sticky-post, theme-options, translation-ready, threaded-comments, white, custom-colors, custom-header
@@ -131,9 +131,9 @@ h1,h2,h3,h4,h5,h6 {
 }
 h1{
 	font-size:1.875em;
-	line-height:1.066em;
-	margin-bottom:1.066em;
-	margin-top:1.066em;
+	line-height:1.3em;
+	margin-bottom:1.3em;
+	margin-top:1.3em;
 }
 h2{
 	font-size:1.625em;
@@ -653,6 +653,12 @@ a.icon-rss:hover, a.icon-rss:active, a.icon-rss:focus{
 	float:right;
 	text-align:right;
 }
+.infinite-scroll #nav-below, .infinite-scroll .wp-pagenavi{
+	display:none;
+}
+#infinite-footer{
+	display:none;
+}
 /*****Sidebar**********/
 #sidebar{
 	display:block;
@@ -981,7 +987,7 @@ a.icon-facebook:hover, a.icon-facebook:active, a.icon-facebook:focus{
 .format-image{
 	background:#22283B;
 }
-.format-image header .entry-meta a, .format-image .yarpp-related h3, .format-image .yarpp-related li{
+.format-image header .entry-meta a, .format-image .yarpp-related h3, .format-image .yarpp-related li, .format-image .entry-content p{
 	color:#bbb;
 }
 .format-image header h1{
