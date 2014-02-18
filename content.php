@@ -18,7 +18,12 @@
         </div><!-- .entry-summary -->
     <?php else : ?>
         <div class="entry-content">
-            <?php the_post_thumbnail();?>
+        	<?php if ( has_post_thumbnail() ) : ?>
+        	<figure class="post-thumb-container">
+				<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'fanoe' ), the_title_attribute( 'echo=0' ) ) ); ?>"><?php the_post_thumbnail();?></a>
+				<?php echo fanoe_post_thumbnail_caption();?>
+            </figure>
+            <?php endif; ?>
             <?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'fanoe' ) ); ?>
             <?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'fanoe' ) . '</span>', 'after' => '</div>' ) ); ?>
         </div><!-- .entry-content -->

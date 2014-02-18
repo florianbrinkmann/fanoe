@@ -5,6 +5,26 @@ For a detailed documentation visit: http://themes.webdesign-florian-brinkmann.de
 Changelog:
 ||||||||||||||
 
+Version 1.3 — 18.02.2014
+---
+- the Featured Images are now linking to the full article
+- You can add a description to the Featured Image, using the field "Caption" in the Featured-Image-Dialog
+- updated the french translation
+
+
+
+
+
+
+Version 1.2.18 — 31.01.2014
+---
+- centered the spinner-image from infinite scroll
+
+
+
+
+
+
 Version 1.2.17 — 31.01.2014
 ---
 - added the "responsive-layout" Tag to the style.css
