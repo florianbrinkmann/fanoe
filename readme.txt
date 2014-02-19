@@ -5,6 +5,15 @@ For a detailed documentation visit: http://themes.webdesign-florian-brinkmann.de
 Changelog:
 ||||||||||||||
 
+Version 1.3.1 — 19.02.2014
+---
+- fixed a Problem with the captions, if the Featured-Image is used for more than one article.
+
+
+
+
+
+
 Version 1.3 — 18.02.2014
 ---
 - the Featured Images are now linking to the full article
