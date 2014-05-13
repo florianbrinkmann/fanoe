@@ -1,9 +1,30 @@
-|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+﻿|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 For a detailed documentation visit: http://themes.webdesign-florian-brinkmann.de/fanoe/
 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
 Changelog:
 ||||||||||||||
+
+Version 1.4.1 — 13.05.2014
+---
+- added a few translations in german, french and dutch
+
+
+
+
+
+
+Version 1.4 — 12.05.2014
+---
+- added a Sharing-Button for LinkedIn
+- reduced the sidebar – less wide
+- added a print-button and a print-stylesheet
+- now the sharing-buttons in the single view appear directly under the content
+
+
+
+
+
 
 Version 1.3.1 — 19.02.2014
 ---

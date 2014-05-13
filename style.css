@@ -4,7 +4,7 @@ Theme URI: http://themes.webdesign-florian-brinkmann.de/fanoe/
 Author: Florian Brinkmann
 Author URI: http://webdesign-florian-brinkmann.de
 Description: The Fanoe Theme is a fully responsive theme with a off canvas sidebar. The post-formats are highlighted with different background colors. In the Theme Customizer you can change things like the Design Color, visibility of the share buttons in blog- and singleview, background-image for the header text and so on. Social Media Channels can be added with the Social Media Widget.
-Version: 1.3.1
+Version: 1.4.1
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: post-formats, one-column, custom-background, light, responsive-layout, sticky-post, theme-options, translation-ready, threaded-comments, white, custom-colors, custom-header
@@ -523,9 +523,6 @@ a.image:hover, a.image:active, a.image:focus{
 .nojs #branding .sidebar-button{
 	display:none;
 }
-.active-sidebar #branding .sidebar-button{
-	right:60%;
-}
 
 #main{
 	position:relative;
@@ -608,7 +605,7 @@ a.icon-youtube:hover, a.icon-youtube:active, a.icon-youtube:focus{
 	background:none;
 	color:#bb0000;
 }
-a.icon-linkedin:hover, a.icon-linkedin:active, a.icon-linkedin:focus{
+a.icon-linkedin:hover, a.icon-linkedin:active, a.icon-linkedin:focus,  #share .icon-linkedin{
 	background:none;
 	color:#007bb6;
 }
@@ -726,7 +723,7 @@ a.icon-rss:hover, a.icon-rss:active, a.icon-rss:focus{
 	line-height:2em;
 	margin:0 auto;
 	text-align:center;
-	width:50%;
+	width:85%;
 }
 #sidebar .widget ul{
 	margin-bottom:2em;
@@ -768,7 +765,7 @@ a.icon-rss:hover, a.icon-rss:active, a.icon-rss:focus{
 	padding-top:40px;
 }
 .active-sidebar #branding, .active-sidebar #main{
-	right:60%;
+	right:30%;
 }
 .active-sidebar #branding .sidebar-button{
 	background:none;
@@ -776,12 +773,15 @@ a.icon-rss:hover, a.icon-rss:active, a.icon-rss:focus{
 	text-align:right;
 	width:100%;
 }
+.active-sidebar #branding .sidebar-button{
+	right:30%;
+}
 .active-sidebar #sidebar{
 	border-left:5px solid #27ae60;	
 	min-height:100% !important;
 	height:auto;
-	left:40%;
-	width:59%;
+	left:70%;
+	width:29%;
 }
 /********Sidebar mit JS Ende ******/
 /****Sidebar Ende*******/
@@ -798,15 +798,16 @@ a.icon-rss:hover, a.icon-rss:active, a.icon-rss:focus{
 	margin-left:102px;
 	margin-top:0;
 }
-#share h2{
-	float:left;
+#share{
+	font-size:1.2em;
 }
 #share .social{
-	float:left;
-	font-size:1.5em;
-	line-height:1.333em;
-	margin-left:1em;
-	margin-top:1em;
+	display:table;
+	margin:0 auto;
+}
+#share a.social:hover, #share a.social:focus, #share a.social:active{
+	background:none;
+	color:#444;
 }
 #author-avatar{
 	height:100%;
@@ -928,7 +929,7 @@ input[type=reset]:hover, input[type=submit]:hover, input[type=reset]:active, inp
 .format-link header h1{
 	color:#eee;
 }
-.format-link .entry-meta a:hover, .format-link .entry-meta a:active, .format-link .entry-meta a:focus, .format-link .entry-meta, .format-link .entry-content p{
+.format-link .entry-meta a:hover, .format-link .entry-meta a:active, .format-link .entry-meta a:focus, .format-link .entry-meta, .format-link .entry-content p, .format-link #share a, .format-link #share a:active, .format-link #share a:focus, .format-link #share a:hover{
 	color:#eee;
 }
 .format-link .entry-meta a.icon-google-plus:hover, .format-link .entry-meta a.icon-google-plus:active, .format-link .entry-meta a.icon-google-plus:focus{
@@ -953,7 +954,7 @@ input[type=reset]:hover, input[type=submit]:hover, input[type=reset]:active, inp
 .format-gallery header h1{
 	color:#eee;
 }
-.format-gallery header .entry-meta a:hover, .format-gallery header .entry-meta a:active, .format-gallery header .entry-meta a:focus, .format-gallery footer.entry-meta a:hover, .format-gallery footer.entry-meta a:active, .format-gallery footer.entry-meta a:focus{
+.format-gallery header .entry-meta a:hover, .format-gallery header .entry-meta a:active, .format-gallery header .entry-meta a:focus, .format-gallery footer.entry-meta span a:hover, .format-gallery footer.entry-meta span a:active, .format-gallery footer.entry-meta span a:focus, .format-gallery #share a, .format-gallery #share a:hover, .format-gallery #share a:focus, .format-gallery #share a:active{
 	color:#eee;
 }
 .format-gallery, .format-gallery footer.entry-meta{
@@ -993,15 +994,6 @@ figure.gallery-thumb{
 }
 .gallery-caption {
 	margin-left: 0;
-}
-.format-gallery .entry-meta a.icon-google-plus:hover, .format-gallery .entry-meta a.icon-google-plus:active, .format-gallery .entry-meta a.icon-google-plus:focus{
-	color:#d34836;
-}
-.format-gallery .entry-meta a.icon-twitter:hover, .format-gallery .entry-meta a.icon-twitter:active, .format-gallery .entry-meta a.icon-twitter:focus{
-	color:#00aced;
-}
-.format-gallery .entry-meta a.icon-facebook:hover, .format-gallery .entry-meta a.icon-facebook:active, .format-gallery .entry-meta a.icon-facebook:focus{
-	color:#3b5998;
 }
 
 /*********** Format Galerie Ende **********/
@@ -1050,7 +1042,7 @@ a.icon-facebook:hover, a.icon-facebook:active, a.icon-facebook:focus{
 .format-image header h1{
 	color:#eee;
 }
-.format-image .entry-meta a:hover, .format-image .entry-meta a:active, .format-image .entry-meta a:focus{
+.format-image .entry-meta a:hover, .format-image .entry-meta a:active, .format-image .entry-meta a:focus, .format-image #share a, .format-image #share a:active, .format-image #share a:hover, .format-image #share a:focus{
 	color:#eee;
 }
 .format-image, .format-image footer.entry-meta{
@@ -1132,7 +1124,7 @@ a.icon-facebook:hover, a.icon-facebook:active, a.icon-facebook:focus{
 .format-status .entry-meta a{
 	color:#333;
 }
-.format-status .entry-meta a:hover, .format-status .entry-meta a:active, .format-status .entry-meta a:focus, .format-status header .entry-meta{
+.format-status .entry-meta a:hover, .format-status .entry-meta a:active, .format-status .entry-meta a:focus, .format-status header .entry-meta, .format-status #share a, .format-status #share a:active, .format-status #share a:focus, .format-status #share a:hover{
 	color:#444;
 }
 
@@ -1154,7 +1146,7 @@ a.icon-facebook:hover, a.icon-facebook:active, a.icon-facebook:focus{
 .format-aside header h1{
 	color:#eee;
 }
-.format-aside .entry-meta a:hover, .format-aside .entry-meta a:active, .format-aside .entry-meta a:focus{
+.format-aside .entry-meta a:hover, .format-aside .entry-meta a:active, .format-aside .entry-meta a:focus, .format-aside #share a, .format-aside #share a:focus, .format-aside #share a:active, .format-aside #share a:hover{
 	color:#eee;
 }
 .format-aside footer.entry-meta{
@@ -1165,11 +1157,11 @@ a.icon-facebook:hover, a.icon-facebook:active, a.icon-facebook:focus{
 
 @font-face {
   font-family: 'fontello';
-  src: url('font/fontello.eot?3743398');
-  src: url('font/fontello.eot?3743398#iefix') format('embedded-opentype'),
-       url('font/fontello.woff?3743398') format('woff'),
-       url('font/fontello.ttf?3743398') format('truetype'),
-       url('font/fontello.svg?3743398#fontello') format('svg');
+  src: url('font/fontello.eot?57094016');
+  src: url('font/fontello.eot?57094016#iefix') format('embedded-opentype'),
+       url('font/fontello.woff?57094016') format('woff'),
+       url('font/fontello.ttf?57094016') format('truetype'),
+       url('font/fontello.svg?57094016#fontello') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -1195,6 +1187,7 @@ a.icon-facebook:hover, a.icon-facebook:active, a.icon-facebook:focus{
 	/* fix buttons height, for twitter bootstrap */
 	line-height: 2em;
 }
+.icon-print:before { content: '\e812'; } /* '' */
 .icon-foursquare:before { content: '\e80e'; } /* '' */
 .icon-xing:before { content: '\e80f'; } /* '' */
 .icon-wordpress:before { content: '\e80d'; } /* '' */
@@ -1241,16 +1234,6 @@ a.icon-facebook:hover, a.icon-facebook:active, a.icon-facebook:focus{
 	}
 	.active-sidebar #branding .sidebar-button{
 		right:0;
-	}
-	.active-sidebar #branding, .active-sidebar #main{
-		right:70%;
-	}
-	.active-sidebar #sidebar{
-		left:30%;
-		width:69%;
-	}
-	#sidebar .widget{
-		width:70%;
 	}	
 	.wp-pagenavi{
 		width:100%;
@@ -1338,11 +1321,17 @@ a.icon-facebook:hover, a.icon-facebook:active, a.icon-facebook:focus{
 	figure.post-thumb-container{
 		margin-top:2em;	
 	}
-	#share .social{
-		clear:both;
-		line-height:1.333em;
-		margin-left:0;
-		margin-top:0;
+}
+@media print{
+	#branding .sidebar-button, #share, #comments, #nav-single, .post-thumb-container, .entry-meta, #branding{
+		display:none !important;
 	}
-
+	.entry-content a:after {
+		content: " [" attr(href) "] ";
+	}
+	img {
+		page-break-before: auto; 
+		page-break-after: auto; 
+		page-break-inside: avoid;
+	}
 }

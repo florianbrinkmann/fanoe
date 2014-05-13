@@ -36,6 +36,19 @@
                     <?php endif; ?>
                     <?php the_content(); ?>
                     <?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'fanoe' ) . '</span>', 'after' => '</div>' ) ); ?>
+					<?php $share_btns_singleview = get_theme_mod( 'share_btns_singleview' ); if($share_btns_singleview == 0){}else{ ?>
+		
+                        <div id="share" class="clearfix">
+                            <ul class="social">
+                                <li><a class="icon-gplus" href="https://plus.google.com/share?url=<?php echo urlencode(get_permalink($post->ID)); ?>&amp;title=<?php echo rawurlencode(strip_tags(get_the_title())) ?>" target="blank" title="<?php _e('Share on Google +', 'fanoe')?>"></a></li>
+                                <li><a class="icon-twitter" href="https://twitter.com/intent/tweet?source=webclient&amp;text=<?php echo rawurlencode(strip_tags(get_the_title())) ?>%20<?php echo urlencode(get_permalink($post->ID)); ?>" target="blank" title="<?php _e('Share on Twitter', 'fanoe')?>"></a></li>
+                                <li><a class="icon-facebook" href="http://www.facebook.com/sharer.php?u=<?php echo urlencode(get_permalink($post->ID)); ?>&amp;t=<?php echo rawurlencode(strip_tags(get_the_title())) ?>" target="blank" title="<?php _e('Share on Facebook', 'fanoe')?>"></a></li>
+                                <li><a class="icon-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<?php echo urlencode(get_permalink($post->ID)); ?>&amp;title=<?php echo rawurlencode(strip_tags(get_the_title())) ?>" target="blank" title="<?php _e('Share on LinkedIn', 'fanoe')?>"></a></li>
+                            </ul>
+                            <a onclick="javascript:print();" href="#" class="social"><i class="icon-print"></i></a>
+                        </div>
+                    <?php } ?>
+
                 </div><!-- .entry-content -->
                         
                 <footer class="entry-meta">
@@ -52,7 +65,7 @@
                         } else {
                             $utility_text = __( 'This entry was posted by <a href="%6$s">%5$s</a>.<br>Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'fanoe' );
                         }
-            
+            			
                         printf(
                             $utility_text,
                             $categories_list,
@@ -63,26 +76,12 @@
                             esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) )
                         );
                     ?>
-                    
 					<?php edit_post_link( __( 'Edit', 'fanoe' ), '<span class="edit-link">', '</span>' ); ?>
                         
                 </footer><!-- .entry-meta -->
             
             </article><!-- #post-<?php the_ID(); ?> -->
         
-		<?php $share_btns_singleview = get_theme_mod( 'share_btns_singleview' ); if($share_btns_singleview == 0){}else{ ?>
-		
-            <div id="share" class="clearfix">
-                <h2 class="share"><?php _e('Share this Article', 'fanoe')?></h2>
-                <ul class="social">
-                    <li><a class="icon-gplus" href="https://plus.google.com/share?url=<?php echo urlencode(get_permalink($post->ID)); ?>&amp;title=<?php echo rawurlencode(strip_tags(get_the_title())) ?>" target="blank" title="<?php _e('Share on Google +', 'fanoe')?>"></a></li>
-                    <li><a class="icon-twitter" href="https://twitter.com/intent/tweet?source=webclient&amp;text=<?php echo rawurlencode(strip_tags(get_the_title())) ?>%20<?php echo urlencode(get_permalink($post->ID)); ?>" target="blank" title="<?php _e('Share on Twitter', 'fanoe')?>"></a></li>
-                    <li><a class="icon-facebook" href="http://www.facebook.com/sharer.php?u=<?php echo urlencode(get_permalink($post->ID)); ?>&amp;t=<?php echo rawurlencode(strip_tags(get_the_title())) ?>" target="blank" title="<?php _e('Share on Facebook', 'fanoe')?>"></a></li>
-                </ul>
-            
-            </div>
-		
-		<?php } ?>
 
 		<?php $author_bio = get_theme_mod( 'author_bio' );if($author_bio ==0){?>
 			
