@@ -5,6 +5,26 @@ For a detailed documentation visit: http://themes.webdesign-florian-brinkmann.de
 Changelog:
 ||||||||||||||
 
+Version 1.4.3 — 06.07.2014
+---
+- reduced a few margins for small displays
+- now the name of the author is displayed in the blogview
+- bigger font-size for small displays
+
+
+
+
+
+
+Version 1.4.2 — 17.05.2014
+---
+- fixed a problem with formats from date and time at articles and comments – now you can change the format in the backend at the point „Settings > General“. For german, dutch and france the format was „j F Y“ in the „Custom“-Input from „Date Format“ and „h:i“ in the Custom-Field „Time Format“. Its automatically separated by an „@“.
+
+
+
+
+
+
 Version 1.4.1 — 13.05.2014
 ---
 - added a few translations in german, french and dutch

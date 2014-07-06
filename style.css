@@ -4,7 +4,7 @@ Theme URI: http://themes.webdesign-florian-brinkmann.de/fanoe/
 Author: Florian Brinkmann
 Author URI: http://webdesign-florian-brinkmann.de
 Description: The Fanoe Theme is a fully responsive theme with a off canvas sidebar. The post-formats are highlighted with different background colors. In the Theme Customizer you can change things like the Design Color, visibility of the share buttons in blog- and singleview, background-image for the header text and so on. Social Media Channels can be added with the Social Media Widget.
-Version: 1.4.1
+Version: 1.4.3
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: post-formats, one-column, custom-background, light, responsive-layout, sticky-post, theme-options, translation-ready, threaded-comments, white, custom-colors, custom-header
@@ -140,14 +140,21 @@ figure.post-thumb-container{
     max-width:40%;
     margin: 0em 1.625em 1em 0;
 }
-figure .attachment-post-thumbnail {
+figure.post-thumb-container-large{
+	display:block;
+	margin:0;
+	margin-top:2em;
+	position:relative;
+    max-width:100%;
+}
+figure .attachment-post-thumbnail, figure .attachment-large {
 	display:block;
 	float:none;
 	height:auto;
 	margin:0;
 	max-width:100%;
 }
-.post-thumb-container figcaption{
+.post-thumb-container figcaption, .post-thumb-container-large figcaption{
 	background:rgba(0,0,0,.75);
 	bottom:0;
 	-moz-box-sizing:border-box;
@@ -161,11 +168,11 @@ figure .attachment-post-thumbnail {
 	position:absolute;
 	width:100%;
 }
-.post-thumb-container figcaption a{
+.post-thumb-container figcaption a, .post-thumb-container-large figcaption a{
 	color:#fff;
 	text-decoration:underline;
 }
-.post-thumb-container figcaption a:hover, .post-thumb-container figcaption a:active, .post-thumb-container figcaption a:focus{
+.post-thumb-container figcaption a:hover, .post-thumb-container figcaption a:active, .post-thumb-container figcaption a:focus, .post-thumb-container-large figcaption a:hover, .post-thumb-container-large figcaption a:active, .post-thumb-container-large figcaption a:focus{
 	background:none;
 	color:#fff;
 	text-decoration:none;
@@ -1042,18 +1049,14 @@ a.icon-facebook:hover, a.icon-facebook:active, a.icon-facebook:focus{
 .format-image header h1{
 	color:#eee;
 }
-.format-image .entry-meta a:hover, .format-image .entry-meta a:active, .format-image .entry-meta a:focus, .format-image #share a, .format-image #share a:active, .format-image #share a:hover, .format-image #share a:focus{
+.format-image .entry-meta a:hover, .format-image .entry-meta a:active, .format-image .entry-meta a:focus, .format-image #share a, .format-image #share a:active, .format-image #share a:hover, .format-image #share a:focus, .format-image, .format-image footer.entry-meta{
 	color:#eee;
 }
 .format-image, .format-image footer.entry-meta{
 	border-color:#444;
-	color:#eee;
-}
-.format-image footer.entry-meta{
-	border-color:#555;
 }
 .format-image ul.social a{
-	color:#777;
+	color:#bbb;
 }
 /*********** Format Image Ende **********/
 
@@ -1244,6 +1247,9 @@ a.icon-facebook:hover, a.icon-facebook:active, a.icon-facebook:focus{
 	#wrapper{
 		font-size:1.4em;
 	}
+	article{
+		padding-top:1em;
+	}
 	.active-sidebar #branding, .active-sidebar #main{
 		right:85%;
 	}
@@ -1257,9 +1263,15 @@ a.icon-facebook:hover, a.icon-facebook:active, a.icon-facebook:focus{
 }
 @media screen and (max-width:470px){
 	#wrapper{
-		font-size:1.2em;
+		font-size:1.3em;
 	}
-	
+	article{
+		padding-top:.5em;
+	}
+	.entry-header h1{
+		margin-bottom:.7em;	
+		margin-top:1em;	
+	}
 	blockquote {
 		margin: 0 2em;
 	}

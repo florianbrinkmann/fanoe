@@ -20,7 +20,7 @@
 					<?php if ( 'post' == get_post_type() ) : ?>
                     
                     <div class="entry-meta">
-                        <?php the_time(__('F j, Y \@ g:i a', 'fanoe')); ?>
+                        <?php echo sprintf( __( '%1$s @ %2$s', 'fanoe' ), get_the_date(), get_the_time() );  ?>
                     </div><!-- .entry-meta -->
                    
                     <?php endif; ?>
@@ -28,12 +28,7 @@
                 </header><!-- .entry-header -->
                         
                 <div class="entry-content">
-					<?php if ( has_post_thumbnail() ) : ?>
-                    <figure class="post-thumb-container">
-                        <a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'fanoe' ), the_title_attribute( 'echo=0' ) ) ); ?>"><?php the_post_thumbnail();?></a>
-                        <?php echo fanoe_post_thumbnail_caption();?>
-                    </figure>
-                    <?php endif; ?>
+                	<?php fanoe_the_post_thumbnail() ?>
                     <?php the_content(); ?>
                     <?php wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __( 'Pages:', 'fanoe' ) . '</span>', 'after' => '</div>' ) ); ?>
 					<?php $share_btns_singleview = get_theme_mod( 'share_btns_singleview' ); if($share_btns_singleview == 0){}else{ ?>

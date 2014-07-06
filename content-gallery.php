@@ -2,7 +2,7 @@
 	<header class="entry-header">
 		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'fanoe' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
         <div class="entry-meta">
-            <a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'fanoe' ), the_title_attribute( 'echo=0' ) ) ); ?>"><?php the_time(__('F j, Y \@ g:i a', 'fanoe')); ?></a>
+            <a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'fanoe' ), the_title_attribute( 'echo=0' ) ) ); ?>"><?php echo sprintf( __( '%1$s @ %2$s', 'fanoe' ), get_the_date(), get_the_time() );  ?></a>
         </div><!-- .entry-meta -->
         
         <div class="comments-trackbacks">
@@ -39,33 +39,7 @@
 	<?php endif; ?>
 
 	<footer class="entry-meta">
-		<?php $show_sep = false; ?>
-		<?php if ( is_object_in_taxonomy( get_post_type(), 'category' ) ) : // Hide category text when not supported ?>
-            <?php
-            /* translators: used between list items, there is a space after the comma */
-            $categories_list = get_the_category_list( __( ', ', 'fanoe' ) );
-            if ( $categories_list ):
-            ?>
-                <span class="cat-links">
-                    <?php printf( __( '<span class="%1$s">Posted in</span> %2$s', 'fanoe' ), 'entry-utility-prep entry-utility-prep-cat-links', $categories_list );
-                    $show_sep = true; ?>
-                </span>
-            <?php endif; // End if categories ?>
-        <?php endif; // End if is_object_in_taxonomy( get_post_type(), 'category' ) ?>
-        <?php if ( is_object_in_taxonomy( get_post_type(), 'post_tag' ) ) : // Hide tag text when not supported ?>
-            <?php
-            /* translators: used between list items, there is a space after the comma */
-            $tags_list = get_the_tag_list( '', __( ', ', 'fanoe' ) );
-            if ( $tags_list ):
-                if ( $show_sep ) : ?>
-                    <span class="sep"> | </span>
-                <?php endif; // End if $show_sep ?>
-                <span class="tag-links">
-                    <?php printf( __( '<span class="%1$s">Tagged</span> %2$s', 'fanoe' ), 'entry-utility-prep entry-utility-prep-tag-links', $tags_list );
-                    $show_sep = true; ?>
-                </span>
-            <?php endif; // End if $tags_list ?>
-        <?php endif; // End if is_object_in_taxonomy( get_post_type(), 'post_tag' ) ?>
+		<?php fanoe_footer_meta() ?>
         <?php $share_btns_blogview = get_theme_mod( 'share_btns_blogview' ); if($share_btns_blogview == 0){}else{ ?>
             <ul class="social">
                 <li><a class="icon-gplus" href="https://plus.google.com/share?url=<?php echo urlencode(get_permalink($post->ID)); ?>&amp;title=<?php echo rawurlencode(strip_tags(get_the_title())) ?>" target="blank" title="<?php _e('Share on Google +', 'fanoe')?>"></a></li>

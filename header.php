@@ -13,7 +13,7 @@
 <!--<![endif]-->
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
-	<meta name="viewport" content="width=device-width" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	
     <title><?php wp_title( '|', true, 'right' );?></title>
     
@@ -21,7 +21,6 @@
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
     
     <?php wp_head();?>
-
 </head>
 
 <body <?php body_class('nojs'); ?>>
@@ -43,7 +42,9 @@
 
 	<?php endif; ?>
             <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-            <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+            <?php if (get_bloginfo( 'description' ) ): ?>
+                <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+            <?php endif;?>
             
             <a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to content', 'fanoe' ); ?>"><?php _e( 'Skip to content', 'fanoe' ); ?></a>
             <a class="sidebar-button<?php $sidebar_btn = get_theme_mod( 'sidebar_btn' ); if ($sidebar_btn != ""){echo " text";}else{echo " stripes";}?><?php if ( is_admin_bar_showing() ) { echo " admin-bar"; }?>" href="#sidebar-menu"><?php if ($sidebar_btn != ""){echo $sidebar_btn;}else{?>≡<?php }?></a>

@@ -203,8 +203,80 @@ $link = substr_replace($link, '', $offset, $end-$offset);
 return $link;
 }
 add_filter('the_content_more_link', 'fanoe_remove_more_jump_link');
+/**
+Get the width of the post-thumbnail, to check if it should be displayed fullwidth or not.
+**/
+function fanoe_get_size_of_post_thumbnail() { 
+	global $post;
+	$image_data = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "full" );
+	$image_width = $image_data[1];
+	return $image_width;
+}
 
+function fanoe_the_post_thumbnail(){?>
+	<?php $fanoe_get_size_of_post_thumbnail=fanoe_get_size_of_post_thumbnail() ?>
+	<?php if ( has_post_thumbnail()) : ?>
+         <?php if ($fanoe_get_size_of_post_thumbnail < 800 ) : ?>
+            <figure class="post-thumb-container">
+                <a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'fanoe' ), the_title_attribute( 'echo=0' ) ) ); ?>"><?php the_post_thumbnail();?></a>
+                <?php echo fanoe_post_thumbnail_caption();?>
+            </figure>
+        <?php else: ?>
+            <figure class="post-thumb-container-large">
+                <a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'fanoe' ), the_title_attribute( 'echo=0' ) ) ); ?>"><?php the_post_thumbnail('large');?></a>
+                <?php echo fanoe_post_thumbnail_caption();?>
+            </figure>
+        <?php endif; ?>
+    <?php endif; ?>
+	
+<?php }
 
+function fanoe_post_thumbnail_caption() {
+	global $post;
+	
+	$thumbnail_id    = get_post_thumbnail_id($post->ID);
+	$thumbnail_image = get_posts(array('p' => $thumbnail_id, 'post_type' => 'attachment'));
+	if ($thumbnail_image && isset($thumbnail_image[0])) {
+	 if($thumbnail_image[0]->post_excerpt != ""){
+		 echo "<figcaption>";
+		 echo $thumbnail_image[0]->post_excerpt; 
+		 echo "</figcaption>";
+	 }
+  }
+}
+
+function fanoe_footer_meta(){?>
+	<?php $show_sep = false; ?>
+    <?php if ( is_object_in_taxonomy( get_post_type(), 'category' ) ) : // Hide category text when not supported ?>
+        <?php
+            /* translators: used between list items, there is a space after the comma */
+            $categories_list = get_the_category_list( __( ', ', 'fanoe' ) );
+            if ( $categories_list ):
+        ?>
+            <span class="cat-links">
+                <?php printf( __( '<span class="%1$s">Posted in</span> %2$s', 'fanoe' ), 'entry-utility-prep entry-utility-prep-cat-links', $categories_list );
+                $show_sep = true; ?>
+            </span>
+        <?php endif; // End if categories ?>
+    <?php endif; // End if is_object_in_taxonomy( get_post_type(), 'category' ) ?>
+    
+    <?php if ( is_object_in_taxonomy( get_post_type(), 'post_tag' ) ) : // Hide tag text when not supported ?>
+        <?php
+            /* translators: used between list items, there is a space after the comma */
+            $tags_list = get_the_tag_list( '', __( ', ', 'fanoe' ) );
+            if ( $tags_list ):
+                if ( $show_sep ) : ?>
+                    <span class="sep"> | </span>
+                <?php endif; // End if $show_sep ?>
+            <span class="tag-links">
+                <?php printf( __( '<span class="%1$s">Tagged</span> %2$s', 'fanoe' ), 'entry-utility-prep entry-utility-prep-tag-links', $tags_list );
+                $show_sep = true; ?>
+            </span>
+        <?php endif; // End if $tags_list ?>
+    <?php endif; // End if is_object_in_taxonomy( get_post_type(), 'post_tag' ) ?>
+    <span> <?php _e( 'by', 'fanoe' );?> <?php the_author(); ?></span>
+    <?php edit_post_link( __( 'Edit', 'fanoe' ), '<span class="edit-link">| ', '</span>' ); ?>
+<?php }
 
 
 if ( ! function_exists( 'fanoe_comment' ) ) :
@@ -245,7 +317,7 @@ function fanoe_comment( $comment, $args, $depth ) {
 						esc_url( get_comment_link( $comment->comment_ID ) ),
 						get_comment_time( 'c' ),
 						/* translators: 1: date, 2: time */
-						sprintf( __( '%1$s @ %2$s', 'fanoe' ), get_comment_date(__('F j, Y', 'fanoe')), get_comment_time(__('g:i a', 'fanoe')) )
+						sprintf( __( '%1$s @ %2$s', 'fanoe' ), get_comment_date(), get_comment_time() )
 					);
 				?>
 			</header><!-- .comment-meta -->
@@ -830,19 +902,6 @@ function fanoe_link_to_menu_editor( $args )
     return $output;
 }
 
-function fanoe_post_thumbnail_caption() {
-	global $post;
-	
-	$thumbnail_id    = get_post_thumbnail_id($post->ID);
-	$thumbnail_image = get_posts(array('p' => $thumbnail_id, 'post_type' => 'attachment'));
-	if ($thumbnail_image && isset($thumbnail_image[0])) {
-	 if($thumbnail_image[0]->post_excerpt != ""){
-		 echo "<figcaption>";
-		 echo $thumbnail_image[0]->post_excerpt; 
-		 echo "</figcaption>";
-	 }
-  }
-}
 //Customizer
 
 
