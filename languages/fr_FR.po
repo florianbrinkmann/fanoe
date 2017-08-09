@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Fanoe v1.4.2\n"
+"Project-Id-Version: Fanoe v1.4.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-06-29 09:29:42+0000\n"
+"PO-Revision-Date: 2015-04-16 14:01:07+0000\n"
 "Last-Translator: François Charlet <contact@francoischarlet.ch>\n"
 "Language-Team: François Charlet <contact@francoischarlet.ch>\n"
 "MIME-Version: 1.0\n"
@@ -24,11 +24,6 @@ msgstr ""
 #@ fanoe
 msgid "This is somewhat embarrassing, isn&rsquo;t it?"
 msgstr "Aucune page n'a été trouvée… C'est un peu embarrassant, n'est-ce pas ?"
-
-#: 404.php:10
-#@ fanoe
-msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching, or one of the links below, can help."
-msgstr "Désolé, le contenu demandé est introuvable. Peut-être qu'une recherche ou un des liens ci-dessous peut aider ?"
 
 #: archive.php:12
 #, php-format
@@ -225,7 +220,6 @@ msgstr "<span class=\"%1$s\">Mot(s) clé(s) :</span> %2$s"
 #: index.php:26
 #: page.php:25
 #: search.php:45
-#: single.php:146
 #: tag.php:58
 #@ fanoe
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
@@ -238,7 +232,6 @@ msgstr "<span class=\"meta-nav\">&larr;</span> Articles précédents"
 #: index.php:27
 #: page.php:26
 #: search.php:46
-#: single.php:147
 #: tag.php:59
 #@ fanoe
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
@@ -280,7 +273,7 @@ msgstr "Site web"
 msgid "Page %s"
 msgstr "Page %s"
 
-#: header.php:49
+#: header.php:46
 #@ fanoe
 msgid "Skip to content"
 msgstr "Aller au contenu"
@@ -374,12 +367,7 @@ msgstr "Menu de la barre latérale"
 msgid "Add a menu"
 msgstr "Ajouter un menu"
 
-#: sidebar.php:11
-#@ fanoe
-msgid "Theme: Fanoe by <a href=\"http://webdesign-florian-brinkmann.de\">Webdesign Florian Brinkmann</a>"
-msgstr "Thème : Fanoe par <a href=\"http://webdesign-florian-brinkmann.de\">Webdesign Florian Brinkmann</a>"
-
-#: functions.php:1025
+#: functions.php:1029
 #@ fanoe
 msgid "CSS"
 msgstr "CSS"
@@ -460,12 +448,12 @@ msgstr "Afficher les boutons de partage sur chaque article"
 msgid "Diplay the Author Bio in the single view also on a single-author blog."
 msgstr "Afficher la biographie de l'auteur sur chaque article, même sur un site avec un seul auteur."
 
-#: functions.php:1029
+#: functions.php:1036
 #@ fanoe
 msgid "Copyright"
 msgstr "Copyright"
 
-#: functions.php:1040
+#: functions.php:1050
 #@ fanoe
 msgid "Content"
 msgstr "Contenu"
@@ -475,27 +463,27 @@ msgstr "Contenu"
 msgid "Here you can add your social media channels."
 msgstr "Vous pouvez ajouter ici vos profils de réseaux sociaux."
 
-#: functions.php:968
+#: functions.php:969
 #@ fanoe
 msgid "Change the Size of the Header Background Image"
 msgstr "Changer la taille de l'image d'arrière-plan de l'en-tête"
 
-#: functions.php:987
+#: functions.php:988
 #@ fanoe
 msgid "The Image fills out the whole header"
 msgstr "L'image remplit tout l'en-tête"
 
-#: functions.php:988
+#: functions.php:989
 #@ fanoe
 msgid "100% Height, Auto Width"
 msgstr "Hauteur à 100%, largeur automatique"
 
-#: functions.php:1035
+#: functions.php:1045
 #@ fanoe
 msgid "Replace the Sidebar Button with your text"
 msgstr "Remplacer le bouton de la barre latérale avec votre texte"
 
-#: functions.php:1020
+#: functions.php:1024
 #@ fanoe
 msgid "Custom CSS"
 msgstr "CSS personnalisé"
@@ -516,4 +504,14 @@ msgstr "Partager via LinkedIn"
 #@ fanoe
 msgid "by"
 msgstr "par"
+
+#: 404.php:10
+#@ fanoe
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Impossible de trouver ce que vous cherchez. Essayez de faire une recherche."
+
+#: sidebar.php:11
+#@ fanoe
+msgid "Theme: Fanoe by <a rel=\"nofollow\" href=\"http://florianbrinkmann.de\">Florian Brinkmann</a>"
+msgstr "Theme: Fanoe par <a rel=\"nofollow\" href=\"http://florianbrinkmann.de\">Florian Brinkmann</a>"
 

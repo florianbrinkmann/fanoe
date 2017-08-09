@@ -1,9 +1,64 @@
-﻿|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-For a detailed documentation visit: http://themes.webdesign-florian-brinkmann.de/fanoe/
-|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-
-Changelog:
+﻿Changelog:
 ||||||||||||||
+
+Version 1.4.9 — 30.05.2016
+---
+- removed deprecated tags from style.css
+
+
+
+
+
+
+Version 1.4.8 — 09.12.2015
+---
+- removed http protocol from google font url
+
+
+
+
+
+
+Version 1.4.7 — 17.04.2015
+---
+- added missing string in german and french translation
+
+
+
+
+
+
+Version 1.4.6 — 16.04.2015
+---
+- small css fix
+
+
+
+
+
+
+Version 1.4.5 — 16.04.2015
+---
+- fixed wrong text colors for some elements in post formats
+- optimized sanitizing of custom css (https://themes.trac.wordpress.org/ticket/23796#comment:2) 
+- added parameter id to register_sidebar() in functions.php (shown as Deprecated Call from the Deprecated Call Plugin)
+
+
+
+
+
+
+Version 1.4.4 — 18.03.2015
+---
+- small corrections in the css
+- added sanitize callbacks to the add_setting functions in the Customizer
+- added rel="nofollow" to the link to my homepage (in the sidebar)
+- removed the title tag from header.php and added add_theme_support( 'title-tag' ); in functions.php
+
+
+
+
+
 
 Version 1.4.3 — 06.07.2014
 ---
@@ -583,5 +638,5 @@ HTML5 Shiv v3.6
 
 
 
-Fanoe WordPress Theme, Copyright 2013 Webdesign Florian Brinkmann
+Fanoe WordPress Theme, Copyright 2015 Florian Brinkmann
 Fanoe is distributed under the terms of the GNU GPL
