@@ -7,15 +7,9 @@ Version 1.4.9 — 30.05.2016
 
 
 
-
-
-
 Version 1.4.8 — 09.12.2015
 ---
 - removed http protocol from google font url
-
-
-
 
 
 
@@ -25,15 +19,9 @@ Version 1.4.7 — 17.04.2015
 
 
 
-
-
-
 Version 1.4.6 — 16.04.2015
 ---
 - small css fix
-
-
-
 
 
 
@@ -42,9 +30,6 @@ Version 1.4.5 — 16.04.2015
 - fixed wrong text colors for some elements in post formats
 - optimized sanitizing of custom css (https://themes.trac.wordpress.org/ticket/23796#comment:2) 
 - added parameter id to register_sidebar() in functions.php (shown as Deprecated Call from the Deprecated Call Plugin)
-
-
-
 
 
 
@@ -57,17 +42,11 @@ Version 1.4.4 — 18.03.2015
 
 
 
-
-
-
 Version 1.4.3 — 06.07.2014
 ---
 - reduced a few margins for small displays
 - now the name of the author is displayed in the blogview
 - bigger font-size for small displays
-
-
-
 
 
 
@@ -77,15 +56,9 @@ Version 1.4.2 — 17.05.2014
 
 
 
-
-
-
 Version 1.4.1 — 13.05.2014
 ---
 - added a few translations in german, french and dutch
-
-
-
 
 
 
@@ -98,15 +71,9 @@ Version 1.4 — 12.05.2014
 
 
 
-
-
-
 Version 1.3.1 — 19.02.2014
 ---
 - fixed a Problem with the captions, if the Featured-Image is used for more than one article.
-
-
-
 
 
 
@@ -118,24 +85,15 @@ Version 1.3 — 18.02.2014
 
 
 
-
-
-
 Version 1.2.18 — 31.01.2014
 ---
 - centered the spinner-image from infinite scroll
 
 
 
-
-
-
 Version 1.2.17 — 31.01.2014
 ---
 - added the "responsive-layout" Tag to the style.css
-
-
-
 
 
 
@@ -146,16 +104,10 @@ Version 1.2.16 — 31.01.2014
 
 
 
-
-
-
 Version 1.2.15 — 12.09.2013
 ---
 - now you can replace the Sidebar Button (the stripes) with your own Text in the Theme Customizer
 - replaced the Sharing Buttons in the Single View, so they are displayed next the Sharing-Text
-
-
-
 
 
 
@@ -165,24 +117,15 @@ Version 1.2.14 — 07.09.2013
 
 
 
-
-
-
 Version 1.2.13 — 05.09.2013
 ---
 - updated the readme.txt for 1.2.12
 
 
 
-
-
-
 Version 1.2.12 — 05.09.2013
 ---
 - fixed a little problem in the style.css
-
-
-
 
 
 
@@ -193,15 +136,9 @@ Version 1.2.11 — 05.09.2013
 
 
 
-
-
-
 Version 1.2.10 — 14.08.2013
 ---
 - fixed the problem, that the rss-icon wasn't displayed
-
-
-
 
 
 
@@ -212,16 +149,10 @@ Version 1.2.9 — 13.08.2013
 
 
 
-
-
-
 Version 1.2.8 — 12.08.2013
 ---
 - dutch Translation, thanks to Pauline van der Sluijs
 - fixed a little problem with the option "Design Color" in the Theme Customizer (left-border color of the sidebar and active/hover/focus color of the title weren't changed
-
-
-
 
 
 
@@ -231,24 +162,15 @@ Version 1.2.7 — 11.08.2013
 
 
 
-
-
-
 Version 1.2.6 — 11.08.2013
 ---
 - Fixed a Problem with HTML in the Copyright-Field
 
 
 
-
-
-
 Version 1.2.5 — 10.08.2013
 ---
 - Theme supports custom backgrounds
-
-
-
 
 
 
@@ -260,14 +182,9 @@ Version 1.2.4 — 10.08.2013
 - if the Header-Text is not visible, but an background-image for the Header is set, a link to the Homepage is set
 
 
-
-
-
 Version 1.2.3 — 08.08.2013
 ---
 - fixed a PHP warning
-
-
 
 
 Version 1.2.2 — 08.08.2013
