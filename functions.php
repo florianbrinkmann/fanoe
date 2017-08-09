@@ -71,27 +71,6 @@ if ( ! function_exists( 'fanoe_setup' ) ):
 	}
 endif; // fanoe_setup
 
-
-/*
- * Print the <title> tag based on what is being viewed.
- */
-function fanoe_custom_wp_title( $title ) {
-	global $page, $paged;
-
-	if ( is_feed() ) {
-		return $title;
-	}
-
-	$site_description = get_bloginfo( 'description' );
-
-	$filtered_title = $title . get_bloginfo( 'name' );
-	$filtered_title .= ( ! empty( $site_description ) && ( is_home() || is_front_page() ) ) ? ' | ' . $site_description : '';
-	$filtered_title .= ( 2 <= $paged || 2 <= $page ) ? ' | ' . sprintf( __( 'Page %s', 'fanoe' ), max( $paged, $page ) ) : '';
-
-	return $filtered_title;
-}
-
-add_filter( 'wp_title', 'fanoe_custom_wp_title' );
 /**
  * Enqueues scripts and styles for front-end.
  *
@@ -134,68 +113,15 @@ function fanoe_menus() {
 }
 
 add_action( 'init', 'fanoe_menus' );
-/**
- * Sets the post excerpt length to 40 words.
- *
- * To override this length in a child theme, remove the filter and add your own
- * function tied to the excerpt_length filter hook.
- */
-function fanoe_excerpt_length( $length ) {
-	return 40;
-}
 
-add_filter( 'excerpt_length', 'fanoe_excerpt_length' );
-
-if ( ! function_exists( 'fanoe_continue_reading_link' ) ) :
+if ( ! function_exists( 'fanoe_continue_reading_link' ) ) {
 	/**
 	 * Returns a "Continue Reading" link for excerpts
 	 */
 	function fanoe_continue_reading_link() {
 		return ' <a href="' . esc_url( get_permalink() ) . '">' . __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'fanoe' ) . '</a>';
 	}
-endif; // fanoe_continue_reading_link
-
-/**
- * Replaces "[...]" (appended to automatically generated excerpts) with an ellipsis and fanoe_continue_reading_link().
- *
- * To override this in a child theme, remove the filter and add your own
- * function tied to the excerpt_more filter hook.
- */
-function fanoe_auto_excerpt_more( $more ) {
-	return ' &hellip;' . fanoe_continue_reading_link();
-}
-
-add_filter( 'excerpt_more', 'fanoe_auto_excerpt_more' );
-
-/**
- * Adds a pretty "Continue Reading" link to custom post excerpts.
- *
- * To override this link in a child theme, remove the filter and add your own
- * function tied to the get_the_excerpt filter hook.
- */
-function fanoe_custom_excerpt_more( $output ) {
-	if ( has_excerpt() && ! is_attachment() ) {
-		$output .= fanoe_continue_reading_link();
-	}
-
-	return $output;
-}
-
-add_filter( 'get_the_excerpt', 'fanoe_custom_excerpt_more' );
-
-/**
- * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
- */
-function fanoe_page_menu_args( $args ) {
-	if ( ! isset( $args['show_home'] ) ) {
-		$args['show_home'] = true;
-	}
-
-	return $args;
-}
-
-add_filter( 'wp_page_menu_args', 'fanoe_page_menu_args' );
-
+} // fanoe_continue_reading_link
 
 function fanoe_remove_more_jump_link( $link ) {
 	$offset = strpos( $link, '#more-' );
@@ -210,6 +136,7 @@ function fanoe_remove_more_jump_link( $link ) {
 }
 
 add_filter( 'the_content_more_link', 'fanoe_remove_more_jump_link' );
+
 /**
  * Get the width of the post-thumbnail, to check if it should be displayed fullwidth or not.
  **/
@@ -294,7 +221,7 @@ function fanoe_footer_meta() {
 <?php }
 
 
-if ( ! function_exists( 'fanoe_comment' ) ) :
+if ( ! function_exists( 'fanoe_comment' ) ) {
 	/**
 	 * Template for comments and pingbacks.
 	 *
@@ -359,32 +286,7 @@ if ( ! function_exists( 'fanoe_comment' ) ) :
 				break;
 		endswitch; // end comment_type check
 	}
-endif;
-
-
-// Customize Comment Form
-function fanoe_fields( $fields ) {
-	if ( isset( $req ) && isset( $commenter ) && isset( $aria_req ) ) {
-		$fields['author'] = '<p class="comment-form-author">' . '<label for="author">' . __( 'Name*', 'fanoe' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) .
-		                    '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>';
-	}
-	if ( isset( $req ) && isset( $commenter ) && isset( $aria_req ) ) {
-		$fields['email'] = '<p class="comment-form-email"><label for="email">' . __( 'Email*', 'fanoe' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) .
-		                   '<input id="email" name="email" type="text" value="' . esc_attr( $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></p>';
-	}
-	if ( isset( $req ) && isset( $commenter ) && isset( $aria_req ) ) {
-		$fields['url'] = '<p class="comment-form-url"><label for="url">' . __( 'Website', 'fanoe' ) . '</label>' .
-		                 '<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></p>';
-	}
-
-	return $fields;
-
 }
-
-add_filter( 'comment_form_default_fields', 'fanoe_fields' );
-?>
-<?php
-
 
 if ( function_exists( 'register_sidebar' ) ) {
 
@@ -398,11 +300,6 @@ if ( function_exists( 'register_sidebar' ) ) {
 		'after_title'   => '</h4>',
 	) );
 }
-
-
-add_filter( 'gallery_style', create_function( '$a', 'return "
-	<div class=\'gallery\'>";' ) );
-
 
 //Kommentaranzahl in fanoe_comment_count speichern
 
@@ -439,47 +336,7 @@ AND comment_post_ID = $thePostID AND comment_approved='1'";
 	}
 }
 
-/**
- * Menu fallback. Link to the menu editor if that is useful.
- *
- * @param  array $args
- *
- * @return string
- */
-function fanoe_link_to_menu_editor( $args ) {
-	if ( ! current_user_can( 'manage_options' ) ) {
-		return;
-	}
-
-	// see wp-includes/nav-menu-template.php for available arguments
-	extract( $args );
-
-	$link = $link_before
-	        . '<a href="' . admin_url( 'nav-menus.php' ) . '">' . $before . __( 'Add a menu', 'fanoe' ) . $after . '</a>'
-	        . $link_after;
-
-	// We have a list
-	if ( false !== stripos( $items_wrap, '<ul' )
-	     or false !== stripos( $items_wrap, '<ol' )
-	) {
-		$link = "<li>$link</li>";
-	}
-
-	$output = sprintf( $items_wrap, $menu_id, $menu_class, $link );
-	if ( ! empty ( $container ) ) {
-		$output = "<$container class='$container_class' id='$container_id'>$output</$container>";
-	}
-
-	if ( $echo ) {
-		echo $output;
-	}
-
-	return $output;
-}
-
 //Customizer
-
-
 function fanoe_customize_register( $wp_customize ) {
 	$colors   = array();
 	$colors[] = array(
