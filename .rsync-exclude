@@ -1,0 +1,9 @@
+- .git/
+- node_modules/
+- fanoe/
+- scripts/
+- package.json
+- package-lock.json
+- webpack.config.js
+- fanoe.zip
+- .*

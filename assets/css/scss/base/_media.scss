@@ -57,6 +57,11 @@ figure.alignright {
 	margin: add-unit($space-half, 'em') 0;
 }
 
+.wp-caption,
+.wp-caption-text,
+.gallery-caption {
+}
+
 /* Image caption.
    ========================================================================== */
 figcaption {
