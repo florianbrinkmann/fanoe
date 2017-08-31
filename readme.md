@@ -38,7 +38,7 @@ Source: https://github.com/necolas/normalize.css
 
 ## Changelog
 
-### 2.0.0
+### 2.0.0 – 31.08.2017
 
 **This release requires WordPress 4.7 or higher**
 
