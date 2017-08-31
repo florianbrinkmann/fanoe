@@ -1,53 +1,76 @@
-<?php get_header();?>
-<div id="main">
-    <div id="content">
+<?php
+/**
+ * Search template.
+ *
+ * @version 2.0.0
+ *
+ * @package Fanoe
+ */
 
-		<?php if ( have_posts() ) : ?>
+/**
+ * Include header.php.
+ */
+get_header(); ?>
+	<main class="main">
+		<div class="content">
+			<?php
+			/**
+			 * Check if we have posts.
+			 */
+			if ( have_posts() ) { ?>
+				<header class="page-header">
+					<h1 class="page-title"><?php printf(
+							__( 'Search results for: %s', 'fanoe' ),
+							get_search_query()
+						); ?></h1>
+				</header>
+				<?php
+				/**
+				 * Loop the posts-
+				 */
+				while ( have_posts() ) {
+					/**
+					 * Setup post.
+					 */
+					the_post();
 
-            <header class="page-header">
-                <h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'fanoe' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-            </header>
+					/**
+					 * Include partial to display post content.
+					 */
+					get_template_part( 'partials/content', get_post_format() );
 
-            <?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
+				} // End while().
+			} else { ?>
+				<article class="post no-results not-found">
+					<header class="page-header">
+						<h1 class="page-title"><?php printf(
+								__( 'Nothing found for: %s', 'fanoe' ),
+								get_search_query()
+							); ?></h1>
+					</header>
+					<div class="entry-content">
+						<?php
+						/**
+						 * Display the search form.
+						 */
+						get_search_form(); ?>
+					</div><!-- .entry-content -->
+				</article>
+			<?php } // End if().
 
-                <?php
-                    /* Include the Post-Format-specific template for the content.
-                     * If you want to overload this in a child theme then include a file
-                     * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-                     */
-                    get_template_part( 'content', get_post_format() );
-                ?>
+			/**
+			 * Display the posts navigation.
+			 */
+			fanoe_the_posts_navigation(); ?>
+		</div>
+	</main>
+<?php
+/**
+ * Include sidebar.php.
+ */
+get_sidebar();
 
-            <?php endwhile; ?>
-
-		<?php else : ?>
-
-            <article id="post-0" class="post no-results not-found">
-                <header class="entry-header">
-                    <h1 class="entry-title"><?php _e( 'Nothing Found', 'fanoe' ); ?></h1>
-                </header><!-- .entry-header -->
-
-                <div class="entry-content">
-                    <p><?php _e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'fanoe' ); ?></p>
-                    <?php get_search_form(); ?>
-                </div><!-- .entry-content -->
-            </article><!-- #post-0 -->
-
-        <?php endif; ?>
-
-	</div><!-- #content -->
-	
-	<?php if (  $wp_query->max_num_pages > 1 ) : ?>
-		<?php if(function_exists('wp_pagenavi')) { wp_pagenavi(); }else{ ?>
-			
-            <nav id="nav-below">
-				<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'fanoe' ) ); ?></div>
-				<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'fanoe' ) ); ?></div>
-			</nav><!-- end nav-below -->
-		<?php }?>
-	<?php endif; ?>		
-</div>
-
-<?php get_sidebar(); ?>
-<?php get_footer();?>
+/**
+ * Include footer.php.
+ */
+get_footer();

@@ -1,0 +1,48 @@
+/* ==========================================================================
+   #LISTS
+   ========================================================================== */
+
+/* Definition lists.
+   ========================================================================== */
+dl {
+	margin: add-unit($space, 'em') 0;
+}
+
+dt {
+	margin: add-unit($space-quarter, 'em') 0 0;
+}
+
+dd {
+	margin: 0 0 0 add-unit($space, 'em');
+}
+
+/* Ordered and unordered lists.
+   ========================================================================== */
+ul,
+ol {
+	margin: add-unit($space, 'em') 0;
+	padding-left: 1rem;
+}
+
+ul > li {
+	list-style-type: none;
+	position: relative;
+}
+
+ul > li::before {
+	content: "·";
+	left: -#{add-unit($space-half, 'em')};
+	top: 0;
+	position: absolute;
+}
+
+li + li {
+	margin: add-unit($space-quarter, 'em') 0 0;
+}
+
+ul ol,
+ol ul,
+ul ul,
+ol ol {
+	margin: add-unit($space-quarter, 'em') 0 0;
+}

@@ -1,46 +1,110 @@
 <?php
-if ( post_password_required() )
+/**
+ * Comments template.
+ *
+ * @version 2.0.0
+ *
+ * @package Fanoe
+ */
+
+if ( post_password_required() ) {
 	return;
-?>
-
-<div id="comments" class="comments-area">
-	<?php // You can start editing here -- including this comment! ?>
-
-	<?php if ( have_comments() ) : ?>
-		<?php if (!empty($comments_by_type['comment'])) { ?>
-            <h2 id="comments-title">
-                <?php fanoe_comment_count(); ?>
-            </h2>
-
-            <ol class="commentlist">
-                <?php wp_list_comments( array( 'callback' => 'fanoe_comment', 'style' => 'ol', 'type'=>'comment' ) ); ?>
-            </ol><!-- .commentlist -->
-		<?php } if (!empty($comments_by_type['pings'])) { ?>
-	 
-            <h2 id="trackbacks-title"><?php fanoe_trackback_count(); ?></h2>
-	 
-            <ol class="commentlist">
-                <?php wp_list_comments( array( 'callback' => 'fanoe_comment', 'type' => 'pings' ) );?>
-            </ol>
-        <?php } ?>
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
-            <nav id="comment-nav-below" class="navigation" role="navigation">
-                <h1 class="assistive-text section-heading"><?php _e( 'Comment navigation', 'fanoe' ); ?></h1>
-                <div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'fanoe' ) ); ?></div>
-                <div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'fanoe' ) ); ?></div>
-            </nav>
-		<?php endif; // check for comment navigation ?>
-
-		<?php
-		/* If there are no comments and comments are closed, let's leave a note.
-		 * But we only want the note on posts and pages that had comments in the first place.
+} ?>
+<aside aria-labelledby="aside" id="comments" class="comments-area">
+	<?php if ( have_comments() ) {
+		/**
+		 * We cannot use the second parameter from comments_template()
+		 * to separate the reactions because if they are
+		 * broken on multiple pages, the count() would only return
+		 * the number of comments and pings which are displayed
+		 * on the current page, not the total.
+		 *
+		 * Because of that, we use our own function to get the comments by type.
 		 */
-		if ( ! comments_open() && get_comments_number() ) : ?>
-			<p class="nocomments"><?php _e( 'Comments are closed.' , 'fanoe' ); ?></p>
-		<?php endif; ?>
+		$comments_by_type = fanoe_get_comments_by_type();
+		if ( ! empty( $comments_by_type['comment'] ) ) {
+			/**
+			 * Save the comment count.
+			 */
+			$comment_number = count( $comments_by_type['comment'] ); ?>
+			<h2 class="comments-title" id="comments-title">
+				<?php printf( /* translators: Title for comment list. 1=comment number, 2=post title */
+					_n(
+						'%1$s Comment on “%2$s”',
+						'%1$s Comments on “%2$s”',
+						$comment_number,
+						'fanoe'
+					),
+					number_format_i18n( $comment_number ),
+					get_the_title() ); ?>
+			</h2>
 
-	<?php endif; // have_comments() ?>
+			<ul class="commentlist">
+				<?php
+				/**
+				 * We need to specify the per_page key because otherwise
+				 * the separated reactions would not be broken correctly into
+				 * multiple pages.
+				 */
+				wp_list_comments( [
+					'callback' => 'fanoe_comment',
+					'style'    => 'ul',
+					'type'     => 'comment',
+					'per_page' => $comment_args['number'],
+				] ); ?>
+			</ul>
+		<?php }
+		if ( ! empty( $comments_by_type['pings'] ) ) {
+			/**
+			 * Save the count of trackbacks and pingbacks.
+			 */
+			$trackback_number = count( $comments_by_type['pings'] ); ?>
+			<h2 class="trackbacks-title" id="trackbacks-title">
+				<?php printf( /* translators: Title for trackback list. 1=trackback number, 2=post title */
+					_n(
+						'%1$s Trackback on “%2$s”',
+						'%1$s Trackbacks on “%2$s”',
+						$trackback_number,
+						'fanoe'
+					),
+					number_format_i18n( $trackback_number ),
+					get_the_title() ); ?>
+			</h2>
 
-	<?php comment_form(array('comment_notes_after' => '', 'label_submit' => __('Submit Comment', 'fanoe' ))); ?>
+			<ul class="commentlist">
+				<?php
+				/**
+				 * Display the pings in short version.
+				 */
+				wp_list_comments( [
+					'type'       => 'pings',
+					'short_ping' => true,
+					'per_page'   => $comment_args['number'],
+				] ); ?>
+			</ul>
+		<?php }
+		/**
+		 * Only show the comments navigation if one of the reaction counts
+		 * is larger than the set number of comments per page. Necessary because
+		 * of our separation. Otherwise, the navigation would also be displayed if
+		 * we should display 4 comments per page and have 3 comments and 2 trackbacks.
+		 */
+		if ( ( isset( $trackback_number ) && $trackback_number > $comment_args['number'] ) || ( isset( $comment_number ) && $comment_number > $comment_args['number'] ) ) {
+			the_comments_navigation();
+		}
 
-</div><!-- #comments .comments-area -->
+		/**
+		 * Display comments closed hint if comments are closed but we already have comments.
+		 */
+		if ( ! comments_open() && get_comments_number() ) { ?>
+			<p class="nocomments"><?php _e( 'Comments are closed.', 'fanoe' ); ?></p>
+		<?php }
+	} // End if().
+
+	/**
+	 * Display comment form with modified submit label.
+	 */
+	comment_form( [
+		'label_submit' => __( 'Submit Comment', 'fanoe' ),
+	] ); ?>
+</aside>

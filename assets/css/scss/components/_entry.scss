@@ -1,0 +1,58 @@
+/* ==========================================================================
+  #ENTRY
+  ========================================================================== */
+
+.post:not(:first-of-type),
+.page:not(:first-of-type) {
+	margin-top: add-unit($space-triple);
+}
+
+.archive,
+.search {
+	.post,
+	.page {
+		margin-top: add-unit($space-triple);
+	}
+}
+
+.entry-header {
+	text-align: center;
+
+	a {
+		box-shadow: none;
+
+		&:focus {
+			box-shadow: 0 1px 0 currentColor;
+		}
+	}
+}
+
+.entry-meta span {
+	display: block;
+	font-style: italic;
+
+	&:not(:first-of-type) {
+		margin-top: add-unit($space-quarter);
+	}
+}
+
+.entry-content {
+	margin-top: add-unit($space);
+
+	> :first-child {
+		margin-top: 0;
+	}
+
+	> :last-child {
+		margin-bottom: 0;
+	}
+}
+
+.entry-footer {
+	font-style: italic;
+	position: relative;
+
+	p {
+		margin-top: add-unit($space);
+	}
+}

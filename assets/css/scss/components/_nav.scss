@@ -1,0 +1,52 @@
+/* ==========================================================================
+   #NAVIGATION AND PAGINATION
+   ========================================================================== */
+.posts-navigation,
+.post-navigation {
+	margin-top: add_unit($space-double);
+
+	&::after {
+		@include clearfix;
+	}
+}
+
+.nav-previous {
+	margin-top: add-unit($space-half);
+	position: relative;
+	text-align: right;
+
+	@media screen and (min-width: 25em) {
+		float: right;
+		margin-top: 0;
+		width: calc(50% - #{add-unit($space-half)});
+	}
+}
+
+.post-navigation .nav-previous::after {
+	content: '»';
+	display: block;
+	font-size: 1.2em;
+	position: absolute;
+	right: -1rem;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.post-navigation .nav-next::before {
+	content: '«';
+	display: block;
+	font-size: 1.2em;
+	position: absolute;
+	left: -1rem;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.nav-next {
+	position: relative;
+
+	@media screen and (min-width: 25em) {
+		float: left;
+		width: calc(50% - #{add-unit($space-half)});
+	}
+}

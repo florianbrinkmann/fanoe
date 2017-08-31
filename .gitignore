@@ -1,0 +1,4 @@
+node_modules
+assets/css/**/*.css
+*.map
+bundle.js

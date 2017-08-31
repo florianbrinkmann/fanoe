@@ -1,0 +1,23 @@
+/* ==========================================================================
+   #HTML
+   ========================================================================== */
+
+html {
+	background: $color-white;
+	color: $color-tundora;
+	font-family: "Libre Baskerville", Georgia, serif;
+	font-size: 1em;
+	line-height: $line-height;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+
+	@media screen and (min-width: 40em) {
+		font-size: 1.1em;
+	}
+
+	@media screen and (min-width: 45em) {
+		font-size: 1.15em;
+	}
+}

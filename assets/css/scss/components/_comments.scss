@@ -1,0 +1,33 @@
+/* ==========================================================================
+  #COMMENTS
+  ========================================================================== */
+
+.commentlist {
+	padding: 0;
+
+	.children {
+		margin-left: add-unit($space-half);
+	}
+}
+
+.comment {
+	margin-top: add-unit($space-double);
+
+	&::before {
+		display: none;
+	}
+
+	.avatar {
+		float: left;
+	}
+
+	.comment-meta {
+		margin-left: 55px;
+		position: relative;
+		top: -.2em;
+
+		&::after {
+			@include clearfix;
+		}
+	}
+}

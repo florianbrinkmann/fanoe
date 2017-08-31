@@ -1,0 +1,55 @@
+/**
+ * CONTENTS
+ *
+ * BASE
+ * HTML........................HTML element styles.
+ * Wrapper.....................Wrapper element styles.
+ * Reset.......................Style resets.
+ * Normalize...................Normalize.
+ * Media.......................Media element styles.
+ * Typography..................Typography styles.
+ * Buttons.....................Button styles.
+ * Lists.......................List styles.
+ * Tables......................Table styles.
+ * Forms.......................Form element styles.
+ * Global classes..............Global classes like .clearfix and .screen-reader-text.
+ *
+ * COMPONENTS
+ * Nav.........................Nav styles.
+ * Entry.......................Entry styles (post, page…)
+ * Comments....................Comments styles.
+ * Widgets.....................Widgets styles.
+ * Gallery items...............Styles for items of the default WordPress gallery.
+ *
+ * LAYOUT
+ * Header......................Site header styles.
+ * Footer......................Site footer styles.
+ * Sidebar.....................Sidebar styles.
+ * Comments area...............Comments area styles.
+ * Gallery.....................WordPress gallery styles.
+ *
+ */
+@import "abstracts/variables";
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "base/html";
+@import "base/wrapper";
+@import "base/reset";
+@import "base/normalize";
+@import "base/media";
+@import "base/typography";
+@import "base/buttons";
+@import "base/lists";
+@import "base/tables";
+@import "base/forms";
+@import "base/global-classes";
+@import "components/nav";
+@import "components/entry";
+@import "components/comments";
+@import "components/widgets";
+@import "components/gallery-items";
+@import "layout/header";
+@import "layout/footer";
+@import "layout/sidebar";
+@import "layout/comments-area";
+@import "layout/gallery";

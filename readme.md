@@ -26,20 +26,45 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
+**Fanoe bundles the following third-party resources:**
+
+ally.js v1.4.1, Copyright Rodney Rehm  
+License: MIT License  
+Source: https://github.com/medialize/ally.js 
+
+normalize.css v5.0.0, Copyright Nicolas Gallagher  
+License: MIT License  
+Source: https://github.com/necolas/normalize.css 
 
 ## Changelog
 
 ### 2.0.0
 
+**This release requires WordPress 4.7 or higher**
+
+#### Added
+* Support for custom logo feature.
+
 #### Changed
 * Code refactoring.
 * Doc improvements.
 * Use HTML5 markup for galleries.
+* moved functions from functions.php to various files inside the inc folder.
+* moved template partials (content- files) inside partials folder.
+* use @version comment for each PHP file, so you can use the »Child Theme Check« plugin (https://wordpress.org/plugins/child-theme-check/).
+* no longer include Source Code Pro as code font.
+* use get_theme_file_uri() to enqueue scripts and styles.
 
 #### Removed
 * Social media widget. Use a plugin instead (for example https://wordpress.org/plugins/svg-social-menu/).
 * Social share button feature. Use a plugin instead, so you also have them after switching the theme.
 * matchmedia.js, HTML5 shiv, and styles for browsers lower than IE7.
+* menu position for sidebar. You are more flexible with using the menu widget for displaying menus.
+* Copyright customizer setting. You can use a text widget to add that.
+* Header image and background image support.
+* background colors for post formats (a few colors did not look very well…).
+* support for various post formats (do not need them after removing background colors).
+* Option to set text for sidebar button.
 
 ### 1.4.9 – 30.05.2016
 * removed deprecated tags from style.css

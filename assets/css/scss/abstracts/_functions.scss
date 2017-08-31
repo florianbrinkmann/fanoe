@@ -1,0 +1,12 @@
+//
+// #FUNCTIONS
+//
+@function line-height($font-size, $ratio-to-base-line-height, $base-line-height: $line-height, $relative-base-font-size: 1) {
+	$abs-font-size: $relative-base-font-size * 16;
+	$line-height: $base-line-height * $ratio-to-base-line-height;
+	@return ($relative-base-font-size * $abs-font-size * $line-height) / ($font-size * $abs-font-size);
+}
+
+@function add-unit($value, $unit: 'em') {
+	@return $value + 0#{$unit};
+}

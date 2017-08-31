@@ -1,0 +1,38 @@
+/* ==========================================================================
+  #HEADER
+  ========================================================================== */
+
+.branding {
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: add-unit($space);
+	padding-right: add-unit($space);
+	padding-top: add-unit($space-double);
+	text-align: center;
+}
+
+.header-wrapper {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: $content-max-width;
+}
+
+.site-title {
+	font-size: 1.424em;
+	font-weight: 700;
+	line-height: line-height(1.424, 1.25);
+	margin: 0;
+
+	a {
+		color: $color-tundora;
+		box-shadow: none;
+
+		&:hover {
+			color: $color-white;
+		}
+
+		&:focus {
+			box-shadow: 0 1px 0 currentColor;
+		}
+	}
+}

@@ -1,0 +1,101 @@
+/* ==========================================================================
+   #MEDIA
+   ========================================================================== */
+
+/* figure and img tag.
+   ========================================================================== */
+figure {
+	line-height: 0;
+	margin: add-unit($space-half, 'em') 0 0;
+
+	> figcaption,
+	img {
+		line-height: $line-height;
+	}
+
+	.img-link {
+		@include no-link-style;
+	}
+}
+
+figure,
+img {
+	max-width: 100%;;
+	height: auto;
+}
+
+/* Image alignment.
+   ========================================================================== */
+.alignleft,
+.alignright {
+	margin-bottom: add-unit($space-half, 'em');
+	margin-top: .4em;
+}
+
+figure.alignleft,
+figure.alignright {
+	margin-top: 1.2em;
+}
+
+.alignleft {
+	float: left;
+	margin-right: add-unit($space-half, 'em');
+}
+
+.alignright {
+	float: right;
+	margin-left: add-unit($space-half, 'em');
+}
+
+.aligncenter {
+	display: block;
+	margin: add-unit($space-half, 'em') auto;
+}
+
+.alignnone {
+	display: block;
+	margin: add-unit($space-half, 'em') 0;
+}
+
+/* Image caption.
+   ========================================================================== */
+figcaption {
+	clear: both;
+	font-size: $font-size-small;
+	padding-top: add-unit($space-quarter, 'em');
+}
+
+/* Image links.
+   ========================================================================== */
+.img-link-wrapper {
+	line-height: 0;
+
+	img {
+		line-height: $line-height;
+	}
+}
+
+.img-link,
+figure[id^='attachment_'] > a {
+	@include no-link-style;
+}
+
+/* Full bleed images.
+   ========================================================================== */
+.full-bleed-img {
+	display: block;
+	position: relative;
+	width: 100%;
+}
+
+.entry-content > .full-bleed-img {
+	margin-top: add-unit($space-half, 'em');
+}
+
+.full-bleed-img-paragraph > .full-bleed-img {
+	margin: 0;
+}
+
+.full-bleed-img-paragraph::after {
+	@include clearfix;
+}

@@ -1,35 +1,57 @@
-<?php get_header();?>
+<?php
+/**
+ * Main template file. Fallback for everything in the template hierarchy.
+ *
+ * @version 2.0.0
+ *
+ * @package Fanoe
+ */
 
-<div id="main">
-	<div id="content">
-		<?php if ( have_posts() ) : ?>
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
-				<?php get_template_part( 'content', get_post_format() ); ?>
-			<?php endwhile; ?>
-		<?php else : ?>
-            <article id="post-0" class="post no-results not-found">
-                <header class="entry-header">
-                    <h1 class="entry-title"><?php _e( 'Nothing Found', 'fanoe' ); ?></h1>
-                </header><!-- .entry-header -->
+/**
+ * Include header.php.
+ */
+get_header(); ?>
+	<main class="main">
+		<div class="content">
+			<?php
+			/**
+			 * Check if we have posts.
+			 */
+			if ( have_posts() ) {
+				/**
+				 * Loop them.
+				 */
+				while ( have_posts() ) {
+					/**
+					 * Setup post.
+					 */
+					the_post();
 
-                <div class="entry-content">
-                    <p><?php _e( 'Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.', 'fanoe' ); ?></p>
-                    <?php get_search_form(); ?>
-                </div><!-- .entry-content -->
-            </article><!-- #post-0 -->
-        <?php endif; ?>
-	</div><!-- #content -->
-	<?php if (  $wp_query->max_num_pages > 1 ) : ?>
-		<?php if(function_exists('wp_pagenavi')) { wp_pagenavi(); }else{ ?>
-            <nav id="nav-below">
-                <div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'fanoe' ) ); ?></div>
-                <div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'fanoe' ) ); ?></div>
-            </nav><!-- end nav-below -->
-        <?php }?>
-	<?php endif; ?>		
-</div>
+					/**
+					 * Include template part for displaying the post’s content.
+					 */
+					get_template_part( 'partials/content', get_post_format() );
+				} // End while().
+			} else {
+				/**
+				 * We have no posts, so include partials/content-none.php.
+				 */
+				get_template_part( 'partials/content', 'none' );
+			} // End if().
 
-<?php get_sidebar(); ?>
+			/**
+			 * Display the posts navigation.
+			 */
+			fanoe_the_posts_navigation(); ?>
+		</div>
+	</main>
+<?php
+/**
+ * Include sidebar.php.
+ */
+get_sidebar();
 
-<?php get_footer(); ?>
+/**
+ * Include footer.php.
+ */
+get_footer();
