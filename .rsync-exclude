@@ -2,6 +2,7 @@
 - node_modules/
 - fanoe/
 - scripts/
+- assets/css/scss
 - package.json
 - package-lock.json
 - webpack.config.js

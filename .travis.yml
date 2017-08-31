@@ -18,3 +18,4 @@ deploy:
   file: fanoe.zip
   on:
     repo: FlorianBrinkmann/fanoe
+    tags: true
