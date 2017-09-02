@@ -8,6 +8,11 @@
  */
 
 /**
+ * Load the translation.
+ */
+add_action( 'after_setup_theme', 'fanoe_load_translation' );
+
+/**
  * Run add_theme_support() functions.
  */
 add_action( 'after_setup_theme', 'fanoe_add_theme_support' );
