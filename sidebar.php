@@ -9,12 +9,12 @@
 
 ?>
 <button class="sidebar-button -open">
-	<span class="screen-reader-text"><?php _e( 'Show Sidebar' ); ?></span>
+	<span class="screen-reader-text"><?php _e( 'Show Sidebar', 'fanoe' ); ?></span>
 	<span aria-hidden="true">≡</span>
 </button>
 <aside class="sidebar" role="sidebar">
 	<button class="sidebar-button -close">
-		<span class="screen-reader-text"><?php _e( 'Close Sidebar' ); ?></span>
+		<span class="screen-reader-text"><?php _e( 'Close Sidebar', 'fanoe' ); ?></span>
 		<span aria-hidden="true">≡</span>
 	</button>
 	<div class="sidebar-content">
