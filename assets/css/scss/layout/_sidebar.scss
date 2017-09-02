@@ -54,6 +54,14 @@
 	top: 0;
 }
 
+.admin-bar .sidebar-button {
+	top: 46px;
+
+	@media screen and (min-width: 768px) {
+		top: 32px;
+	}
+}
+
 .active-sidebar {
 	.sidebar {
 		left: 10%;
