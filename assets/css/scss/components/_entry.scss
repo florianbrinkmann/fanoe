@@ -2,6 +2,12 @@
   #ENTRY
   ========================================================================== */
 .sticky {
+	/**
+	 * We have to add something here, otherwise it would
+	 * get stripped out from the SASS compiler and the theme
+	 * would not pass the Theme Check plugin.
+	 */
+	text-align: inherit;
 }
 
 .post:not(:first-of-type),

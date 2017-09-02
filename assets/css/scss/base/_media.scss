@@ -60,6 +60,12 @@ figure.alignright {
 .wp-caption,
 .wp-caption-text,
 .gallery-caption {
+	/**
+	 * We have to add something here, otherwise it would
+	 * get stripped out from the SASS compiler and the theme
+	 * would not pass the Theme Check plugin.
+	 */
+	text-align: inherit;
 }
 
 /* Image caption.
