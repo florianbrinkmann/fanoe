@@ -16,12 +16,9 @@
 	},
 	"scripts": {
 		"watch": "npm-watch",
-		"build:production": "webpack -p --env.production && npm run sass:production && npm run css:rtl && npm run css:autoprefixer && npm run minify-css",
-		"build:dev": "webpack && npm run sass:dev && npm run css:rtl && npm run css:autoprefixer && npm run minify-css",
-		"css:autoprefixer": "postcss 'assets/css/*.css' --replace --use autoprefixer",
+		"build:production": "webpack -p --env.production && npm run css:rtl && npm run minify-css",
+		"build:dev": "webpack",
 		"css:rtl": "css-flip assets/css/fanoe.css > assets/css/fanoe-rtl.css",
-		"sass:dev": "node-sass --source-map=true --indent-width=1 --output-style='expanded' --output='assets/css/' --indent-type='tab' assets/css/scss/",
-		"sass:production": "node-sass --indent-width=1 --output-style='expanded' --output='assets/css/' --indent-type='tab' assets/css/scss/",
 		"minify-css": "find assets/css/ -iname '*.css' -and -not -iname '*.min.css' -exec sh -c 'node_modules/csso-cli/bin/csso {} --input-map auto --map inline --output ${0%.css}.min.css' {} \\;"
 	},
 	"author": "Florian Brinkmann",
@@ -32,12 +29,17 @@
 		"babel-loader": "^7.1.2",
 		"babel-preset-env": "^1.6.0",
 		"css-flip": "^0.5.0",
+		"css-loader": "^0.28.7",
 		"csso-cli": "^1.0.0",
+		"extract-loader": "^1.0.1",
+		"file-loader": "^0.11.2",
 		"node-sass": "^4.5.3",
 		"npm-watch": "^0.2.0",
 		"postcss-cli": "^4.1.0",
+		"postcss-loader": "^2.0.6",
 		"run-sequence": "^1.2.2",
-		"webpack": "^3.5.5"
+		"sass-loader": "^6.0.6",
+		"webpack": "^3.5.6"
 	},
 	"dependencies": {
 		"ally.js": "^1.4.1"

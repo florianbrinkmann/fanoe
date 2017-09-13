@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 /**
  * Parts from https://blog.flennik.com/the-fine-art-of-the-webpack-2-config-dc4d19d7f172
@@ -9,10 +10,9 @@ const webpack = require('webpack');
 module.exports = (env = {}) => {
 	const isProduction = env.production === true;
 	return {
-		entry: './assets/js/src/functions.js',
+		entry: ['./assets/js/src/functions.js', './assets/css/scss/fanoe.scss'],
 		output: {
-			filename: 'bundle.js',
-			path: path.resolve(__dirname, 'assets/js')
+			filename: 'assets/js/bundle.js',
 		},
 		module: {
 			rules: [
@@ -28,6 +28,30 @@ module.exports = (env = {}) => {
 							presets: ['env']
 						}
 					}
+				},
+				{
+					test: /\.scss$/,
+					use: [
+						{
+							loader: 'file-loader',
+							options: {
+								name: '[name].css',
+								outputPath: 'assets/css/'
+							}
+						},
+						{
+							loader: 'extract-loader'
+						},
+						{
+							loader: 'css-loader'
+						},
+						{
+							loader: 'postcss-loader'
+						},
+						{
+							loader: 'sass-loader'
+						}
+					]
 				}
 			]
 		},
@@ -36,7 +60,6 @@ module.exports = (env = {}) => {
 				banner: "Want to take a look at the JS before bundled by Webpack? Check out https://github.com/FlorianBrinkmann/fanoe",
 				entryOnly: true
 			})
-
 		],
 		devtool: (() => {
 			if (isProduction) return 'hidden-source-map'
