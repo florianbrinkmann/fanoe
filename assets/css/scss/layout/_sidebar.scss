@@ -31,7 +31,7 @@
 		width: 50%;
 	}
 
-	.sidebar-button.-close {
+	.sidebar-button {
 		right: 0;
 		top: 0;
 		z-index: 1001;
@@ -54,7 +54,7 @@
 	top: 0;
 }
 
-.admin-bar .sidebar-button {
+.js .admin-bar .sidebar-button {
 	top: 46px;
 
 	@media screen and (min-width: 768px) {
