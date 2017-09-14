@@ -38,7 +38,7 @@ Source: https://github.com/necolas/normalize.css
 
 ## Changelog
 
-### 2.0.0 – 14.09.2017
+### 2.0.1 – 14.09.2017
 
 #### Fixed
 * Modified theme description and tags.
