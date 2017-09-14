@@ -9,7 +9,7 @@
 
 ## Description
 
-The Fanoe theme is a fully responsive theme with a off canvas sidebar. The post formats are highlighted with different background colors. In the customizer you can change things like the design color, background-image for the header text and so on.
+The Fanoe theme is a fully responsive theme with an off canvas sidebar. You can change the design color in the customier.
 
 ## Copyright
 
@@ -37,6 +37,13 @@ License: MIT License
 Source: https://github.com/necolas/normalize.css 
 
 ## Changelog
+
+### 2.0.0 – 14.09.2017
+
+#### Fixed
+* Modified theme description and tags.
+* Non visible customizer option for design color.
+* Gallery styles.
 
 ### 2.0.0 – 31.08.2017
 

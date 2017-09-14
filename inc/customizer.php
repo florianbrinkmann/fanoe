@@ -2,7 +2,7 @@
 /**
  * Customize related funtions.
  *
- * @version 2.0.0
+ * @version 2.0.1
  *
  * @package Fanoe
  */
@@ -31,13 +31,13 @@ function fanoe_customize_register( $wp_customize ) {
 			$wp_customize,
 			'design_color',
 			[
-				'label'   => __( 'Main Color of the Design', 'fanoe' ),
+				'label'   => __( 'Main color of the design', 'fanoe' ),
 				'section' => 'theme_options',
 			]
 		)
 	);
 
-	$wp_customize->add_section( 'content', [
+	$wp_customize->add_section( 'theme_options', [
 		'title' => __( 'Theme options', 'fanoe' ),
 	] );
 }
@@ -57,15 +57,15 @@ function fanoe_insert_customize_css() {
 	if ( '#27ae60' !== $design_color ) {
 		?>
 		<style>
-			a, .format-status header h1 a:hover, .format-status header h1 a:active, .format-status header h1 a:focus, .site-title a:hover, .site-title a:active, .site-title a:focus {
+			a, .format-status header h1 a:hover, .format-status header h1 a:active, .format-status header h1 a:focus, .site-title a:hover, .site-title a:active, .site-title a:focus, .js .sidebar .sidebar-button {
 				color: <?php echo $design_color ; ?>;
 			}
 
-			a:focus, a:active, a:hover, .format-status, input[type=reset]:hover, input[type=submit]:hover, input[type=reset]:active, input[type=submit]:active, input[type=reset]:focus, input[type=submit]:focus {
+			a:focus, a:active, a:hover, input[type=reset]:hover, input[type=submit]:hover, input[type=reset]:active, input[type=submit]:active, input[type=reset]:focus, input[type=submit]:focus {
 				background: <?php echo $design_color ; ?>;
 			}
 
-			input[type=text]:hover, input[type=password]:hover, input[type=email]:hover, input[type=url]:hover, input[type=number]:hover, textarea:hover, input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, input[type=url]:focus, input[type=number]:focus, textarea:focus {
+			input:hover, input:focus, textarea:hover, textarea:focus {
 				border-color: <?php echo $design_color ; ?>
 			}
 		</style>

@@ -1,6 +1,6 @@
 {
 	"name": "fanoe",
-	"version": "2.0.0",
+	"version": "2.0.1",
 	"description": "Fanoe WordPress theme",
 	"repository": {
 		"type": "git",
@@ -17,7 +17,7 @@
 	"scripts": {
 		"watch": "npm-watch",
 		"build:production": "webpack -p --env.production && npm run css:rtl && npm run minify-css",
-		"build:dev": "webpack",
+		"build:dev": "webpack --watch",
 		"css:rtl": "css-flip assets/css/fanoe.css > assets/css/fanoe-rtl.css",
 		"minify-css": "find assets/css/ -iname '*.css' -and -not -iname '*.min.css' -exec sh -c 'node_modules/csso-cli/bin/csso {} --input-map auto --map inline --output ${0%.css}.min.css' {} \\;"
 	},

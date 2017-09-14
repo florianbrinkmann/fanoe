@@ -1,3 +1,35 @@
 /* ==========================================================================
   #GALLERY
   ========================================================================== */
+
+.gallery {
+	margin-left: -#{add-unit($space-half, 'em')};
+	margin-right: -#{add-unit($space-half, 'em')};
+}
+
+.gallery-size-large,
+.gallery-size-full {
+	margin: 0;
+}
+
+.gallery-size-large .gallery-item,
+.gallery-size-full .gallery-item {
+	margin: 0;
+
+	&::after {
+		@include clearfix;
+	}
+}
+
+.gallery-size-large .gallery-caption,
+.gallery-size-full .gallery-caption {
+	display: block;
+}
+
+.gallery::after {
+	@include clearfix;
+}
+
+.gallery + * {
+	margin-top: 0;
+}
