@@ -45,7 +45,7 @@ Source: https://github.com/necolas/normalize.css
 * Non visible customizer option for design color.
 * Gallery styles.
 
-### 2.0.0 – 31.08.2017
+### 2.0.0 – 14.09.2017
 
 **This release requires WordPress 4.7 or higher**
 
