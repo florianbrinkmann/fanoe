@@ -32,6 +32,7 @@
 		"css-loader": "^0.28.7",
 		"csso-cli": "^1.0.0",
 		"extract-loader": "^1.0.1",
+		"extract-text-webpack-plugin": "^3.0.0",
 		"file-loader": "^0.11.2",
 		"node-sass": "^4.5.3",
 		"npm-watch": "^0.2.0",
