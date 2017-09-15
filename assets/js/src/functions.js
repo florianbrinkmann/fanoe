@@ -45,6 +45,26 @@ import ally from 'ally.js/ally';
 	 */
 	closeButton.addEventListener('click', sidebar, false);
 
+	/**
+	 * Catch clicks on the document to close sidebar on mouse click
+	 * outside the open sidebar.
+	 */
+	document.body.addEventListener('click', function (e) {
+		/**
+		 * Check if the sidebar is visible.
+		 */
+		if (root.classList.contains('active-sidebar')) {
+			/**
+			 * Check if the click was made on the .sidebar element, not the .sidebar-content.
+			 */
+			if (e.explicitOriginalTarget.classList.contains('sidebar')) {
+				disabledHandle.disengage();
+				tabHandle.disengage();
+				root.classList.remove('active-sidebar');
+			}
+		}
+	}, false);
+
 	addClassToImageLinks();
 
 	/**
