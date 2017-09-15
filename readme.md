@@ -3,7 +3,7 @@
 **Contributors:** Florian Brinkmann  
 **Requires at least:** WordPress 4.7  
 **Tested up to:** WordPress 4.8.1  
-**Version:** 2.0.0  
+**Version:** 2.0.2  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -37,6 +37,12 @@ License: MIT License
 Source: https://github.com/necolas/normalize.css 
 
 ## Changelog
+
+### 2.0.2 – 15.09.2017
+
+#### Fixed
+* Date of 2.0.0 release.
+* Small CSS improvements for checkboxes, radio, submit, file, and reset inputs.
 
 ### 2.0.1 – 14.09.2017
 

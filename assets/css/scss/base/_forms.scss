@@ -19,17 +19,23 @@ textarea {
 }
 
 input {
+	width: 100%;
 	&[type='submit'] {
 		margin-top: add_unit($space-half);
 	}
 
-	&:not([type='submit']) {
-		width: 100%;
-
-		@media screen and (min-width: 40em) {
-			width: 75%;
-		}
+	&[type='submit'],
+	&[type='reset'],
+	&[type='checkbox'],
+	&[type='file'],
+	&[type='radio'] {
+		width: auto;
 	}
+
+	@media screen and (min-width: 40em) {
+		width: 75%;
+	}
+
 }
 
 textarea {
