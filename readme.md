@@ -38,7 +38,7 @@ Source: https://github.com/necolas/normalize.css
 
 ## Changelog
 
-### 2.0.3 – 19.09.2017
+### 2.0.4 – 19.09.2017
 
 #### Fixed
 * Site title invisible on hover.
