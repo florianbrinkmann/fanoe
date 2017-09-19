@@ -57,11 +57,11 @@ function fanoe_insert_customize_css() {
 	if ( '#27ae60' !== $design_color ) {
 		?>
 		<style>
-			a, .format-status header h1 a:hover, .format-status header h1 a:active, .format-status header h1 a:focus, .site-title a:hover, .site-title a:active, .site-title a:focus, .js .sidebar .sidebar-button {
+			a, .js .sidebar .sidebar-button {
 				color: <?php echo $design_color ; ?>;
 			}
 
-			a:focus, a:active, a:hover, input[type=reset]:hover, input[type=submit]:hover, input[type=reset]:active, input[type=submit]:active, input[type=reset]:focus, input[type=submit]:focus {
+			a:focus {
 				background: <?php echo $design_color ; ?>;
 			}
 
