@@ -43,6 +43,7 @@ Source: https://github.com/necolas/normalize.css
 #### Fixed
 * Site title invisible on hover.
 * Background color for images on focus.
+* CSS fixes for links when custom design color is used.
 
 ### 2.0.3 – 15.09.2017
 
