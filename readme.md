@@ -3,7 +3,7 @@
 **Contributors:** Florian Brinkmann  
 **Requires at least:** WordPress 4.7  
 **Tested up to:** WordPress 4.8.1  
-**Version:** 2.0.3  
+**Version:** 2.0.4  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -37,6 +37,12 @@ License: MIT License
 Source: https://github.com/necolas/normalize.css 
 
 ## Changelog
+
+### 2.0.3 – 19.09.2017
+
+#### Fixed
+* Site title invisible on hover.
+* Background color for images on focus.
 
 ### 2.0.3 – 15.09.2017
 

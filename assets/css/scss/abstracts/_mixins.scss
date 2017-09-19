@@ -1,7 +1,8 @@
 @mixin no-link-style() {
 	box-shadow: none;
 
-	&:hover {
+	&:hover,
+	&:focus {
 		background: none;
 		box-shadow: none;
 	}
