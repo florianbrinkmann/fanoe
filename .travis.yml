@@ -2,7 +2,7 @@ language: php
 php:
 - '7.1'
 script:
-- 
+-
 before_deploy:
 - npm install --silent
 - npm run build:production
@@ -12,6 +12,7 @@ before_deploy:
 - rm -rf fanoe
 deploy:
   provider: releases
+  prerelease: true
   skip_cleanup: true
   api_key:
     secure: jEUSNDcx9Rr+WNdHYHwJfDAkVKLknZyPeDwxmx7huiJxfeBVdVNOyJPi2iBjiGBwF4ablDhgpVQrc9uftynYrYbR41AhBvKk7VV2C5nWexO9M4nAD22V/stKvyArK2MmvvMbFq2Y2rmY0oIXHpwsQ52d80pCrUEGQ3NfXf9DmurmGqWYI6ki1HtA3Ta1z61U80g/lvCKkSZX+WVAnPVTorGp4XD6ReVER0jADhBKctqmMZpgSWy8wN8t7hoVMutymync9mK33yobTG+fmGr4BCqZVUY//s7QnKNM/qYUZ+J3Gb+vteAi+OzDaEIXvTYZoWXnKHdrnULLD3eletsJiUNPFvMsoIlyZYOjXA4Vasf1GpkPSVePSR9e9xGT8/5Us6MvAlJixb9akx6nuQuIq/1I9hXMuFjQMXbrhOgY2b6N0E/xji3Ki08swIukAmuXcWghYliSUblBpfHJg3RDlksZ7idBH7ZUks7ZBKuVM2lYXJyy1ZBr7xgLFsg4jLvzz5xRnZgpXWx7/1UG+upMtReAmMhnRP2+fFz14fnftvO8WvxUPFO9gPhpDsGzInaqyTYzO296ZJprf1OA6xTENF/jCfUGiJVFyO0IbzKVi3DrayoOM0GRoIIlQsQrgJYvFc8bPXH174adomEFHDGHZi3Ndmtujq219i22fHmV7mA=
