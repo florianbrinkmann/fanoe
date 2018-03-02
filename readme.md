@@ -2,7 +2,7 @@
 
 **Contributors:** Florian Brinkmann  
 **Requires at least:** WordPress 4.7  
-**Tested up to:** WordPress 4.8.1  
+**Tested up to:** WordPress 4.9.4  
 **Version:** 2.0.4  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
@@ -38,6 +38,11 @@ Source: https://github.com/necolas/normalize.css
 
 ## Changelog
 
+### 2.0.5 – 02.03.2018
+
+#### Fixed
+* Safari on iOS zooms into the page after opening the sidebar.
+
 ### 2.0.4 – 19.09.2017
 
 #### Fixed
@@ -48,7 +53,7 @@ Source: https://github.com/necolas/normalize.css
 ### 2.0.3 – 15.09.2017
 
 #### Changed
-* Links style improvements (underline on hover, background color on focus).
+* Link style improvements (underline on hover, background color on focus).
 * Hide open sidebar if user clicks anywhere else.
 
 ### 2.0.2 – 15.09.2017

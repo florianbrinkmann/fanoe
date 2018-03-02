@@ -83,25 +83,24 @@ import ally from 'ally.js/ally';
 		 * sidebar is currently visible or not.
 		 */
 		if (root.classList.contains('active-sidebar')) {
-			disabledHandle = ally.maintain.disabled({
-				filter: sidebarElem,
-			});
+			setTimeout(function() {
+				disabledHandle = ally.maintain.disabled({
+					filter: sidebarElem,
+				});
 
-			tabHandle = ally.maintain.tabFocus({
-				context: sidebarElem,
-			});
+				tabHandle = ally.maintain.tabFocus({
+					context: sidebarElem,
+				});
 
-			keyHandle = ally.when.key({
-				escape: closeSidebarByKey,
+				keyHandle = ally.when.key({
+					escape: sidebar,
+				});
 			});
 		} else {
 			disabledHandle.disengage();
 			tabHandle.disengage();
+			keyHandle.disengage();
 		}
-	}
-
-	function closeSidebarByKey(event) {
-		sidebar();
 	}
 
 	function addClassToImageLinks() {
@@ -125,5 +124,4 @@ import ally from 'ally.js/ally';
 			}
 		}
 	}
-
 }
