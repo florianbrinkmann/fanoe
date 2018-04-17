@@ -16,7 +16,9 @@
 
 .js .sidebar {
 	left: 100%;
+	height: 0;
 	opacity: 0;
+	overflow: hidden;
 	position: absolute;
 	top: 0;
 	transition: opacity .3s ease, visibility 0s ease .3s, left 0s ease .3s;
@@ -65,7 +67,9 @@
 .active-sidebar {
 	.sidebar {
 		left: 10%;
+		height: auto;
 		opacity: 1;
+		overflow: visible;
 		transition-delay: 0s;
 		visibility: visible;
 		z-index: 1000;
