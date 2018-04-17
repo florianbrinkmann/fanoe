@@ -42,6 +42,16 @@ Source: https://fonts.google.com/specimen/Libre+Baskerville
 
 ## Changelog
 
+### 2.0.6 – 17.04.2018
+
+#### Changed
+
+* Bundle Libre Baskerville font instead of loading it from Google fonts.
+
+#### Fixed
+* Give sidebar height of `0` if it is not visible.
+* Added responsive styles for `video` and a `max-width: 100%` for iFrames.
+
 ### 2.0.5 – 02.03.2018
 
 #### Fixed
