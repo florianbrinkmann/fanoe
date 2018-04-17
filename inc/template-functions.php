@@ -121,11 +121,6 @@ function fanoe_scripts_styles() {
 	}
 
 	/**
-	 * Enqueue fonts.
-	 */
-	wp_enqueue_style( 'fanoe-fonts', '//fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic,700', [], null );
-
-	/**
 	 * Check if SCRIPT_DEBUG is defined and enabled.
 	 */
 	if ( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ) {

@@ -43,7 +43,7 @@ module.exports = (env = {}) => {
 							loader: 'extract-loader'
 						},
 						{
-							loader: 'css-loader'
+							loader: 'css-loader?-url'
 						},
 						{
 							loader: 'postcss-loader'

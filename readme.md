@@ -36,6 +36,10 @@ normalize.css v5.0.0, Copyright Nicolas Gallagher
 License: MIT License  
 Source: https://github.com/necolas/normalize.css 
 
+Libre Baskerville Font, Copyright 2012, Pablo Impallari and Rodrigo Fuenzalida  
+License: SIL OPEN FONT LICENSE Version 1.1  
+Source: https://fonts.google.com/specimen/Libre+Baskerville  
+
 ## Changelog
 
 ### 2.0.5 – 02.03.2018
