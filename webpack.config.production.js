@@ -1,11 +1,12 @@
+const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
-	mode: 'development',
+	mode: 'production',
 	entry: ['./assets/js/src/functions.js', './assets/css/scss/fanoe.scss'],
 	output: {
-		path: path.resolve(__dirname, 'assets/js'),
-		filename: 'bundle.js',
+		path: path.resolve(__dirname, 'assets'),
+		filename: 'js/bundle.js',
 	},
 	module: {
 		rules: [
@@ -28,8 +29,7 @@ module.exports = {
 					{
 						loader: 'file-loader',
 						options: {
-							name: '[name].css',
-							outputPath: path.resolve(__dirname, 'assets/css')
+							name: 'css/[name].css',
 						}
 					},
 					{
@@ -47,5 +47,10 @@ module.exports = {
 				]
 			}
 		]
-	}
+	},
+	plugins: [
+		new webpack.BannerPlugin({
+			banner: "Want to take a look at the JS before bundled by Webpack? Check out https://github.com/florianbrinkmann/fanoe"
+		})
+	]
 };
