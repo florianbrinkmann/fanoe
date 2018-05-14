@@ -2,8 +2,8 @@
 
 **Contributors:** Florian Brinkmann  
 **Requires at least:** WordPress 4.7  
-**Tested up to:** WordPress 4.9.5  
-**Version:** 2.0.6  
+**Tested up to:** WordPress 4.9.6  
+**Version:** 2.0.7  
 **Requires PHP:** 5.4  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
@@ -42,6 +42,11 @@ License: SIL OPEN FONT LICENSE Version 1.1
 Source: https://fonts.google.com/specimen/Libre+Baskerville  
 
 ## Changelog
+
+### 2.0.7 – 14.05.2018
+
+#### Fixed
+* Styling of new comment cookie consent checkbox.
 
 ### 2.0.6 – 17.04.2018
 
