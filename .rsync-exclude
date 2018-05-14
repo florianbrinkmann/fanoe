@@ -6,6 +6,7 @@
 - package.json
 - package-lock.json
 - webpack.config.js
+- webpack.config.production.js
 - postcss.config.js
 - fanoe.zip
 - .*
